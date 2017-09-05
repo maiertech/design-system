@@ -1,6 +1,6 @@
 {
-  "name": "@mda/components",
-  "version": "0.1.0",
+  "name": "mda-components",
+  "version": "0.0.1",
   "description": "Reusable React components",
   "homepage": "https://github.com/mdotasia/mda-components",
   "bugs": "https://github.com/mdotasia/mda-components/issues",
@@ -8,24 +8,30 @@
     "name": "Thilo Maier",
     "email": "git@maier.asia"
   },
+  "license": "MIT",
   "repository": "git@github.com:mdotasia/mda-components.git",
   "scripts": {
     "format": "eslint . --ext .js,.jsx --fix",
     "lint": "eslint . --ext .js,.jsx",
+    "prepublish": "rimraf ./dist && babel ./src -d ./dist --ignore story.js,test.js",
     "start": "start-storybook -p 9001 -c .storybook"
   },
+  "main": "dist/index.js",
+  "files": [
+    "dist"
+  ],
   "dependencies": {
     "prop-types": "^15.5.10",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
     "rebass": "^1.0.4",
     "styled-components": "^2.1.2",
-    "styled-system": "^1.0.0-13",
-    "typography-theme-us-web-design-standards": "^0.15.10"
+    "styled-system": "^1.0.0-13"
   },
   "devDependencies": {
     "@storybook/addon-options": "^3.2.6",
     "@storybook/react": "^3.2.8",
+    "babel-cli": "^6.26.0",
     "babel-eslint": "^7.2.3",
     "babel-preset-env": "^1.6.0",
     "babel-preset-react": "^6.24.1",
@@ -39,7 +45,7 @@
     "eslint-plugin-react": "^7.3.0",
     "prettier": "^1.6.1",
     "react-router": "^4.2.0",
-    "react-router-dom": "^4.2.2"
-  },
-  "private": true
+    "react-router-dom": "^4.2.2",
+    "rimraf": "^2.6.1"
+  }
 }

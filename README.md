@@ -6,10 +6,40 @@ A library of reusable [React](https://facebook.github.io/react/) components. Bui
   - [Styled Components](https://www.styled-components.com/).
 Explore with [Storybook](https://storybooks.js.org/).
 
-Execute
+## Installation and Use
 
-    yarn add mda-components
+Run
 
-You can import components like this:
+```bash
+yarn add mda-components
+```
 
-    import { Header } from 'mda-components'
+to add package [mda-components](https://github.com/mdotasia/mda-components) to your dependencies.
+
+You can import components like this
+
+```javascript
+import { Header } from 'mda-components'
+```
+
+and and use them like any other component in your code.
+
+## Global CSS
+
+You will likely need some global styles, e.g. a browser reset such as
+[normalize.css](https://necolas.github.io/normalize.css/) or `@font-face` declarations. There are
+many ways to add global CSS and this library leaves it up to you to decide which global CSS you use
+and how to include it.
+
+For a minimalistic reset, you can use
+[`injectGlobal`](https://www.styled-components.com/docs/api#injectglobal) from
+[styled components](https://www.styled-components.com/):
+
+```javascript
+import { injectGlobal } from 'styled-components'
+
+injectGlobal`
+  * { box-sizing: border-box; }
+  body { margin: 0; }
+`
+```

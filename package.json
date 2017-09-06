@@ -29,6 +29,7 @@
     "styled-system": "^1.0.0-13"
   },
   "devDependencies": {
+    "@storybook/addon-actions": "^3.2.6",
     "@storybook/addon-options": "^3.2.6",
     "@storybook/react": "^3.2.8",
     "babel-cli": "^6.26.0",

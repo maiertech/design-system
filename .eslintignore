@@ -1,0 +1,2 @@
+# Create .eslintignore to address https://github.com/AtomLinter/linter-eslint/issues/771
+# This means you need to duplicate entries from .gitignore.

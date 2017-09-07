@@ -18,14 +18,14 @@ const theme = {
 export default theme;
 
 /**
- * By default a theme provided to ThemeProvider overrides an upper theme.    
+ * By default a theme provided to ThemeProvider overrides an upper theme.
  * This is the desired behavior for
  * - breakpoints,
  * - fontSizes,
  * - space.
  * but not for
  * - colors.
- * For colors the upper theme should the theme.
+ * For colors the upper theme should prevail.
  * This can be achieved with this merge function.
  */
 const merge = ({ colors: upperColors }) => ({

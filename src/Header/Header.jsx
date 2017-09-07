@@ -1,44 +1,51 @@
 import React from 'react';
 import styled, { ThemeProvider, withTheme } from 'styled-components';
-import { Flex, Heading } from 'rebass';
+import { Container, Box, Flex, Heading } from 'rebass';
 import PropTypes from 'prop-types';
 import { color, fontSize, space } from 'styled-system';
 import { merge } from '../theme';
 
 const Header = props => {
-  const NavLink = styled(props.element)`
+  const NavLink = styled(props.linkComponent)`
     ${color} ${fontSize} ${space} text-decoration: none;
     font-weight: bold;
+    border-bottom: solid 4px
+      ${navLinkProps => navLinkProps.theme.colors.primary};
   `;
 
   return (
     <ThemeProvider theme={merge}>
-      <Flex
-        direction={['column', 'row']}
-        justify={['center', 'space-between']}
-        align="center"
-        color="bg"
-        bg="primary"
-      >
-        <Heading p={[2, 3]}>{props.title}</Heading>
-        <Flex justify="space-around" align="center" wrap>
-          {props.links.map(link => (
-            <NavLink
-              to={link.to}
-              key={link.to}
-              color="bg"
-              p={1}
-              m={[2, 3]}
-              activeStyle={{
-                borderBottom: `solid 4px ${props.theme.colors.bg}`,
-              }}
-              exact
-            >
-              {link.text}
-            </NavLink>
-          ))}
-        </Flex>
-      </Flex>
+      <Box bg="primary">
+        <Container>
+          <Flex
+            direction={['column', 'row']}
+            justify={['center', 'space-between']}
+            align="center"
+            color="bg"
+          >
+            <Heading py={[2, 3]}>{props.title}</Heading>
+            <Flex justify="space-around" align="center" wrap>
+              {props.links.map(link => (
+                <NavLink
+                  to={link.to}
+                  key={link.to}
+                  color="bg"
+                  p={1}
+                  my={[2, 3]}
+                  ml={[3, 4]}
+                  mr={[3, 0]}
+                  activeStyle={{
+                    borderBottom: `solid 4px ${props.theme.colors.bg}`,
+                  }}
+                  exact
+                >
+                  {link.text}
+                </NavLink>
+              ))}
+            </Flex>
+          </Flex>
+        </Container>
+      </Box>
     </ThemeProvider>
   );
 };
@@ -54,7 +61,7 @@ Header.propTypes = {
    * [React Router <NavLink>](https://reacttraining.com/react-router/web/api/NavLink)
    * or [Gatsby <Link>](https://github.com/gatsbyjs/gatsby/tree/master/packages/gatsby-link).
    */
-  element: PropTypes.func.isRequired,
+  linkComponent: PropTypes.func.isRequired,
   /**
    * Array of navigation links.
    */

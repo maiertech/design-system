@@ -16,10 +16,6 @@ const externalLinks = [
 ];
 const title = 'Coding for the Web';
 
-// TODO use standard colors and override colors in one test
-
-// TODO One to make elements wrap
-
 storiesOf('components/Footer', module)
   .add('internal and external links', () => (
     <MemoryRouter>

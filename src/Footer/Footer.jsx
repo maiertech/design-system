@@ -15,7 +15,12 @@ const Footer = props => {
 
   return (
     <ThemeProvider theme={merge}>
-      <Box is="footer" bg="primaryDarker" color="bgAlt">
+      <Box
+        is="footer"
+        bg="primaryDarker"
+        color="bgAlt"
+        className={props.className}
+      >
         <Container>
           <Flex direction="column" justify="center" align="center">
             <Lead py={[2, 3]}>
@@ -77,11 +82,17 @@ Footer.propTypes = {
   externalLinks: PropTypes.arrayOf(
     PropTypes.shape({ to: PropTypes.string, text: PropTypes.string })
   ),
+  /**
+   * This property is used when using `styled` from styled-components.
+   * Can also be used to apply your own CSS (not recommended).
+   */
+  className: PropTypes.string,
 };
 
 Footer.defaultProps = {
   internalLinks: [],
   externalLinks: [],
+  className: '',
 };
 
 export default withTheme(Footer);

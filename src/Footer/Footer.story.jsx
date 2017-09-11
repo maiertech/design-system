@@ -3,6 +3,7 @@ import { storiesOf } from '@storybook/react';
 import { Provider } from 'rebass';
 import { MemoryRouter } from 'react-router';
 import { NavLink } from 'react-router-dom';
+import styled from 'styled-components';
 import { colors } from '../theme';
 import Footer from './Footer';
 
@@ -14,14 +15,13 @@ const externalLinks = [
   { to: 'http://twitter.com/mdotasia', text: 'Twitter' },
   { to: 'https://github.com/mdotasia/', text: 'GitHub' },
 ];
-const title = 'Coding for the Web';
 
 storiesOf('components/Footer', module)
   .add('internal and external links', () => (
     <MemoryRouter>
       <Provider theme={{ colors }}>
         <Footer
-          title={title}
+          title="Footer with internal and external links"
           internalLinkComponent={NavLink}
           internalLinks={internalLinks}
           externalLinks={externalLinks}
@@ -33,7 +33,7 @@ storiesOf('components/Footer', module)
     <MemoryRouter>
       <Provider theme={{ colors }}>
         <Footer
-          title={title}
+          title="Footer with internal links only"
           internalLinkComponent={NavLink}
           internalLinks={internalLinks}
         />
@@ -44,7 +44,7 @@ storiesOf('components/Footer', module)
     <MemoryRouter>
       <Provider theme={{ colors }}>
         <Footer
-          title={title}
+          title="Footer with external links only"
           internalLinkComponent={NavLink}
           externalLinks={externalLinks}
         />
@@ -54,7 +54,7 @@ storiesOf('components/Footer', module)
   .add('no links', () => (
     <MemoryRouter>
       <Provider theme={{ colors }}>
-        <Footer title={title} internalLinkComponent={NavLink} />
+        <Footer title="Footer with no links" internalLinkComponent={NavLink} />
       </Provider>
     </MemoryRouter>
   ))
@@ -62,7 +62,7 @@ storiesOf('components/Footer', module)
     <MemoryRouter>
       <Provider theme={{ colors }}>
         <Footer
-          title={title}
+          title="Footer with many links"
           internalLinkComponent={NavLink}
           internalLinks={[
             { to: '/1/', text: 'One' },
@@ -89,4 +89,26 @@ storiesOf('components/Footer', module)
         />
       </Provider>
     </MemoryRouter>
-  ));
+  ))
+  .add('override CSS with className prop', () => {
+    // `styled` adds generated class via className prop.
+    const StyledFooter = styled(Footer)`
+      color: palevioletred;
+      background-color: papayawhip;
+      a {
+        color: palevioletred;
+      }
+    `;
+    return (
+      <MemoryRouter>
+        <Provider theme={{ colors }}>
+          <StyledFooter
+            title="Override CSS with className prop"
+            internalLinkComponent={NavLink}
+            internalLinks={internalLinks}
+            externalLinks={externalLinks}
+          />
+        </Provider>
+      </MemoryRouter>
+    );
+  });

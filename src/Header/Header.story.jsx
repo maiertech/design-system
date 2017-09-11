@@ -3,6 +3,7 @@ import { storiesOf } from '@storybook/react';
 import { Provider } from 'rebass';
 import { MemoryRouter } from 'react-router';
 import { NavLink } from 'react-router-dom';
+import styled from 'styled-components';
 import { colors } from '../theme';
 import Header from './Header';
 
@@ -11,35 +12,35 @@ const links = [
   { to: '/about/', text: 'About' },
   { to: '/archive/', text: 'Archive' },
 ];
-const title = 'Coding for the Web';
 
 storiesOf('components/Header', module)
-  .add("'/' route", () => (
-    <MemoryRouter initialEntries={['/']}>
-      <Provider theme={{ colors }}>
-        <Header title={title} linkComponent={NavLink} links={links} />
-      </Provider>
-    </MemoryRouter>
-  ))
-  .add("'/about/' route", () => (
-    <MemoryRouter initialEntries={['/about/']}>
-      <Provider theme={{ colors }}>
-        <Header title={title} linkComponent={NavLink} links={links} />
-      </Provider>
-    </MemoryRouter>
-  ))
-  .add("'/archive/' route", () => (
-    <MemoryRouter initialEntries={['/archive/']}>
-      <Provider theme={{ colors }}>
-        <Header title={title} linkComponent={NavLink} links={links} />
-      </Provider>
-    </MemoryRouter>
-  ))
-  .add('links wrap', () => (
+  .add('root route', () => (
     <MemoryRouter initialEntries={['/']}>
       <Provider theme={{ colors }}>
         <Header
-          title={title}
+          title="Root route active"
+          linkComponent={NavLink}
+          links={links}
+        />
+      </Provider>
+    </MemoryRouter>
+  ))
+  .add('non-root route', () => (
+    <MemoryRouter initialEntries={['/about/']}>
+      <Provider theme={{ colors }}>
+        <Header
+          title="Non-root route active"
+          linkComponent={NavLink}
+          links={links}
+        />
+      </Provider>
+    </MemoryRouter>
+  ))
+  .add('many links causing line wrap', () => (
+    <MemoryRouter initialEntries={['/']}>
+      <Provider theme={{ colors }}>
+        <Header
+          title="Many links causing line wrap"
           linkComponent={NavLink}
           links={[
             { to: '/1/', text: 'One' },
@@ -61,4 +62,32 @@ storiesOf('components/Header', module)
         />
       </Provider>
     </MemoryRouter>
-  ));
+  ))
+  .add('override CSS with with className prop', () => {
+    // `styled` adds generated class via className prop.
+    const StyledHeader = styled(Header)`
+      color: palevioletred;
+      background-color: papayawhip;
+      a {
+        color: palevioletred;
+        border-bottom-color: papayawhip;
+        &.active {
+          border-bottom-color: palevioletred !important;
+        }
+      }
+      h2 {
+        color: palevioletred;
+      }
+    `;
+    return (
+      <MemoryRouter initialEntries={['/']}>
+        <Provider theme={{ colors }}>
+          <StyledHeader
+            title="Override CSS with className prop"
+            linkComponent={NavLink}
+            links={links}
+          />
+        </Provider>
+      </MemoryRouter>
+    );
+  });

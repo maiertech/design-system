@@ -15,7 +15,7 @@ const Header = props => {
 
   return (
     <ThemeProvider theme={merge}>
-      <Box bg="primary">
+      <Box bg="primary" className={props.className}>
         <Container>
           <Flex
             direction={['column', 'row']}
@@ -79,6 +79,15 @@ Header.propTypes = {
       bg: PropTypes.string,
     }),
   }).isRequired,
+  /**
+   * This property is used when using `styled` from styled-components.
+   * Can also be used to apply your own CSS (not recommended).
+   */
+  className: PropTypes.string,
+};
+
+Header.defaultProps = {
+  className: '',
 };
 
 export default withTheme(Header);

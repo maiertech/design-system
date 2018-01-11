@@ -1,7 +1,7 @@
-import breakpoints from './breakpoints';
-import colors from './colors';
-import fontSizes from './fontSizes';
-import space from './space';
+import breakpoints from "./breakpoints";
+import colors from "./colors";
+import fontSizes from "./fontSizes";
+import space from "./space";
 
 export { breakpoints };
 export { colors };
@@ -12,7 +12,7 @@ const theme = {
   breakpoints,
   colors,
   fontSizes,
-  space,
+  space
 };
 
 export default theme;
@@ -32,7 +32,7 @@ const merge = ({ colors: upperColors }) => ({
   breakpoints,
   colors: upperColors || colors,
   fontSizes,
-  space,
+  space
 });
 
 export { merge };

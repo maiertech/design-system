@@ -1,32 +1,32 @@
 {
-  "name": "mda-components",
+  "name": "@mdotasia/components",
   "version": "0.0.7",
-  "description": "Reusable React components",
-  "homepage": "https://github.com/mdotasia/mda-components",
-  "bugs": "https://github.com/mdotasia/mda-components/issues",
+  "description": "Reusable React components.",
+  "homepage": "https://github.com/mdotasia/components",
+  "bugs": "https://github.com/mdotasia/components/issues",
   "author": {
     "name": "Thilo Maier",
     "email": "git@maier.asia"
   },
   "license": "MIT",
-  "repository": "git@github.com:mdotasia/mda-components.git",
+  "repository": "git@github.com:mdotasia/components.git",
   "scripts": {
-    "format": "eslint . --ext .js,.jsx --fix",
-    "lint": "eslint . --ext .js,.jsx",
-    "prepublish": "rimraf ./dist && babel ./src -d ./dist --ignore story.js,test.js",
+    "format": "prettier --write \"src/**/*.{js,jsx,md}\"",
+    "lint": "eslint src/**/*.{js,jsx}",
+    "prepublish":
+      "rimraf ./dist && babel ./src -d ./dist --ignore story.js,test.js",
     "start": "start-storybook -p 9001 -c .storybook"
   },
   "main": "dist/index.js",
-  "files": [
-    "dist"
-  ],
+  "files": ["dist"],
   "dependencies": {
     "prop-types": "^15.5.10",
-    "react": "^15.6.1",
-    "react-dom": "^15.6.1",
     "rebass": "^1.0.4",
     "styled-components": "^2.1.2",
     "styled-system": "^1.0.0-13"
+  },
+  "peerDependencies": {
+    "react": "^16.2.0"
   },
   "devDependencies": {
     "@storybook/addon-actions": "^3.2.6",
@@ -37,16 +37,19 @@
     "babel-preset-env": "^1.6.0",
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-2": "^6.24.1",
-    "eslint": "^4.6.1",
-    "eslint-config-airbnb": "^15.1.0",
-    "eslint-config-prettier": "^2.4.0",
-    "eslint-plugin-import": "^2.7.0",
-    "eslint-plugin-jsx-a11y": "5.1.1",
-    "eslint-plugin-prettier": "^2.2.0",
-    "eslint-plugin-react": "^7.3.0",
-    "prettier": "^1.6.1",
+    "eslint": "^4.1.1",
+    "eslint-config-react-app": "^2.0.1",
+    "eslint-plugin-flowtype": "^2.34.1",
+    "eslint-plugin-import": "^2.6.0",
+    "eslint-plugin-jsx-a11y": "^5.1.1",
+    "eslint-plugin-react": "^7.1.0",
+    "prettier": "^1.10.1",
+    "react-dom": "^16.2.0",
     "react-router": "^4.2.0",
     "react-router-dom": "^4.2.2",
     "rimraf": "^2.6.1"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
   }
 }

@@ -1,9 +1,9 @@
-import React from 'react';
-import { Box, Container, Flex, Lead, Link, Text } from 'rebass';
-import PropTypes from 'prop-types';
-import styled, { ThemeProvider, withTheme } from 'styled-components';
-import { color, fontSize, space } from 'styled-system';
-import { merge } from '../theme';
+import React from "react";
+import { Box, Container, Flex, Lead, Link, Text } from "rebass";
+import PropTypes from "prop-types";
+import styled, { ThemeProvider, withTheme } from "styled-components";
+import { color, fontSize, space } from "styled-system";
+import { merge } from "../theme";
 
 const Footer = props => {
   const InternalLink = styled(props.internalLinkComponent)`
@@ -29,7 +29,7 @@ const Footer = props => {
               </InternalLink>
             </Lead>
             <Flex
-              direction={['column', 'row']}
+              direction={["column", "row"]}
               justify="space-around"
               align="center"
               wrap
@@ -86,13 +86,13 @@ Footer.propTypes = {
    * This property is used when using `styled` from styled-components.
    * Can also be used to apply your own CSS (not recommended).
    */
-  className: PropTypes.string,
+  className: PropTypes.string
 };
 
 Footer.defaultProps = {
   internalLinks: [],
   externalLinks: [],
-  className: '',
+  className: ""
 };
 
 export default withTheme(Footer);

@@ -1,10 +1,11 @@
-# mda-components
+# @mdotasia/components
 
 A library of reusable [React](https://facebook.github.io/react/) components. Built with
-  - [Rebass](http://jxnblk.com/rebass/)
-  - [Styled System](http://jxnblk.com/styled-system/)
-  - [Styled Components](https://www.styled-components.com/).
-Explore with [Storybook](https://storybooks.js.org/).
+
+* [Rebass](http://jxnblk.com/rebass/)
+* [Styled System](http://jxnblk.com/styled-system/)
+* [Styled Components](https://www.styled-components.com/).
+  Explore with [Storybook](https://storybooks.js.org/).
 
 ## Installation and Use
 
@@ -19,7 +20,7 @@ to add package [mda-components](https://github.com/mdotasia/mda-components) to y
 You can import components like this
 
 ```javascript
-import { Header } from 'mda-components'
+import { Header } from "mda-components";
 ```
 
 and and use them like any other component in your code.
@@ -36,10 +37,10 @@ For a minimalistic reset, you can use
 [styled components](https://www.styled-components.com/):
 
 ```javascript
-import { injectGlobal } from 'styled-components'
+import { injectGlobal } from "styled-components";
 
 injectGlobal`
   * { box-sizing: border-box; }
   body { margin: 0; }
-`
+`;
 ```

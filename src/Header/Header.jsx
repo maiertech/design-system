@@ -1,9 +1,9 @@
-import React from 'react';
-import styled, { ThemeProvider, withTheme } from 'styled-components';
-import { Container, Box, Flex, Heading } from 'rebass';
-import PropTypes from 'prop-types';
-import { color, fontSize, space } from 'styled-system';
-import { merge } from '../theme';
+import React from "react";
+import styled, { ThemeProvider, withTheme } from "styled-components";
+import { Container, Box, Flex, Heading } from "rebass";
+import PropTypes from "prop-types";
+import { color, fontSize, space } from "styled-system";
+import { merge } from "../theme";
 
 const Header = props => {
   const NavLink = styled(props.linkComponent)`
@@ -18,8 +18,8 @@ const Header = props => {
       <Box bg="primary" className={props.className}>
         <Container>
           <Flex
-            direction={['column', 'row']}
-            justify={['center', 'space-between']}
+            direction={["column", "row"]}
+            justify={["center", "space-between"]}
             align="center"
             color="bg"
           >
@@ -35,7 +35,7 @@ const Header = props => {
                   ml={[3, 4]}
                   mr={[3, 0]}
                   activeStyle={{
-                    borderBottom: `solid 4px ${props.theme.colors.bg}`,
+                    borderBottom: `solid 4px ${props.theme.colors.bg}`
                   }}
                   exact
                 >
@@ -76,18 +76,18 @@ Header.propTypes = {
    */
   theme: PropTypes.shape({
     colors: PropTypes.shape({
-      bg: PropTypes.string,
-    }),
+      bg: PropTypes.string
+    })
   }).isRequired,
   /**
    * This property is used when using `styled` from styled-components.
    * Can also be used to apply your own CSS (not recommended).
    */
-  className: PropTypes.string,
+  className: PropTypes.string
 };
 
 Header.defaultProps = {
-  className: '',
+  className: ""
 };
 
 export default withTheme(Header);

@@ -3,7 +3,7 @@ import styled, { ThemeProvider, withTheme } from "styled-components";
 import { Container, Box, Flex, Heading } from "rebass";
 import PropTypes from "prop-types";
 import { color, fontSize, space } from "styled-system";
-import { merge } from "../theme";
+import { merge } from "../../theme";
 
 const Header = props => {
   const NavLink = styled(props.linkComponent)`

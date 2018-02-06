@@ -3,7 +3,7 @@ import { Box, Container, Flex, Lead, Link, Text } from "rebass";
 import PropTypes from "prop-types";
 import styled, { ThemeProvider, withTheme } from "styled-components";
 import { color, fontSize, space } from "styled-system";
-import { merge } from "../theme";
+import { merge } from "../../theme";
 
 const Footer = props => {
   const InternalLink = styled(props.internalLinkComponent)`

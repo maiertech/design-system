@@ -12,18 +12,22 @@ A library of reusable [React](https://facebook.github.io/react/) components. Bui
 Run
 
 ```bash
-yarn add mda-components
+yarn add @mdotasia/components
 ```
 
-to add package [mda-components](https://github.com/mdotasia/mda-components) to your dependencies.
+to add package [@mdotasia/components](https://github.com/mdotasia/components) to your dependencies.
 
 You can import components like this
 
 ```javascript
-import { Header } from "mda-components";
+import { Header } from "@mdotasia/components";
 ```
 
 and and use them like any other component in your code.
+
+## Styleguide
+
+https://mdotasia.github.io/components/
 
 ## Global CSS
 

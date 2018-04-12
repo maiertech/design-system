@@ -12,6 +12,9 @@
 # catalog
 /catalog/build
 
+# development
+App.js
+
 # misc
 .DS_Store
 .env.local

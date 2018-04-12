@@ -14,25 +14,25 @@
   "main": "dist/index.js",
   "files": ["dist"],
   "scripts": {
-    "start": "catalog start",
+    "start": "BROWSER=none react-scripts start",
     "prebuild": "rimraf ./dist",
     "build":
-      "cross-env NODE_ENV=production babel ./src -d ./dist --ignore test.js",
-    "build:catalog": "catalog build",
+      "cross-env NODE_ENV=production babel ./src -d ./dist --ignore test.js,src/index.js",
+    "catalog-start": "catalog start",
+    "catalog-build": "catalog build",
     "lint": "eslint .",
     "precommit": "pretty-quick --staged",
     "prepublish": "yarn run build",
     "release": "release",
-    "postrelease": "yarn run build:catalog && yarn run deploy",
     "test": "react-scripts test --env=jsdom",
     "test:coverage": "react-scripts test --env=jsdom --coverage",
     "test:debug": "react-scripts --inspect-brk test --runInBand --env=jsdom"
   },
   "dependencies": {
-    "prop-types": "^15.5.10",
-    "rebass": "^1.0.4",
-    "styled-components": "^2.1.2",
-    "styled-system": "^1.0.0-13"
+    "prop-types": "^15.6.0",
+    "rebass": "^1.0.7",
+    "styled-components": "^3.1.6",
+    "styled-system": "^2.2.1"
   },
   "peerDependencies": {
     "react": "^16.0.0"

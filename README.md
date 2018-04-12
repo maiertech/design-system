@@ -10,7 +10,7 @@ A library of reusable [React](https://facebook.github.io/react/) components. Bui
 
 You can explore all components by launching the catalog:
 
-    yarn start
+    yarn catalog-start
 
 and open your browser at [http://localhost:4000/](http://localhost:4000/). You can also explore the catalog online: [https://components.maier.asia](https://components.maier.asia).
 

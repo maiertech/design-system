@@ -1,10 +1,10 @@
-Footer with internal and external links:
+A simple footer.
 
-```jsx
-const colors = require("../../theme").colors;
-const NavLink = require("react-router-dom").NavLink;
-const MemoryRouter = require("react-router").MemoryRouter;
-const Provider = require("rebass").Provider;
+## Footer with internal and external links
+
+```react
+showSource: true
+---
 <MemoryRouter>
   <Provider theme={{ colors }}>
     <Footer
@@ -20,16 +20,14 @@ const Provider = require("rebass").Provider;
       ]}
     />
   </Provider>
-</MemoryRouter>;
+</MemoryRouter>
 ```
 
-Footer with internal links only:
+## Footer with internal links only
 
-```jsx
-const colors = require("../../theme").colors;
-const NavLink = require("react-router-dom").NavLink;
-const MemoryRouter = require("react-router").MemoryRouter;
-const Provider = require("rebass").Provider;
+```react
+showSource: true
+---
 <MemoryRouter>
   <Provider theme={{ colors }}>
     <Footer
@@ -41,16 +39,14 @@ const Provider = require("rebass").Provider;
       ]}
     />
   </Provider>
-</MemoryRouter>;
+</MemoryRouter>
 ```
 
-Footer with external links only:
+## Footer with external links only
 
-```jsx
-const colors = require("../../theme").colors;
-const NavLink = require("react-router-dom").NavLink;
-const MemoryRouter = require("react-router").MemoryRouter;
-const Provider = require("rebass").Provider;
+```react
+showSource: true
+---
 <MemoryRouter>
   <Provider theme={{ colors }}>
     <Footer
@@ -62,30 +58,26 @@ const Provider = require("rebass").Provider;
       ]}
     />
   </Provider>
-</MemoryRouter>;
+</MemoryRouter>
 ```
 
-Footer with no links:
+## Footer with no links
 
-```jsx
-const colors = require("../../theme").colors;
-const NavLink = require("react-router-dom").NavLink;
-const MemoryRouter = require("react-router").MemoryRouter;
-const Provider = require("rebass").Provider;
+```react
+showSource: true
+---
 <MemoryRouter>
   <Provider theme={{ colors }}>
     <Footer title="Footer with no links" internalLinkComponent={NavLink} />
   </Provider>
-</MemoryRouter>;
+</MemoryRouter>
 ```
 
-Footer with many links that wrap:
+## Footer with many links that wrap
 
-```jsx
-const colors = require("../../theme").colors;
-const NavLink = require("react-router-dom").NavLink;
-const MemoryRouter = require("react-router").MemoryRouter;
-const Provider = require("rebass").Provider;
+```react
+showSource: true
+---
 <MemoryRouter>
   <Provider theme={{ colors }}>
     <Footer
@@ -115,5 +107,5 @@ const Provider = require("rebass").Provider;
       ]}
     />
   </Provider>
-</MemoryRouter>;
+</MemoryRouter>
 ```

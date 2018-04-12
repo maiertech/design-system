@@ -1,10 +1,10 @@
-Header with root route active:
+A simple header.
 
-```jsx
-const colors = require("../../theme").colors;
-const NavLink = require("react-router-dom").NavLink;
-const MemoryRouter = require("react-router").MemoryRouter;
-const Provider = require("rebass").Provider;
+## Header with root route active
+
+```react
+showSource: true
+---
 <MemoryRouter initialEntries={["/"]}>
   <Provider theme={{ colors }}>
     <Header
@@ -17,16 +17,14 @@ const Provider = require("rebass").Provider;
       ]}
     />
   </Provider>
-</MemoryRouter>;
+</MemoryRouter>
 ```
 
-Header with non-root route active:
+## Header with non-root route active
 
-```jsx
-const colors = require("../../theme").colors;
-const NavLink = require("react-router-dom").NavLink;
-const MemoryRouter = require("react-router").MemoryRouter;
-const Provider = require("rebass").Provider;
+```react
+showSource: true
+---
 <MemoryRouter initialEntries={["/about/"]}>
   <Provider theme={{ colors }}>
     <Header
@@ -39,16 +37,14 @@ const Provider = require("rebass").Provider;
       ]}
     />
   </Provider>
-</MemoryRouter>;
+</MemoryRouter>
 ```
 
-Header with many links that wrap:
+## Header with many links that wrap
 
-```jsx
-const colors = require("../../theme").colors;
-const NavLink = require("react-router-dom").NavLink;
-const MemoryRouter = require("react-router").MemoryRouter;
-const Provider = require("rebass").Provider;
+```react
+showSource: true
+---
 <MemoryRouter initialEntries={["/"]}>
   <Provider theme={{ colors }}>
     <Header
@@ -73,5 +69,5 @@ const Provider = require("rebass").Provider;
       ]}
     />
   </Provider>
-</MemoryRouter>;
+</MemoryRouter>
 ```

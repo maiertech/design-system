@@ -20,7 +20,7 @@ const config = {
       title: "Components",
       pages: [
         {
-          path: "components/Footer",
+          path: "/Footer",
           title: "Footer",
           content: pageLoader(() =>
             import("../src/components/Footer/README.md")
@@ -28,7 +28,7 @@ const config = {
           imports: { Footer: require("../src/components/Footer") }
         },
         {
-          path: "components/Header",
+          path: "/Header",
           title: "Header",
           content: pageLoader(() =>
             import("../src/components/Header/README.md")

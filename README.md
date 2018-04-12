@@ -12,7 +12,7 @@ You can explore all components by launching the catalog:
 
     yarn start
 
-and open your browser at [http://localhost:4000/](http://localhost:4000/). You can also explore the catalog online: [https://mdotasia.github.io/components/](https://mdotasia.github.io/components/).
+and open your browser at [http://localhost:4000/](http://localhost:4000/). You can also explore the catalog online: [https://components.maier.asia](https://components.maier.asia).
 
 ## Installation
 

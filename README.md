@@ -1,10 +1,6 @@
 # @mdotasia/components
 
-A library of reusable [React](https://facebook.github.io/react/) components. Built with
-
-* [Rebass](http://jxnblk.com/rebass/),
-* [Styled System](http://jxnblk.com/styled-system/) and
-* [Styled Components](https://www.styled-components.com/).
+A library of reusable [React](https://facebook.github.io/react/) components. Built with [Styled Components](https://www.styled-components.com/).
 
 ## Explore
 
@@ -25,7 +21,7 @@ to add package [@mdotasia/components](https://github.com/mdotasia/components) to
 ```code
 lang: js
 ---
-import { Header } from "@mdotasia/components";
+import { Header, Footer } from "@mdotasia/components";
 ```
 
 ## Global CSS

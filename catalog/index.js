@@ -36,24 +36,15 @@ const config = {
             theme: require("../src/themes/alternate")
           }
         }
-        /*
-        {
-          path: "/Footer",
-          title: "Footer",
-          content: pageLoader(() =>
-            import("../src/components/Footer/README.md")
-          ),
-          imports: { Footer: require("../src/components/Footer") }
-        },
-        {
-          path: "/Header",
-          title: "Header",
-          content: pageLoader(() =>
-            import("../src/components/Header/README.md")
-          ),
-          imports: { Header: require("../src/components/Header") }
-        }
-        */
+        // {
+        //   path: "/Icon",
+        //   title: "Icon",
+        //   content: pageLoader(() => import("../src/components/Icon/README.md")),
+        //   imports: {
+        //     Provider: require("../src/components/Provider"),
+        //     Icon: require("../src/components/Icon")
+        //   }
+        // }
       ]
     }
   ]

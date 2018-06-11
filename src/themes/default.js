@@ -33,10 +33,8 @@ const highContrastColors = {
 };
 
 export default {
-  breakpoints: {
-    medium: "30em",
-    large: "60em"
-  },
+  breakpoints: ["30em", "60em"],
+
   colors: {
     default: {
       background: highContrastColors.inverse,
@@ -54,6 +52,7 @@ export default {
       text: highContrastColors.default
     }
   },
+
   fontSize: [
     ".75rem",
     ".875rem",
@@ -63,9 +62,16 @@ export default {
     "2.25rem",
     "3rem"
   ],
-  fontFamily:
-    "-apple-system, BlinkMacSystemFont, 'avenir next', avenir, 'helvetica neue', helvetica, ubuntu, roboto, noto, 'segoe ui', arial, sans-serif",
+
+  font: {
+    sansSerif:
+      "-apple-system, BlinkMacSystemFont, 'avenir next', avenir, 'helvetica neue', helvetica, ubuntu, roboto, noto, 'segoe ui', arial, sans-serif",
+    serif: "georgia, times, serif"
+  },
+
   height: ["1rem", "2rem", "4rem", "8rem", "16rem"],
-  spacing: [0, ".25rem", ".5rem", "1rem", "2rem", "4rem", "8rem", "16rem"],
+
+  space: [0, ".25rem", ".5rem", "1rem", "2rem", "4rem", "8rem", "16rem"],
+
   width: ["1rem", "2rem", "4rem", "8rem", "16rem"]
 };

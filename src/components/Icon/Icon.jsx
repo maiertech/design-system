@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { Link, Svg, Label } from "./style";
+import styled from "styled-components";
+import { fontSize, space, width } from "styled-system";
 
 const icons = {
   github: {
@@ -19,23 +20,72 @@ const icons = {
   }
 };
 
-const Icon = props => (
-  // The word Twitter in `title` prop can trigger uBlock Origin filter that sets `display: none`.
-  <Link href={`${icons[props.type].url}${props.username}`}>
-    <Svg
-      fill="currentColor"
-      xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 24 24"
-    >
-      {icons[props.type].path}
-    </Svg>
-    <Label>{icons[props.type].text}</Label>
-  </Link>
+const Wrapper = styled.div`
+  display: inline-block;
+  a {
+    display: block;
+    height: 100%;
+    color: inherit;
+    text-decoration: none;
+    transition: all 1s ease-out;
+
+    &:hover {
+      opacity: 0.5;
+      transition: all 0.2s ease-in;
+    }
+
+    &:active {
+      transition: all 0.2s ease-in;
+      outline: 2px dotted currentColor;
+    }
+  }
+  ${space};
+`;
+
+const Box = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  ${space};
+`;
+
+const Svg = styled.svg`
+  height: ${props => props.theme.height[1]};
+  ${width};
+`;
+
+const Label = styled.span`
+  display: block;
+  ${fontSize};
+`;
+
+const Icon = ({ type, username, render, ...props }) => (
+  <Wrapper {...props}>
+    {render(
+      `${icons[type].url}${username}`,
+      <Box p={2}>
+        <Svg
+          fill="currentColor"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          width={1}
+        >
+          {icons[type].path}
+        </Svg>
+        <Label fontSize={1}>{icons[type].text}</Label>
+      </Box>
+    )}
+  </Wrapper>
 );
 
 Icon.propTypes = {
   type: PropTypes.oneOf(["github", "twitter"]).isRequired,
-  username: PropTypes.string.isRequired
+  username: PropTypes.string.isRequired,
+  render: PropTypes.func
+};
+
+Icon.defaultProps = {
+  render: (href, text) => <a href={href}>{text}</a>
 };
 
 export default Icon;

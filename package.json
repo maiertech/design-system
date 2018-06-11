@@ -21,9 +21,10 @@
   ],
   "scripts": {
     "start": "start-storybook -p 9009",
-    "prebuild:js": "rimraf ./dist",
     "build": "yarn run build:js && yarn run build:storybook",
+    "prebuild:js": "rimraf ./dist",
     "build:js": "babel ./src -d ./dist --ignore test.js,stories.jsx,profiles.js",
+    "prebuild:storybook": "rimraf ./storybook-static",
     "build:storybook": "build-storybook",
     "format": "pretty-quick",
     "lint": "eslint --ignore-path .gitignore .",

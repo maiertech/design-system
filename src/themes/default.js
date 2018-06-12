@@ -7,50 +7,38 @@ const lightestBlue = "#CDECFF";
 const washedGreen = "#E8FDF5";
 const white = "#FFFFFF";
 
-/**
- * Primary branding colors:
- * - contrast(primary default, high contrast inverse) = contrast(dark blue, white) = 9.04 (AAA)
- * - contrast(primary default, secondary inverse) = contrast(dark blue, washed green) = 8.53 (AAA)
- * - contrast(primary inverse, high contrast default) = contrast(lightest blue, black) = 17.03 (AAA)
- */
-const primaryColors = {
-  default: darkBlue,
-  inverse: lightestBlue
-};
-
-// Secondary branding colors:
-// - contrast(secondary default, high contrast inverse) = contrast(dark green, white): 5.54 (AA)
-const secondaryColors = {
-  default: darkGreen,
-  inverse: washedGreen
-};
-
-// High contrast colors for easy reading:
-// - contrast(high contrast default, high contrast inverse) = contrast(black, white) = 21.0 (AAA)
-const highContrastColors = {
-  default: black,
-  inverse: white
-};
+// Theme colors.
+const primary = darkBlue;
+const primaryInverse = lightestBlue;
+const secondary = darkGreen;
+const secondaryInverse = washedGreen;
+const highContrastText = black;
+const highContrastBackground = white;
 
 export default {
   breakpoints: ["30em", "60em"],
 
   colors: {
-    default: {
-      background: highContrastColors.inverse,
-      text: highContrastColors.default,
-      accent: primaryColors.default,
-      alternate: secondaryColors.default
-    },
-    branded: {
-      background: primaryColors.default,
-      text: highContrastColors.inverse,
-      accent: secondaryColors.inverse
-    },
-    inverse: {
-      background: primaryColors.inverse,
-      text: highContrastColors.default
-    }
+    // Default theme colors:
+    // contrast(text, background): 21.0 (AAA)
+    // contrast(accent, background): 9.05 (AAA)
+    // contrast(alternate, background): 5.54 (AA)
+    background: highContrastBackground,
+    text: highContrastText,
+    accent: primary,
+    alternate: secondary,
+
+    // Branded theme colors:
+    // contrast(brandedText, brandedBackground): 9.05 (AAA)
+    // contrast(brandedAccent, brandedBackground): 8.53 (AAA)
+    brandedBackground: primary,
+    brandedText: highContrastBackground,
+    brandedAccent: secondaryInverse,
+
+    // Inverse theme color:
+    // contrast(inverseText, inverseBackground): 17.04 (AAA)
+    inverseBackground: primaryInverse,
+    inverseText: highContrastText
   },
 
   fontSize: [
@@ -70,6 +58,19 @@ export default {
   },
 
   height: ["1rem", "2rem", "4rem", "8rem", "16rem"],
+
+  maxWidth: [
+    0,
+    "1rem",
+    "2rem",
+    "4rem",
+    "8rem",
+    "16rem",
+    "32rem",
+    "48rem",
+    "64rem",
+    "96rem"
+  ],
 
   space: [0, ".25rem", ".5rem", "1rem", "2rem", "4rem", "8rem", "16rem"],
 

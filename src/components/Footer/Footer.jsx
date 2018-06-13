@@ -2,6 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
 import { color, fontSize, space } from "styled-system";
+import { anchorStyle } from "../style";
 import Icon from "../Icon";
 import Container from "../Container";
 import LinkedHeading from "../LinkedHeading";
@@ -19,23 +20,7 @@ const FooterLinks = styled.div`
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
-  a {
-    display: block;
-    height: 100%;
-    color: inherit;
-    text-decoration: none;
-    transition: all 1s ease-out;
-
-    &:hover {
-      opacity: 0.5;
-      transition: all 0.2s ease-in;
-    }
-
-    &:active {
-      transition: all 0.2s ease-in;
-      outline: 2px dotted currentColor;
-    }
-  }
+  ${anchorStyle};
   ${fontSize};
   ${space};
 `;

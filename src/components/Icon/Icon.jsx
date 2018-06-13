@@ -2,6 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
 import { fontSize, space, width } from "styled-system";
+import { anchorStyle } from "../style";
 
 const icons = {
   github: {
@@ -22,23 +23,7 @@ const icons = {
 
 const Wrapper = styled.div`
   display: inline-block;
-  a {
-    display: block;
-    height: 100%;
-    color: inherit;
-    text-decoration: none;
-    transition: all 1s ease-out;
-
-    &:hover {
-      opacity: 0.5;
-      transition: all 0.2s ease-in;
-    }
-
-    &:active {
-      transition: all 0.2s ease-in;
-      outline: 2px dotted currentColor;
-    }
-  }
+  ${anchorStyle};
   ${space};
 `;
 

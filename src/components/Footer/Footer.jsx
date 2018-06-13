@@ -4,6 +4,7 @@ import styled from "styled-components";
 import { color, fontSize, space } from "styled-system";
 import Icon from "../Icon";
 import Container from "../Container";
+import LinkedHeading from "../LinkedHeading";
 
 const Wrapper = styled.footer`
   display: flex;
@@ -12,12 +13,6 @@ const Wrapper = styled.footer`
   font-family: ${props => props.theme.font.sansSerif};
   ${color};
   ${space};
-`;
-
-const Title = styled.h1`
-  text-align: center;
-  ${space};
-  ${fontSize};
 `;
 
 const FooterLinks = styled.div`
@@ -62,14 +57,14 @@ const Copyright = styled.small`
   ${fontSize};
 `;
 
-const Footer = ({ title, name, links, render, ...props }) => (
+const Footer = ({ title, name, links, anchor, ...props }) => (
   <Wrapper color="inverseText" bg="inverseBackground" {...props}>
     <Container maxWidth={8} px={[1, 2, 3]} py={3}>
-      <Title fontSize={4} mt={0} mb={3}>
+      <LinkedHeading align="center" href="/" fontSize={4} mt={0} mb={3}>
         {title}
-      </Title>
+      </LinkedHeading>
       <FooterLinks fontSize={2} mb={3}>
-        {links.map(link => <Box px={2}>{render(link.href, link.text)}</Box>)}
+        {links.map(link => <Box px={2}>{anchor(link.href, link.text)}</Box>)}
       </FooterLinks>
       <SocialIcons mb={3}>
         <Icon type="github" username="mdotasia" />
@@ -95,11 +90,11 @@ Footer.propTypes = {
     })
   ),
   /** Render prop for link component. */
-  render: PropTypes.func
+  anchor: PropTypes.func
 };
 
 Footer.defaultProps = {
-  render: (href, text) => <a href={href}>{text}</a>
+  anchor: (href, text) => <a href={href}>{text}</a>
 };
 
 export default Footer;

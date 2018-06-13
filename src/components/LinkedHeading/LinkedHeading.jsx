@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
-import { space } from "styled-system";
+import { fontSize, space } from "styled-system";
 
 const Wrapper = styled.div`
   & > h1,
@@ -11,7 +11,10 @@ const Wrapper = styled.div`
   & > h5,
   & > h6 {
     margin: ${props => props.theme.space[0]};
+    ${fontSize};
+    text-align: ${props => props.align};
   }
+
   a {
     display: block;
     height: 100%;
@@ -33,22 +36,27 @@ const Wrapper = styled.div`
   ${space};
 `;
 
-const LinkedHeading = ({ heading, anchor, href, children, ...props }) => (
+const LinkedHeading = ({ anchor, children, heading, href, ...props }) => (
   <Wrapper {...props}>{heading(anchor(href, children))}</Wrapper>
 );
 
 LinkedHeading.propTypes = {
-  /** Render prop for title. */
-  heading: PropTypes.func,
-  /** Render prop for anchor. */
+  /** Align heading. */
+  align: PropTypes.oneOf(["left", "right", "center", "justify"]),
+  /** Render prop for anchor element. */
   anchor: PropTypes.func,
+  /** Override default font-size of heading. */
+  fontSize: PropTypes.string,
+  /** Render prop for heading element. */
+  heading: PropTypes.func,
   href: PropTypes.string.isRequired,
   children: PropTypes.string.isRequired
 };
 
 LinkedHeading.defaultProps = {
-  heading: children => <h1>{children}</h1>,
-  anchor: (href, text) => <a href={href}>{text}</a>
+  align: "left",
+  anchor: (href, text) => <a href={href}>{text}</a>,
+  heading: children => <h1>{children}</h1>
 };
 
 export default LinkedHeading;

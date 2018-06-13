@@ -3,36 +3,47 @@ import { storiesOf } from "@storybook/react";
 import { NavLink, MemoryRouter } from "react-router-dom";
 import Footer from "./Footer";
 
-const links = [
-  {
-    href: "/?selectedKind=Footer&selectedStory=default%20render%20prop",
-    text: "Blog"
-  },
-  {
-    href: "/?selectedKind=Footer&selectedStory=default%20render%20prop",
-    text: "About"
-  },
-  {
-    href: "/?selectedKind=Footer&selectedStory=default%20render%20prop",
-    text: "Archive"
-  }
-];
-
 storiesOf("Footer", module)
-  .add("default render prop", () => (
+  .add("default anchor", () => (
     <Footer
-      title="Footer with default render prop"
+      title="Footer with default anchor"
       name="Thilo Maier"
-      links={links}
+      links={[
+        {
+          href: "/?selectedKind=Footer&selectedStory=default%20anchor",
+          text: "Blog"
+        },
+        {
+          href: "/?selectedKind=Footer&selectedStory=default%20anchor",
+          text: "About"
+        },
+        {
+          href: "/?selectedKind=Footer&selectedStory=default%20anchor",
+          text: "Archive"
+        }
+      ]}
     />
   ))
-  .add("custom render prop", () => (
+  .add("custom anchor", () => (
     <MemoryRouter>
       <Footer
-        title="Footer with custom render prop"
+        title="Footer with custom anchor"
         name="Thilo Maier"
-        links={links}
-        render={(href, text) => <NavLink to={href}>{text}</NavLink>}
+        links={[
+          {
+            href: "/?selectedKind=Footer&selectedStory=custom%20anchor",
+            text: "Blog"
+          },
+          {
+            href: "/?selectedKind=Footer&selectedStory=custom%20anchor",
+            text: "About"
+          },
+          {
+            href: "/?selectedKind=Footer&selectedStory=custom%20anchor",
+            text: "Archive"
+          }
+        ]}
+        anchor={(href, text) => <NavLink to={href}>{text}</NavLink>}
       />
     </MemoryRouter>
   ))

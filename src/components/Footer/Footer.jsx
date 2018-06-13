@@ -57,18 +57,25 @@ const Copyright = styled.small`
   ${fontSize};
 `;
 
-const Footer = ({ title, name, links, anchor, ...props }) => (
+const Footer = ({ anchor, title, name, links, ...props }) => (
   <Wrapper color="inverseText" bg="inverseBackground" {...props}>
     <Container maxWidth={8} px={[1, 2, 3]} py={3}>
-      <LinkedHeading align="center" href="/" fontSize={4} mt={0} mb={3}>
+      <LinkedHeading
+        anchor={anchor}
+        align="center"
+        href="/"
+        fontSize={4}
+        mt={0}
+        mb={3}
+      >
         {title}
       </LinkedHeading>
       <FooterLinks fontSize={2} mb={3}>
         {links.map(link => <Box px={2}>{anchor(link.href, link.text)}</Box>)}
       </FooterLinks>
       <SocialIcons mb={3}>
-        <Icon type="github" username="mdotasia" />
-        <Icon type="twitter" username="mdotasia" />
+        <Icon anchor={anchor} type="github" username="mdotasia" />
+        <Icon anchor={anchor} type="twitter" username="mdotasia" />
       </SocialIcons>
       <Copyright fontSize={1}>
         © {new Date().getFullYear()} by {name}

@@ -15,9 +15,9 @@ storiesOf("LinkedHeading", module)
   .add("custom heading and anchor", () => (
     <MemoryRouter>
       <LinkedHeading
+        anchor={(href, text) => <NavLink to={href}>{text}</NavLink>}
         href="/?selectedKind=LinkedHeading&selectedStory=custom%20heading%20and%20anchor"
         heading={children => <h2>{children}</h2>}
-        anchor={(href, text) => <NavLink to={href}>{text}</NavLink>}
         p={2}
       >
         Custom heading and anchor

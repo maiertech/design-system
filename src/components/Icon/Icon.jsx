@@ -59,9 +59,9 @@ const Label = styled.span`
   ${fontSize};
 `;
 
-const Icon = ({ type, username, render, ...props }) => (
+const Icon = ({ anchor, type, username, ...props }) => (
   <Wrapper {...props}>
-    {render(
+    {anchor(
       `${icons[type].url}${username}`,
       <Box p={2}>
         <Svg
@@ -79,13 +79,13 @@ const Icon = ({ type, username, render, ...props }) => (
 );
 
 Icon.propTypes = {
+  anchor: PropTypes.func,
   type: PropTypes.oneOf(["github", "twitter"]).isRequired,
-  username: PropTypes.string.isRequired,
-  render: PropTypes.func
+  username: PropTypes.string.isRequired
 };
 
 Icon.defaultProps = {
-  render: (href, text) => <a href={href}>{text}</a>
+  anchor: (href, text) => <a href={href}>{text}</a>
 };
 
 export default Icon;

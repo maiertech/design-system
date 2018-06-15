@@ -6,7 +6,7 @@ export const anchorStyle = css`
     height: 100%;
     color: inherit;
     text-decoration: none;
-    transition: all 1s ease-out;
+    transition: all 0.2s ease-out;
 
     &:hover {
       opacity: 0.5;

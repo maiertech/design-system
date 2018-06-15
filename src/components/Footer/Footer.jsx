@@ -43,8 +43,8 @@ const Copyright = styled.small`
 `;
 
 const Footer = ({ anchor, title, name, links, ...props }) => (
-  <Wrapper color="inverseText" bg="inverseBackground" {...props}>
-    <Container maxWidth={8} px={[1, 2, 3]} py={3}>
+  <Wrapper color="inverseText" bg="inverseBackground" py={3} {...props}>
+    <Container>
       <LinkedHeading
         anchor={anchor}
         align="center"
@@ -80,7 +80,7 @@ Footer.propTypes = {
       href: PropTypes.string.isRequired,
       text: PropTypes.string.isRequired
     })
-  ),
+  ).isRequired,
   /** Render prop for link component. */
   anchor: PropTypes.func
 };

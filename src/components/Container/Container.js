@@ -1,15 +1,29 @@
+import PropTypes from "prop-types";
 import styled from "styled-components";
-import { space, style } from "styled-system";
-
-const maxWidth = style({
-  prop: "maxWidth",
-  cssProperty: "maxWidth",
-  key: "maxWidth"
-});
 
 const Container = styled.div`
-  ${maxWidth};
-  ${space};
+  max-width: ${({ theme: { maxWidth }, wide }) =>
+    wide ? maxWidth[9] : maxWidth[8]};
+  width: 100%;
+  padding-left: ${({ theme: { space } }) => space[2]};
+  padding-right: ${({ theme: { space } }) => space[2]};
+
+  @media (min-width: ${({ theme: { breakpoints } }) => breakpoints[0]}) {
+    padding-left: ${({ theme: { space } }) => space[3]};
+    padding-right: ${({ theme: { space } }) => space[3]};
+  }
 `;
+
+Container.propTypes = {
+  /**
+   * Default maxWidth is theme.maxWidth[8] = 64rem.
+   * With wide flag: theme.maxWidth[9] = 96rem.
+   */
+  wide: PropTypes.bool
+};
+
+Container.defaultProps = {
+  wide: false
+};
 
 export default Container;

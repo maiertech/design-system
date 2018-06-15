@@ -11,6 +11,7 @@ const Wrapper = styled.div`
   & > h4,
   & > h5,
   & > h6 {
+    white-space: nowrap;
     margin: ${props => props.theme.space[0]};
     ${fontSize};
     text-align: ${props => props.align};
@@ -29,7 +30,11 @@ LinkedHeading.propTypes = {
   /** Render prop for anchor element. */
   anchor: PropTypes.func,
   /** Override default font-size of heading. */
-  fontSize: PropTypes.string,
+  fontSize: PropTypes.oneOfType([
+    PropTypes.number,
+    PropTypes.string,
+    PropTypes.array
+  ]),
   /** Render prop for heading element. */
   heading: PropTypes.func,
   href: PropTypes.string.isRequired,

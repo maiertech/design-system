@@ -41,6 +41,12 @@ export default {
     inverseText: highContrastText
   },
 
+  font: {
+    sansSerif:
+      "-apple-system, BlinkMacSystemFont, 'avenir next', avenir, 'helvetica neue', helvetica, ubuntu, roboto, noto, 'segoe ui', arial, sans-serif",
+    serif: "georgia, times, serif"
+  },
+
   fontSize: [
     ".75rem",
     ".875rem",
@@ -51,10 +57,12 @@ export default {
     "3rem"
   ],
 
-  font: {
-    sansSerif:
-      "-apple-system, BlinkMacSystemFont, 'avenir next', avenir, 'helvetica neue', helvetica, ubuntu, roboto, noto, 'segoe ui', arial, sans-serif",
-    serif: "georgia, times, serif"
+  fontWeight: ["normal", 100, 200, 300, 400, 500, 600, 700, 800, 900],
+
+  letterSpacing: {
+    tracked: ".1em;",
+    "tracked-tight": "-.05em",
+    "tracked-mega": ".25em"
   },
 
   height: ["1rem", "2rem", "4rem", "8rem", "16rem"],

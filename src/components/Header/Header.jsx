@@ -54,14 +54,14 @@ const Header = ({ anchor, links, title: { href, text } }) => (
         justifyContent={["center", "space-between"]}
       >
         <LinkedHeading
-          fontSize={[3, 4, 5]}
+          fontSize={[4, 3, 2]}
           anchor={anchor}
           href={href}
           mr={[0, 3]}
         >
           {text}
         </LinkedHeading>
-        <Links fontSize={[1, 2, 3]} fontWeight={6}>
+        <Links fontSize={[6, 5, 4]} fontWeight={6}>
           {links.map(({ href, text }) => (
             <LinkBox key={text} ml={[2, 3, 4]} mr={[2, 0]}>
               {anchor(href, text)}

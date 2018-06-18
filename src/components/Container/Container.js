@@ -2,8 +2,8 @@ import PropTypes from "prop-types";
 import styled from "styled-components";
 
 const Container = styled.div`
-  max-width: ${({ theme: { maxWidth }, wide }) =>
-    wide ? maxWidth[9] : maxWidth[8]};
+  max-width: ${({ theme: { maxWidths }, wide }) =>
+    wide ? maxWidths[9] : maxWidths[8]};
   width: 100%;
   padding-left: ${({ theme: { space } }) => space[2]};
   padding-right: ${({ theme: { space } }) => space[2]};

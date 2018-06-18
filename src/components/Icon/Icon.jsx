@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
-import { fontSize, space, width } from "styled-system";
+import { fontSize, height, space, width } from "styled-system";
 import { anchorStyle } from "../style";
 
 const icons = {
@@ -35,7 +35,7 @@ const Box = styled.div`
 `;
 
 const Svg = styled.svg`
-  height: ${props => props.theme.height[1]};
+  ${height};
   ${width};
 `;
 
@@ -53,11 +53,12 @@ const Icon = ({ anchor, type, username, ...props }) => (
           fill="currentColor"
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 24 24"
+          height={2}
           width={1}
         >
           {icons[type].path}
         </Svg>
-        <Label fontSize={1}>{icons[type].text}</Label>
+        <Label fontSize={6}>{icons[type].text}</Label>
       </Box>
     )}
   </Wrapper>

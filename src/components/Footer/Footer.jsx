@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
-import { color, fontSize, space } from "styled-system";
+import { color, fontFamily, fontSize, lineHeight, space } from "styled-system";
 import { anchorStyle } from "../style";
 import Icon from "../Icon";
 import Container from "../Container";
@@ -11,8 +11,8 @@ const Wrapper = styled.footer`
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-family: ${props => props.theme.font.sansSerif};
   ${color};
+  ${fontFamily};
   ${space};
 `;
 
@@ -22,6 +22,7 @@ const FooterLinks = styled.div`
   justify-content: center;
   ${anchorStyle};
   ${fontSize};
+  ${lineHeight};
   ${space};
 `;
 
@@ -43,26 +44,46 @@ const Copyright = styled.small`
 `;
 
 const Footer = ({ anchor, title, name, links, ...props }) => (
-  <Wrapper color="inverseText" bg="inverseBackground" py={3} {...props}>
+  <Wrapper
+    fontFamily="sansSerif"
+    color="inverseText"
+    bg="inverseBackground"
+    py={3}
+    {...props}
+  >
     <Container>
       <LinkedHeading
         anchor={anchor}
         align="center"
         href="/"
-        fontSize={4}
+        fontSize={3}
         mt={0}
         mb={3}
       >
         {title}
       </LinkedHeading>
-      <FooterLinks fontSize={2} mb={3}>
-        {links.map(link => <Box px={2}>{anchor(link.href, link.text)}</Box>)}
+      <FooterLinks fontSize={5} lineHeight="copy" mb={3}>
+        {links.map(({ href, text }, index) => (
+          <Box px={2} key={index}>
+            {anchor(href, text)}
+          </Box>
+        ))}
       </FooterLinks>
       <SocialIcons mb={3}>
-        <Icon anchor={anchor} type="github" username="mdotasia" />
-        <Icon anchor={anchor} type="twitter" username="mdotasia" />
+        <Icon
+          anchor={anchor}
+          type="github"
+          username="mdotasia"
+          key="github-mdotasia"
+        />
+        <Icon
+          anchor={anchor}
+          type="twitter"
+          username="mdotasia"
+          key="twitter-mdotasia"
+        />
       </SocialIcons>
-      <Copyright fontSize={1}>
+      <Copyright fontSize={7}>
         © {new Date().getFullYear()} by {name}
       </Copyright>
     </Container>

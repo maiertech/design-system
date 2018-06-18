@@ -1,23 +1,28 @@
 import React from "react";
-import styled, { injectGlobal, ThemeProvider } from "styled-components";
 import PropTypes from "prop-types";
+import styled, { injectGlobal, ThemeProvider } from "styled-components";
+import { fontFamily, lineHeight } from "styled-system";
 import defaultTheme from "../../themes/default";
 
-injectGlobal`body {
-  margin: 0;
-}`;
-
-export const Base = styled.div`
-  font-family: ${props => props.theme.font.sansSerif};
-  line-height: 1.4;
-  * {
-    box-sizing: border-box;
+injectGlobal`
+  body {
+    margin: 0;
   }
 `;
 
-const Provider = ({ theme, ...props }) => (
+const Base = styled.div`
+  * {
+    box-sizing: border-box;
+  }
+  ${fontFamily};
+  ${lineHeight};
+`;
+
+const Provider = ({ theme, children }) => (
   <ThemeProvider theme={{ ...defaultTheme, ...theme }}>
-    <Base {...props} />
+    <Base fontFamily="sansSerif" lineHeight="copy">
+      {children}
+    </Base>
   </ThemeProvider>
 );
 

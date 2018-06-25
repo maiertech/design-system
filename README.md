@@ -22,4 +22,16 @@ to add package [@mdotasia/components](https://github.com/mdotasia/components) to
 
 ## Use
 
-Even though this library uses [styled-system](http://jxnblk.com/styled-system/) under the hood, it is not necessary to understand the styled-system API to use its components. You can think of styled-components and styled-system as implementation details which you can levarage if you want or simply ignore. Neither are peer dependecnies.
+Even though this library uses [styled-system](http://jxnblk.com/styled-system/) under the hood, it is not necessary to understand the styled-system API to use its components. You can think of styled-components and styled-system as implementation details which you can levarage if you want or simply ignore. Neither are peer dependencies.
+
+## Development
+
+Run Storybook locally with
+
+    yarn start
+
+while you develop. Use Storybook to develop components in isolation. In order to run screenshot tests, while Storybook is up and running, run
+
+    yarn test
+
+in a separate terminal.

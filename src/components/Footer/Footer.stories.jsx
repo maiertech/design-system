@@ -4,42 +4,44 @@ import { NavLink, MemoryRouter } from "react-router-dom";
 import Footer from "./Footer";
 
 storiesOf("Footer", module)
-  .add("default anchor", () => (
-    <Footer
-      title="Footer with default anchor"
-      name="Thilo Maier"
-      links={[
-        {
-          href: "/?selectedKind=Footer&selectedStory=default%20anchor",
-          text: "Blog"
-        },
-        {
-          href: "/?selectedKind=Footer&selectedStory=default%20anchor",
-          text: "About"
-        },
-        {
-          href: "/?selectedKind=Footer&selectedStory=default%20anchor",
-          text: "Archive"
-        }
-      ]}
-    />
-  ))
-  .add("custom anchor", () => (
-    <MemoryRouter>
+  .add("default anchor", () => {
+    return (
       <Footer
-        title="Footer with custom anchor"
+        title="This is the Footer Title"
         name="Thilo Maier"
         links={[
           {
-            href: "/?selectedKind=Footer&selectedStory=custom%20anchor",
+            href: "#",
             text: "Blog"
           },
           {
-            href: "/?selectedKind=Footer&selectedStory=custom%20anchor",
+            href: "#",
             text: "About"
           },
           {
-            href: "/?selectedKind=Footer&selectedStory=custom%20anchor",
+            href: "#",
+            text: "Archive"
+          }
+        ]}
+      />
+    );
+  })
+  .add("custom anchor", () => (
+    <MemoryRouter>
+      <Footer
+        title="This is the Footer Title"
+        name="Thilo Maier"
+        links={[
+          {
+            href: "#",
+            text: "Blog"
+          },
+          {
+            href: "#",
+            text: "About"
+          },
+          {
+            href: "#",
             text: "Archive"
           }
         ]}
@@ -49,107 +51,87 @@ storiesOf("Footer", module)
   ))
   .add("many links that wrap", () => (
     <Footer
-      title="Footer with many links that wrap"
+      title="This is the Footer Title"
       name="Thilo Maier"
       links={[
         {
-          href:
-            "/?selectedKind=Footer&selectedStory=many%20links%20that%20wrap",
+          href: "#",
           text: "One"
         },
         {
-          href:
-            "/?selectedKind=Footer&selectedStory=many%20links%20that%20wrap",
+          href: "#",
           text: "Two"
         },
         {
-          href:
-            "/?selectedKind=Footer&selectedStory=many%20links%20that%20wrap",
+          href: "#",
           text: "Three"
         },
         {
-          href:
-            "/?selectedKind=Footer&selectedStory=many%20links%20that%20wrap",
+          href: "#",
           text: "Four"
         },
         {
-          href:
-            "/?selectedKind=Footer&selectedStory=many%20links%20that%20wrap",
+          href: "#",
           text: "Five"
         },
         {
-          href:
-            "/?selectedKind=Footer&selectedStory=many%20links%20that%20wrap",
+          href: "#",
           text: "Six"
         },
         {
-          href:
-            "/?selectedKind=Footer&selectedStory=many%20links%20that%20wrap",
+          href: "#",
           text: "Seven"
         },
         {
-          href:
-            "/?selectedKind=Footer&selectedStory=many%20links%20that%20wrap",
+          href: "#",
           text: "Eight"
         },
         {
-          href:
-            "/?selectedKind=Footer&selectedStory=many%20links%20that%20wrap",
+          href: "#",
           text: "Nine"
         },
         {
-          href:
-            "/?selectedKind=Footer&selectedStory=many%20links%20that%20wrap",
+          href: "#",
           text: "Ten"
         },
         {
-          href:
-            "/?selectedKind=Footer&selectedStory=many%20links%20that%20wrap",
+          href: "#",
           text: "Eleven"
         },
         {
-          href:
-            "/?selectedKind=Footer&selectedStory=many%20links%20that%20wrap",
+          href: "#",
           text: "Twelve"
         },
         {
-          href:
-            "/?selectedKind=Footer&selectedStory=many%20links%20that%20wrap",
+          href: "#",
           text: "Thirteen"
         },
         {
-          href:
-            "/?selectedKind=Footer&selectedStory=many%20links%20that%20wrap",
+          href: "#",
           text: "Fourteen"
         },
         {
-          href:
-            "/?selectedKind=Footer&selectedStory=many%20links%20that%20wrap",
+          href: "#",
           text: "Fifteen"
         },
         {
-          href:
-            "/?selectedKind=Footer&selectedStory=many%20links%20that%20wrap",
+          href: "#",
           text: "Sixteen"
         },
         {
-          href:
-            "/?selectedKind=Footer&selectedStory=many%20links%20that%20wrap",
+          href: "#",
           text: "Seveteen"
         },
         {
-          href:
-            "/?selectedKind=Footer&selectedStory=many%20links%20that%20wrap",
+          href: "#",
           text: "Eighteen"
         },
         {
-          href:
-            "/?selectedKind=Footer&selectedStory=many%20links%20that%20wrap",
+          href: "#",
           text: "Nineteen"
         },
         {
-          href:
-            "/?selectedKind=Footer&selectedStory=many%20links%20that%20wrap",
+          href: "#",
           text: "Twenty"
         }
       ]}

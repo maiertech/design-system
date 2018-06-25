@@ -3,11 +3,11 @@ import * as devices from "puppeteer/DeviceDescriptors";
 import path from "path";
 
 const url =
-  "http://localhost:9009/?selectedKind=Header&selectedStory=default%20anchor&full=1&addons=1&stories=1&panelRight=0";
+  "http://localhost:9009/?selectedKind=Footer&selectedStory=default%20anchor&full=1&addons=1&stories=1&panelRight=0";
 
 const platform = process.platform;
 
-describe("Header", () => {
+describe("Footer", () => {
   let browser;
 
   beforeAll(async () => {

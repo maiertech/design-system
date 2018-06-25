@@ -7,20 +7,20 @@ storiesOf("Header", module)
   .add("default anchor", () => (
     <Header
       title={{
-        href: "/?selectedKind=Header&selectedStory=default%20anchor",
-        text: "With default anchor"
+        href: "#",
+        text: "Linked Header Title"
       }}
       links={[
         {
-          href: "/?selectedKind=Header&selectedStory=default%20anchor",
+          href: "#",
           text: "Blog"
         },
         {
-          href: "/?selectedKind=Header&selectedStory=default%20anchor",
+          href: "#",
           text: "About"
         },
         {
-          href: "/?selectedKind=Header&selectedStory=default%20anchor",
+          href: "#",
           text: "Archive"
         }
       ]}
@@ -30,20 +30,20 @@ storiesOf("Header", module)
     <MemoryRouter>
       <Header
         title={{
-          href: "/?selectedKind=Header&selectedStory=custom%20anchor",
-          text: "With custom anchor"
+          href: "#",
+          text: "Linked Header Title"
         }}
         links={[
           {
-            href: "/?selectedKind=Header&selectedStory=custom%20anchor",
+            href: "#",
             text: "Blog"
           },
           {
-            href: "/?selectedKind=Header&selectedStory=custom%20anchor",
+            href: "#",
             text: "About"
           },
           {
-            href: "/?selectedKind=Header&selectedStory=custom%20anchor",
+            href: "#",
             text: "Archive"
           }
         ]}

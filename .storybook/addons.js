@@ -1,1 +1,1 @@
-import "@storybook/addon-viewport/register";
+// Keep empty file to hide Action Logger.

@@ -1,0 +1,12 @@
+{
+  "name": "components",
+  "alias": "components.maier.asia",
+  "type": "static",
+  "files": ["storybook-static"],
+  "public": false,
+  "static": {
+    "public": "storybook-static",
+    "directoryListing": false,
+    "trailingSlash": true
+  }
+}

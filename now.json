@@ -1,0 +1,6 @@
+{
+  "name": "components",
+  "alias": "components.maier.asia",
+  "files": ["storybook-static"],
+  "public": false
+}

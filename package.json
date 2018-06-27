@@ -26,8 +26,9 @@
     "format": "pretty-quick",
     "lint": "eslint --ignore-path .gitignore .",
     "precommit": "pretty-quick --staged",
-    "prepublishOnly": "yarn run babel",
+    "prepublishOnly": "yarn run build",
     "release": "release",
+    "postrelease": "yarn run deploy",
     "serve": "build-storybook && serve",
     "test": "jest --watch",
     "test:debug": "node --inspect-brk node_modules/.bin/jest --runInBand"

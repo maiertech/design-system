@@ -35,3 +35,11 @@ while you develop. Use Storybook to develop components in isolation. In order to
     yarn test
 
 in a separate terminal.
+
+## Releases
+
+Releases are done with [release](https://github.com/zeit/release) by [Zeit](https://zeit.co/dashboard). Run
+
+    yarn run release
+
+with one of `major`, `minor` and `patch` as argument. This created the release and release notes. Subsequently, Storybook is published to Zeit.

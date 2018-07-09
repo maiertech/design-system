@@ -1,29 +1,18 @@
-import PropTypes from "prop-types";
+import React from "react";
 import styled from "styled-components";
+import { maxWidth, space } from "styled-system";
 
-const Container = styled.div`
-  max-width: ${({ theme: { maxWidths }, wide }) =>
-    wide ? maxWidths[9] : maxWidths[8]};
+const Wrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   width: 100%;
-  padding-left: ${({ theme: { space } }) => space[2]};
-  padding-right: ${({ theme: { space } }) => space[2]};
-
-  @media (min-width: ${({ theme: { breakpoints } }) => breakpoints[0]}) {
-    padding-left: ${({ theme: { space } }) => space[3]};
-    padding-right: ${({ theme: { space } }) => space[3]};
-  }
+  ${maxWidth};
+  ${space};
 `;
 
-Container.propTypes = {
-  /**
-   * Default maxWidth is theme.maxWidth[8] = 64rem.
-   * With wide flag: theme.maxWidth[9] = 96rem.
-   */
-  wide: PropTypes.bool
-};
-
-Container.defaultProps = {
-  wide: false
-};
+const Container = ({ children, ...props }) => (
+  <Wrapper {...props}>{children}</Wrapper>
+);
 
 export default Container;

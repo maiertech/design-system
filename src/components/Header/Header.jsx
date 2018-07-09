@@ -12,7 +12,7 @@ import {
 } from "styled-system";
 import { anchorStyle } from "../style";
 import Container from "../Container";
-import LinkedHeading from "../LinkedHeading";
+import Heading from "../Heading";
 
 const Wrapper = styled.header`
   display: flex;
@@ -22,8 +22,9 @@ const Wrapper = styled.header`
   ${space};
 `;
 
-const FlexBox = styled.div`
+const Navigation = styled.div`
   display: flex;
+  width: 100%;
   ${flexDirection};
   ${justifyContent};
   align-items: center;
@@ -48,19 +49,14 @@ const Header = ({ anchor, links, title: { href, text } }) => (
     letterSpacing="tracked"
     py={[2, 3]}
   >
-    <Container wide>
-      <FlexBox
+    <Container maxWidth={9} px={[2, 3]}>
+      <Navigation
         flexDirection={["column", "row"]}
         justifyContent={["center", "space-between"]}
       >
-        <LinkedHeading
-          fontSize={[4, 3, 2]}
-          anchor={anchor}
-          href={href}
-          mr={[0, 3]}
-        >
+        <Heading link={{ anchor, href }} fontSize={[4, 3, 2]} mr={[0, 3]}>
           {text}
-        </LinkedHeading>
+        </Heading>
         <Links fontSize={[6, 5, 4]} fontWeight={6}>
           {links.map(({ href, text }) => (
             <LinkBox key={text} ml={[2, 3, 4]} mr={[2, 0]}>
@@ -68,7 +64,7 @@ const Header = ({ anchor, links, title: { href, text } }) => (
             </LinkBox>
           ))}
         </Links>
-      </FlexBox>
+      </Navigation>
     </Container>
   </Wrapper>
 );

@@ -5,7 +5,7 @@ import { color, fontFamily, fontSize, lineHeight, space } from "styled-system";
 import { anchorStyle } from "../style";
 import Icon from "../Icon";
 import Container from "../Container";
-import LinkedHeading from "../LinkedHeading";
+import Heading from "../Heading";
 
 const Wrapper = styled.footer`
   display: flex;
@@ -16,7 +16,7 @@ const Wrapper = styled.footer`
   ${space};
 `;
 
-const FooterLinks = styled.div`
+const Links = styled.div`
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
@@ -52,23 +52,22 @@ const Footer = ({ anchor, title, name, links, ...props }) => (
     {...props}
   >
     <Container>
-      <LinkedHeading
-        anchor={anchor}
+      <Heading
+        link={{ anchor, href: "/" }}
         align="center"
-        href="/"
         fontSize={3}
         mt={0}
         mb={3}
       >
         {title}
-      </LinkedHeading>
-      <FooterLinks fontSize={5} lineHeight="copy" mb={3}>
+      </Heading>
+      <Links fontSize={5} lineHeight="copy" mb={3}>
         {links.map(({ href, text }, index) => (
           <Box px={2} key={index}>
             {anchor(href, text)}
           </Box>
         ))}
-      </FooterLinks>
+      </Links>
       <SocialIcons mb={3}>
         <Icon
           anchor={anchor}

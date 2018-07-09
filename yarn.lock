@@ -3128,8 +3128,8 @@ eslint-module-utils@^2.2.0:
     pkg-dir "^1.0.0"
 
 eslint-plugin-flowtype@^2.34.1:
-  version "2.49.3"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-flowtype/-/eslint-plugin-flowtype-2.49.3.tgz#ccca6ee5ba2027eb3ed36bc2ec8c9a842feee841"
+  version "2.50.0"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-flowtype/-/eslint-plugin-flowtype-2.50.0.tgz#953e262fa9b5d0fa76e178604892cf60dfb916da"
   dependencies:
     lodash "^4.17.10"
 
@@ -5929,8 +5929,8 @@ normalize-url@^1.4.0:
     sort-keys "^1.0.0"
 
 now@^11.2.4:
-  version "11.2.5"
-  resolved "https://registry.yarnpkg.com/now/-/now-11.2.5.tgz#e0077186f5a02494e6b4decb3ef32cc44bf1fe76"
+  version "11.2.8"
+  resolved "https://registry.yarnpkg.com/now/-/now-11.2.8.tgz#bad9617cd065a2ce7e24e99fed8e88f28f40c327"
 
 npm-bundled@^1.0.1:
   version "1.0.3"
@@ -8131,8 +8131,8 @@ styled-components@^3.2.6:
     supports-color "^3.2.3"
 
 styled-system@^2.3.1:
-  version "2.3.3"
-  resolved "https://registry.yarnpkg.com/styled-system/-/styled-system-2.3.3.tgz#c503c7d3f2ca58548bdd7f92457d7d12f591087c"
+  version "2.3.5"
+  resolved "https://registry.yarnpkg.com/styled-system/-/styled-system-2.3.5.tgz#608ad815e2f451739f2be2b44041f3890bc9c0cd"
   dependencies:
     prop-types "^15.6.0"
 

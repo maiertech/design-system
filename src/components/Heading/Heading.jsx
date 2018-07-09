@@ -1,9 +1,10 @@
 import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
-import { fontSize, space } from "styled-system";
+import { fontSize, lineHeight, space } from "styled-system";
 import { anchorStyle } from "../style";
 
+// Reset default browser margins.
 const Wrapper = styled.div`
   & > h1,
   & > h2,
@@ -11,24 +12,30 @@ const Wrapper = styled.div`
   & > h4,
   & > h5,
   & > h6 {
-    white-space: nowrap;
     margin: ${props => props.theme.space[0]};
+    text-align: ${({ align }) => align};
     ${fontSize};
-    text-align: ${props => props.align};
+    ${lineHeight};
   }
   ${anchorStyle};
   ${space};
 `;
 
-const LinkedHeading = ({ anchor, children, heading, href, ...props }) => (
-  <Wrapper {...props}>{heading(anchor(href, children))}</Wrapper>
+const Heading = ({ link, children, heading, href, ...props }) => (
+  <Wrapper {...props}>
+    {link ? heading(link.anchor(link.href, children)) : heading(children)}
+  </Wrapper>
 );
 
-LinkedHeading.propTypes = {
+Heading.propTypes = {
   /** Align heading. */
   align: PropTypes.oneOf(["left", "right", "center", "justify"]),
-  /** Render prop for anchor element. */
-  anchor: PropTypes.func,
+  /** Optionsl render prop for anchor element. */
+  link: PropTypes.shape({
+    anchor: PropTypes.func.isRequired,
+    href: PropTypes.string.isRequired
+  }),
+  children: PropTypes.string.isRequired,
   /** Override default font-size of heading. */
   fontSize: PropTypes.oneOfType([
     PropTypes.number,
@@ -37,14 +44,12 @@ LinkedHeading.propTypes = {
   ]),
   /** Render prop for heading element. */
   heading: PropTypes.func,
-  href: PropTypes.string.isRequired,
-  children: PropTypes.string.isRequired
+  lineHeight: PropTypes.string
 };
 
-LinkedHeading.defaultProps = {
+Heading.defaultProps = {
   align: "left",
-  anchor: (href, text) => <a href={href}>{text}</a>,
   heading: children => <h1>{children}</h1>
 };
 
-export default LinkedHeading;
+export default Heading;

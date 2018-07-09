@@ -51,7 +51,7 @@ const Footer = ({ anchor, title, name, links, ...props }) => (
     py={3}
     {...props}
   >
-    <Container>
+    <Container maxWidth={8}>
       <Heading
         link={{ anchor, href: "/" }}
         align="center"

@@ -21,17 +21,18 @@
   ],
   "scripts": {
     "start": "start-storybook -p 9009",
-    "build": "rimraf ./dist && babel ./src -d ./dist --ignore test.js,stories.jsx,profiles.js",
-    "deploy": "build-storybook && now && now alias",
+    "build": "rimraf ./dist && babel ./src -d ./dist --ignore test.js,stories.jsx",
+    "build-storybook": "rimraf ./storybook-static && build-storybook",
+    "deploy": "yarn run build-storybook && now && now alias",
     "format": "pretty-quick",
+    "inspect": "node --inspect-brk node_modules/.bin/jest --runInBand",
     "lint": "eslint --ignore-path .gitignore .",
     "precommit": "pretty-quick --staged",
     "prepublishOnly": "yarn run build",
     "release": "release",
-    "postrelease": "yarn run deploy",
-    "serve": "build-storybook && serve",
-    "test": "jest --watch",
-    "test:debug": "node --inspect-brk node_modules/.bin/jest --runInBand"
+    "postrelease": "yarn run deploy && npm publish",
+    "serve": "yarn run build-storybook && serve",
+    "test": "jest --watch"
   },
   "dependencies": {
     "prop-types": "^15.6.0",
@@ -42,6 +43,8 @@
     "react": "^16.0.0"
   },
   "devDependencies": {
+    "@storybook/addon-actions": "^3.4.8",
+    "@storybook/addon-console": "^1.0.4",
     "@storybook/addon-options": "^3.4.8",
     "@storybook/addons": "^3.4.8",
     "@storybook/react": "^3.4.8",

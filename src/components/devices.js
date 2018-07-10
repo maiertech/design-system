@@ -4,5 +4,7 @@ export default [
   "iPhone 6 Plus",
   "iPhone 6 Plus landscape",
   "iPad",
-  "iPad landscape"
+  "iPad landscape",
+  "iPad Pro",
+  "iPad Pro landscape"
 ];

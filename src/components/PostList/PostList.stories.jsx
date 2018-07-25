@@ -5,13 +5,13 @@ import posts from "../posts";
 import PostList from "./PostList";
 
 storiesOf("PostList", module)
-  .add("default anchor", () => <PostList posts={posts} />)
+  .add("default anchor", () => <PostList values={posts} />)
   .add("custom anchor", () => (
     <MemoryRouter>
       <PostList
-        posts={posts}
-        anchor={(href, text) => <NavLink to={href}>{text}</NavLink>}
+        values={posts}
+        anchor={({ href, children }) => <NavLink to={href}>{children}</NavLink>}
       />
     </MemoryRouter>
   ))
-  .add("1 post only", () => <PostList posts={posts.slice(0, 1)} />);
+  .add("1 post only", () => <PostList values={posts.slice(0, 1)} />);

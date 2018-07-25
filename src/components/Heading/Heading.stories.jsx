@@ -1,35 +1,38 @@
 import React from "react";
 import { storiesOf } from "@storybook/react";
 import Heading from "./Heading";
+import Box from "../Box";
+
+const link = ({ href, children }) => <a href={href}>{children}</a>;
 
 storiesOf("Heading", module)
+  .addDecorator(story => <Box m={1}>{story()}</Box>)
+
   .add("default heading without link", () => (
-    <Heading p={2}>Default heading without link</Heading>
+    <Heading>Default heading without link</Heading>
   ))
   .add("default heading with link", () => (
     <Heading
       link={{
-        anchor: (href, text) => <a href={href}>{text}</a>,
+        anchor: link,
         href: "#"
       }}
-      p={2}
     >
       Default heading with link
     </Heading>
   ))
   .add("custom heading without link", () => (
-    <Heading heading={children => <h2>{children}</h2>} p={2}>
+    <Heading heading={children => <h2>{children}</h2>}>
       Custom heading without link
     </Heading>
   ))
   .add("custom heading with link", () => (
     <Heading
       link={{
-        anchor: (href, text) => <a href={href}>{text}</a>,
+        anchor: link,
         href: "#"
       }}
       heading={children => <h2>{children}</h2>}
-      p={2}
     >
       Custom heading with link
     </Heading>

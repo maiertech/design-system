@@ -60,7 +60,7 @@ const Header = ({ anchor, links, title: { href, text } }) => (
         <Links fontSize={[6, 5, 4]} fontWeight={6}>
           {links.map(({ href, text }) => (
             <LinkBox key={text} ml={[2, 3, 4]} mr={[2, 0]}>
-              {anchor(href, text)}
+              {anchor({ href, children: text })}
             </LinkBox>
           ))}
         </Links>
@@ -86,7 +86,7 @@ Header.propTypes = {
 };
 
 Header.defaultProps = {
-  anchor: (href, text) => <a href={href}>{text}</a>
+  anchor: ({ href, children }) => <a href={href}>{children}</a>
 };
 
 export default Header;

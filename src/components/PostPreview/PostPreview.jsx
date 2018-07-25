@@ -20,6 +20,13 @@ const Border = styled.div`
   ${borders};
   ${borderColor};
   ${space};
+  &:last-child {
+    border: 0;
+    margin-bottom: 0;
+    article {
+      padding-bottom: 0;
+    }
+  }
 `;
 
 // `borderColor` only works if defined after `borders`.
@@ -80,31 +87,33 @@ const PostPreview = ({
   ...props
 }) => (
   <Border borderColor={borderColor} borderBottom="2px solid" mb={mb}>
-    {anchor(
+    {anchor({
       href,
-      <Wrapper {...props}>
-        <Head flexDirection={["column", "row"]}>
-          <HeadlineAndExcerpt order={[2, 1]} pr={[0, 3]} width={[1, 0.6]}>
-            <Heading fontSize={3} lineHeight="title" mt={0} mb={3}>
-              {title}
-            </Heading>
-            <Excerpt
-              fontFamily="serif"
-              fontSize={[6, 5]}
-              lineHeight="copy"
-              dangerouslySetInnerHTML={{ __html: excerpt }}
-            />
-          </HeadlineAndExcerpt>
-          <Image mb={[3, 0]} order={[1, 2]} pl={[0, 3]} width={[1, 0.4]}>
-            <img src={src} alt={alt} />
-          </Image>
-        </Head>
-        <Author fontSize={6} lineHeight="copy">
-          {author}
-        </Author>
-        <Date fontSize={6}>{date}</Date>
-      </Wrapper>
-    )}
+      children: (
+        <Wrapper {...props}>
+          <Head flexDirection={["column", "row"]}>
+            <HeadlineAndExcerpt order={[2, 1]} pr={[0, 3]} width={[1, 0.6]}>
+              <Heading fontSize={3} lineHeight="title" mt={0} mb={3}>
+                {title}
+              </Heading>
+              <Excerpt
+                fontFamily="serif"
+                fontSize={[6, 5]}
+                lineHeight="copy"
+                dangerouslySetInnerHTML={{ __html: excerpt }}
+              />
+            </HeadlineAndExcerpt>
+            <Image mb={[3, 0]} order={[1, 2]} pl={[0, 3]} width={[1, 0.4]}>
+              <img src={src} alt={alt} />
+            </Image>
+          </Head>
+          <Author fontSize={6} lineHeight="copy">
+            {author}
+          </Author>
+          <Date fontSize={6}>{date}</Date>
+        </Wrapper>
+      )
+    })}
   </Border>
 );
 
@@ -126,7 +135,7 @@ PostPreview.propTypes = {
 };
 
 PostPreview.defaultProps = {
-  anchor: (href, text) => <a href={href}>{text}</a>,
+  anchor: ({ href, children }) => <a href={href}>{children}</a>,
   borderColor: "accent"
 };
 

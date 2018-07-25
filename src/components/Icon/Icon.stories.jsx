@@ -2,29 +2,26 @@ import React from "react";
 import { storiesOf } from "@storybook/react";
 import { NavLink, MemoryRouter } from "react-router-dom";
 import Icon from "./Icon";
+import Box from "../Box";
 
 storiesOf("Icon", module)
+  .addDecorator(story => <Box m={1}>{story()}</Box>)
   .add("default anchor", () => (
-    <div>
+    <React.Fragment>
       <Icon type="github" username="mdotasia" m={1} />
       <Icon type="twitter" username="mdotasia" m={1} />
-    </div>
+    </React.Fragment>
   ))
-  .add("custom anchor", () => (
-    <MemoryRouter>
-      <div>
-        <Icon
-          anchor={(href, text) => <NavLink to={href}>{text}</NavLink>}
-          type="github"
-          username="mdotasia"
-          m={1}
-        />
-        <Icon
-          anchor={(href, text) => <NavLink to={href}>{text}</NavLink>}
-          type="twitter"
-          username="mdotasia"
-          m={1}
-        />
-      </div>
-    </MemoryRouter>
-  ));
+  .add("custom anchor", () => {
+    const routerLink = ({ href, children }) => (
+      <NavLink to={href}>{children}</NavLink>
+    );
+    return (
+      <MemoryRouter>
+        <React.Fragment>
+          <Icon anchor={routerLink} type="github" username="mdotasia" m={1} />
+          <Icon anchor={routerLink} type="twitter" username="mdotasia" m={1} />
+        </React.Fragment>
+      </MemoryRouter>
+    );
+  });

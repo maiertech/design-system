@@ -46,21 +46,23 @@ const Label = styled.span`
 
 const Icon = ({ anchor, type, username, ...props }) => (
   <Wrapper {...props}>
-    {anchor(
-      `${icons[type].url}${username}`,
-      <Box p={2}>
-        <Svg
-          fill="currentColor"
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 24 24"
-          height={2}
-          width={1}
-        >
-          {icons[type].path}
-        </Svg>
-        <Label fontSize={6}>{icons[type].text}</Label>
-      </Box>
-    )}
+    {anchor({
+      href: `${icons[type].url}${username}`,
+      children: (
+        <Box p={2}>
+          <Svg
+            fill="currentColor"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            height={2}
+            width={1}
+          >
+            {icons[type].path}
+          </Svg>
+          <Label fontSize={6}>{icons[type].text}</Label>
+        </Box>
+      )
+    })}
   </Wrapper>
 );
 
@@ -71,7 +73,7 @@ Icon.propTypes = {
 };
 
 Icon.defaultProps = {
-  anchor: (href, text) => <a href={href}>{text}</a>
+  anchor: ({ href, children }) => <a href={href}>{children}</a>
 };
 
 export default Icon;

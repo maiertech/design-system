@@ -64,7 +64,7 @@ const Footer = ({ anchor, title, name, links, ...props }) => (
       <Links fontSize={5} lineHeight="copy" mb={3}>
         {links.map(({ href, text }, index) => (
           <Box px={2} key={index}>
-            {anchor(href, text)}
+            {anchor({ href, children: text })}
           </Box>
         ))}
       </Links>
@@ -106,7 +106,7 @@ Footer.propTypes = {
 };
 
 Footer.defaultProps = {
-  anchor: (href, text) => <a href={href}>{text}</a>
+  anchor: ({ href, children }) => <a href={href}>{children}</a>
 };
 
 export default Footer;

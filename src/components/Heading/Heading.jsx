@@ -23,7 +23,9 @@ const Wrapper = styled.div`
 
 const Heading = ({ link, children, heading, href, ...props }) => (
   <Wrapper {...props}>
-    {link ? heading(link.anchor(link.href, children)) : heading(children)}
+    {link
+      ? heading(link.anchor({ href: link.href, children }))
+      : heading(children)}
   </Wrapper>
 );
 

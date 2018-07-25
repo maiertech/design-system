@@ -37,13 +37,18 @@ const SocialIcons = styled.div`
   ${space};
 `;
 
-const Copyright = styled.small`
-  display: block;
+const LastUpdated = styled.div`
+  text-align: center;
+  ${fontSize};
+  ${space};
+`;
+
+const Copyright = styled.div`
   text-align: center;
   ${fontSize};
 `;
 
-const Footer = ({ anchor, title, name, links, ...props }) => (
+const Footer = ({ anchor, lastUpdated, links, name, title, ...props }) => (
   <Wrapper
     fontFamily="sansSerif"
     color="inverseText"
@@ -82,7 +87,13 @@ const Footer = ({ anchor, title, name, links, ...props }) => (
           key="twitter-mdotasia"
         />
       </SocialIcons>
-      <Copyright fontSize={7}>
+      {lastUpdated && (
+        <LastUpdated
+          fontSize={7}
+          mb={1}
+        >{`Last updated: ${lastUpdated}`}</LastUpdated>
+      )}
+      <Copyright fontSize={6}>
         © {new Date().getFullYear()} by {name}
       </Copyright>
     </Container>
@@ -90,10 +101,9 @@ const Footer = ({ anchor, title, name, links, ...props }) => (
 );
 
 Footer.propTypes = {
-  /** Footer title. */
-  title: PropTypes.string.isRequired,
-  /** Copyright name. */
-  name: PropTypes.string.isRequired,
+  /** Render prop for link component. */
+  anchor: PropTypes.func,
+  lastUpdated: PropTypes.string,
   /** Footer links. */
   links: PropTypes.arrayOf(
     PropTypes.shape({
@@ -101,8 +111,10 @@ Footer.propTypes = {
       text: PropTypes.string.isRequired
     })
   ).isRequired,
-  /** Render prop for link component. */
-  anchor: PropTypes.func
+  /** Copyright name. */
+  name: PropTypes.string.isRequired,
+  /** Footer title. */
+  title: PropTypes.string.isRequired
 };
 
 Footer.defaultProps = {

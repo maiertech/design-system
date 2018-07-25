@@ -49,6 +49,29 @@ storiesOf("Footer", module)
       />
     </MemoryRouter>
   ))
+  .add("last updated", () => {
+    return (
+      <Footer
+        lastUpdated="Aug 1, 2018"
+        title="This is the Footer Title"
+        name="Thilo Maier"
+        links={[
+          {
+            href: "#",
+            text: "Blog"
+          },
+          {
+            href: "#",
+            text: "About"
+          },
+          {
+            href: "#",
+            text: "Archive"
+          }
+        ]}
+      />
+    );
+  })
   .add("many links that wrap", () => (
     <Footer
       title="This is the Footer Title"

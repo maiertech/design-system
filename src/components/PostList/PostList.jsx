@@ -3,28 +3,23 @@ import PropTypes from "prop-types";
 import styled from "styled-components";
 import { space } from "styled-system";
 import PostPreview from "../PostPreview";
-import Container from "../Container";
 
 const Wrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  ${space};
 `;
 
-const PostList = ({ anchor, values, ...props }) => (
-  <Wrapper {...props}>
-    <Container maxWidth={7}>
-      {values.map((post, index) => (
-        <PostPreview
-          key={index}
-          anchor={anchor}
-          px={[2, 3, 0]}
-          pb={3}
-          mb={3}
-          {...post}
-        />
-      ))}
-    </Container>
+const PostList = ({ anchor, values, mt, mb }) => (
+  <Wrapper mt={mt} mb={mb}>
+    {values.map((post, index) => (
+      <PostPreview
+        key={index}
+        anchor={anchor}
+        px={[2, 3, 0]}
+        pb={3}
+        mb={3}
+        {...post}
+      />
+    ))}
   </Wrapper>
 );
 

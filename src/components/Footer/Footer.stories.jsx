@@ -3,51 +3,54 @@ import { storiesOf } from "@storybook/react";
 import { NavLink, MemoryRouter } from "react-router-dom";
 import Footer from "./Footer";
 
+const links = [
+  {
+    href: "#",
+    text: "Blog"
+  },
+  {
+    href: "#",
+    text: "About"
+  },
+  {
+    href: "#",
+    text: "Archive"
+  }
+];
+
 storiesOf("Footer", module)
-  .add("default anchor", () => {
+  .add("default anchors", () => {
     return (
       <Footer
         title="This is the Footer Title"
         name="Thilo Maier"
-        links={[
-          {
-            href: "#",
-            text: "Blog"
-          },
-          {
-            href: "#",
-            text: "About"
-          },
-          {
-            href: "#",
-            text: "Archive"
-          }
-        ]}
+        links={links}
       />
     );
   })
-  .add("custom anchor", () => (
+  .add("custom internal anchor", () => (
     <MemoryRouter>
       <Footer
         title="This is the Footer Title"
         name="Thilo Maier"
-        links={[
-          {
-            href: "#",
-            text: "Blog"
-          },
-          {
-            href: "#",
-            text: "About"
-          },
-          {
-            href: "#",
-            text: "Archive"
-          }
-        ]}
-        anchor={({ href, children }) => <NavLink to={href}>{children}</NavLink>}
+        links={links}
+        internalAnchor={({ href, children }) => (
+          <NavLink to={href}>{children}</NavLink>
+        )}
       />
     </MemoryRouter>
+  ))
+  .add("custom external anchor", () => (
+    <Footer
+      title="This is the Footer Title"
+      name="Thilo Maier"
+      links={links}
+      externalAnchor={({ href, children }) => (
+        <a href={href} target="_blank" rel="noreferrer noopener">
+          {children}
+        </a>
+      )}
+    />
   ))
   .add("last updated", () => {
     return (

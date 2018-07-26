@@ -48,7 +48,15 @@ const Copyright = styled.div`
   ${fontSize};
 `;
 
-const Footer = ({ anchor, lastUpdated, links, name, title, ...props }) => (
+const Footer = ({
+  externalAnchor,
+  internalAnchor,
+  lastUpdated,
+  links,
+  name,
+  title,
+  ...props
+}) => (
   <Wrapper
     fontFamily="sansSerif"
     color="inverseText"
@@ -58,7 +66,7 @@ const Footer = ({ anchor, lastUpdated, links, name, title, ...props }) => (
   >
     <Container maxWidth={8}>
       <Heading
-        link={{ anchor, href: "/" }}
+        link={{ anchor: internalAnchor, href: "/" }}
         align="center"
         fontSize={3}
         mt={0}
@@ -69,19 +77,19 @@ const Footer = ({ anchor, lastUpdated, links, name, title, ...props }) => (
       <Links fontSize={5} lineHeight="copy" mb={3}>
         {links.map(({ href, text }, index) => (
           <Box px={2} key={index}>
-            {anchor({ href, children: text })}
+            {internalAnchor({ href, children: text })}
           </Box>
         ))}
       </Links>
       <SocialIcons mb={3}>
         <Icon
-          anchor={anchor}
+          anchor={externalAnchor}
           type="github"
           username="mdotasia"
           key="github-mdotasia"
         />
         <Icon
-          anchor={anchor}
+          anchor={externalAnchor}
           type="twitter"
           username="mdotasia"
           key="twitter-mdotasia"
@@ -90,7 +98,7 @@ const Footer = ({ anchor, lastUpdated, links, name, title, ...props }) => (
       {lastUpdated && (
         <LastUpdated
           fontSize={7}
-          mb={1}
+          mb={3}
         >{`Last updated: ${lastUpdated}`}</LastUpdated>
       )}
       <Copyright fontSize={6}>
@@ -101,8 +109,10 @@ const Footer = ({ anchor, lastUpdated, links, name, title, ...props }) => (
 );
 
 Footer.propTypes = {
-  /** Render prop for link component. */
-  anchor: PropTypes.func,
+  /** Render prop for external anchors. */
+  externalAnchor: PropTypes.func,
+  /** Render prop for internal anchors. */
+  internalAnchor: PropTypes.func,
   lastUpdated: PropTypes.string,
   /** Footer links. */
   links: PropTypes.arrayOf(
@@ -117,8 +127,11 @@ Footer.propTypes = {
   title: PropTypes.string.isRequired
 };
 
+const defaultAnchor = ({ href, children }) => <a href={href}>{children}</a>;
+
 Footer.defaultProps = {
-  anchor: ({ href, children }) => <a href={href}>{children}</a>
+  externalAnchor: defaultAnchor,
+  internalAnchor: defaultAnchor
 };
 
 export default Footer;

@@ -8,12 +8,8 @@ import Container from "../Container";
 import Heading from "../Heading";
 
 const Wrapper = styled.footer`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   ${color};
   ${fontFamily};
-  ${space};
 `;
 
 const Links = styled.div`
@@ -54,17 +50,10 @@ const Footer = ({
   lastUpdated,
   links,
   name,
-  title,
-  ...props
+  title
 }) => (
-  <Wrapper
-    fontFamily="sansSerif"
-    color="inverseText"
-    bg="inverseBackground"
-    py={3}
-    {...props}
-  >
-    <Container maxWidth={8}>
+  <Wrapper fontFamily="sansSerif" color="inverseText" bg="inverseBackground">
+    <Container maxWidth={8} pt={3} pb={3}>
       <Heading
         link={{ anchor: internalAnchor, href: "/" }}
         align="center"

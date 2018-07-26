@@ -7,19 +7,16 @@ import {
   fontSize,
   fontWeight,
   justifyContent,
-  letterSpacing,
-  space
+  lineHeight
 } from "styled-system";
 import { anchorStyle } from "../style";
+import Box from "../Box";
 import Container from "../Container";
 import Heading from "../Heading";
 
 const Wrapper = styled.header`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   ${color};
-  ${space};
+  ${lineHeight};
 `;
 
 const Navigation = styled.div`
@@ -29,7 +26,6 @@ const Navigation = styled.div`
   ${justifyContent};
   align-items: center;
   ${anchorStyle};
-  ${letterSpacing};
 `;
 
 const Links = styled.div`
@@ -38,18 +34,9 @@ const Links = styled.div`
   ${fontWeight};
 `;
 
-const LinkBox = styled.div`
-  ${space};
-`;
-
 const Header = ({ anchor, links, title: { href, text } }) => (
-  <Wrapper
-    color="brandedText"
-    bg="brandedBackground"
-    letterSpacing="tracked"
-    py={[2, 3]}
-  >
-    <Container maxWidth={9} px={[2, 3]}>
+  <Wrapper color="brandedText" bg="brandedBackground" lineHeight="copy">
+    <Container maxWidth={9} pt={[2, 3]} pb={[2, 3]}>
       <Navigation
         flexDirection={["column", "row"]}
         justifyContent={["center", "space-between"]}
@@ -59,9 +46,9 @@ const Header = ({ anchor, links, title: { href, text } }) => (
         </Heading>
         <Links fontSize={[6, 5, 4]} fontWeight={6}>
           {links.map(({ href, text }) => (
-            <LinkBox key={text} ml={[2, 3, 4]} mr={[2, 0]}>
+            <Box key={text} ml={[2, 3, 4]} mr={[2, 0]}>
               {anchor({ href, children: text })}
-            </LinkBox>
+            </Box>
           ))}
         </Links>
       </Navigation>

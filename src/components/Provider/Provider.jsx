@@ -1,36 +1,36 @@
 import React from "react";
 import PropTypes from "prop-types";
-import styled, { injectGlobal, ThemeProvider } from "styled-components";
-import { fontFamily, lineHeight } from "styled-system";
+import { injectGlobal, ThemeProvider } from "styled-components";
+import { normalize } from "polished";
 import defaultTheme from "../../themes/default";
 
+// https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/
 injectGlobal`
-  body {
-    margin: 0;
-  }
-`;
-
-const Base = styled.div`
-  * {
+  ${normalize()};
+  html {
     box-sizing: border-box;
   }
-  ${fontFamily};
-  ${lineHeight};
+  *,
+  *:before,
+  *:after {
+    box-sizing: inherit;
+  }
 `;
 
+// ThemeProvider can have one child only.
+// You can use <React.Fragment> around multiple children.
 const Provider = ({ theme, children }) => (
   <ThemeProvider theme={{ ...defaultTheme, ...theme }}>
-    <Base fontFamily="sansSerif" lineHeight="copy">
-      {children}
-    </Base>
+    {children}
   </ThemeProvider>
 );
 
 Provider.propTypes = {
-  /** Custom theme, which is shallow merged into default theme. */
+  /** Custom theme to be shallow merged into default theme. */
   theme: PropTypes.object.isRequired
 };
 
+// Undefined theme cannot be merged.
 Provider.defaultProps = {
   theme: {}
 };

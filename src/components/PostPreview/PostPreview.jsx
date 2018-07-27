@@ -15,7 +15,7 @@ import {
 import Heading from "../Heading";
 import { anchorStyle } from "../style";
 
-const Border = styled.div`
+const Wrapper = styled.article`
   ${anchorStyle};
   ${borders};
   ${borderColor};
@@ -23,32 +23,27 @@ const Border = styled.div`
   &:last-child {
     border: 0;
     margin-bottom: 0;
-    article {
-      padding-bottom: 0;
-    }
+    padding-bottom: 0;
   }
 `;
 
-// `borderColor` only works if defined after `borders`.
-const Wrapper = styled.article`
+const Padding = styled.div`
   ${space};
 `;
-const Head = styled.div`
+
+const Preview = styled.div`
   display: flex;
   ${flexDirection};
+  ${space};
 `;
 
-const HeadlineAndExcerpt = styled.div`
+const Text = styled.div`
   ${order};
   ${space};
   ${width};
 `;
 
 const Excerpt = styled.div`
-  p {
-    margin-top: 0;
-    margin-bottom: ${({ theme: { space } }) => space[3]};
-  }
   ${fontFamily};
   ${fontSize};
   ${lineHeight};
@@ -75,58 +70,52 @@ const Date = styled.time`
 `;
 
 const PostPreview = ({
-  title,
-  excerpt,
-  image: { src, alt },
-  date,
-  author,
-  borderColor,
   anchor,
+  author,
+  color,
+  date,
+  excerpt,
   href,
-  mb,
+  image: { src, alt },
+  title,
   ...props
 }) => (
-  <Border borderColor={borderColor} borderBottom="2px solid" mb={mb}>
+  <Wrapper borderColor={color} borderBottom="2px solid" {...props}>
     {anchor({
       href,
       children: (
-        <Wrapper {...props}>
-          <Head flexDirection={["column", "row"]}>
-            <HeadlineAndExcerpt order={[2, 1]} pr={[0, 3]} width={[1, 0.6]}>
+        <Padding px={[2, 3, 0]}>
+          <Preview flexDirection={["column", "row"]} mb={3}>
+            <Text order={[2, 1]} pr={[0, 3]} width={[1, 0.6]}>
               <Heading fontSize={3} lineHeight="title" mt={0} mb={3}>
                 {title}
               </Heading>
-              <Excerpt
-                fontFamily="serif"
-                fontSize={[6, 5]}
-                lineHeight="copy"
-                dangerouslySetInnerHTML={{ __html: excerpt }}
-              />
-            </HeadlineAndExcerpt>
+              <Excerpt fontFamily="serif" fontSize={[6, 5]} lineHeight="copy">
+                {excerpt}
+              </Excerpt>
+            </Text>
             <Image mb={[3, 0]} order={[1, 2]} pl={[0, 3]} width={[1, 0.4]}>
               <img src={src} alt={alt} />
             </Image>
-          </Head>
+          </Preview>
           <Author fontSize={6} lineHeight="copy">
             {author}
           </Author>
           <Date fontSize={6}>{date}</Date>
-        </Wrapper>
+        </Padding>
       )
     })}
-  </Border>
+  </Wrapper>
 );
 
 PostPreview.propTypes = {
   /** Render prop for anchors. */
   anchor: PropTypes.func,
-  href: PropTypes.string.isRequired,
   author: PropTypes.string.isRequired,
-  borderColor: PropTypes.string,
-  /** Published date. */
+  color: PropTypes.string,
   date: PropTypes.string.isRequired,
-  /** Blog post summary. */
   excerpt: PropTypes.string.isRequired,
+  href: PropTypes.string.isRequired,
   image: PropTypes.shape({
     src: PropTypes.string.isRequired,
     alt: PropTypes.string.isRequired
@@ -136,7 +125,7 @@ PostPreview.propTypes = {
 
 PostPreview.defaultProps = {
   anchor: ({ href, children }) => <a href={href}>{children}</a>,
-  borderColor: "accent"
+  color: "accent"
 };
 
 export default PostPreview;

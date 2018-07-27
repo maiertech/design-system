@@ -6058,8 +6058,8 @@ normalize-url@^1.4.0:
     sort-keys "^1.0.0"
 
 now@^11.2.4:
-  version "11.3.1"
-  resolved "https://registry.yarnpkg.com/now/-/now-11.3.1.tgz#3573781b0e12bb14f6cef5869f8896586b2aaed7"
+  version "11.3.2"
+  resolved "https://registry.yarnpkg.com/now/-/now-11.3.2.tgz#e696bf4e6d81875bbcc88fe5ae048e7aa9157008"
 
 npm-bundled@^1.0.1:
   version "1.0.3"

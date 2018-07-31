@@ -34,15 +34,15 @@ const Links = styled.div`
   ${fontWeight};
 `;
 
-const Header = ({ anchor, links, title: { href, text } }) => (
+const Header = ({ anchor, links, title }) => (
   <Wrapper color="brandedText" bg="brandedBackground" lineHeight="copy">
     <Container maxWidth={9} pt={[2, 3]} pb={[2, 3]}>
       <Navigation
         flexDirection={["column", "row"]}
         justifyContent={["center", "space-between"]}
       >
-        <Heading link={{ anchor, href }} fontSize={[4, 3, 2]} mr={[0, 3]}>
-          {text}
+        <Heading link={{ anchor, href: "/" }} fontSize={[4, 3, 2]} mr={[0, 3]}>
+          {title}
         </Heading>
         <Links fontSize={[6, 5, 4]} fontWeight={6}>
           {links.map(({ href, text }) => (
@@ -66,10 +66,7 @@ Header.propTypes = {
       text: PropTypes.string.isRequired
     })
   ).isRequired,
-  title: PropTypes.shape({
-    href: PropTypes.string.isRequired,
-    text: PropTypes.string.isRequired
-  }).isRequired
+  title: PropTypes.string.isRequired
 };
 
 Header.defaultProps = {

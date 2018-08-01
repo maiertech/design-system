@@ -3,7 +3,7 @@ import { storiesOf } from "@storybook/react";
 import PostHeader from "./PostHeader";
 import Box from "../Box";
 
-storiesOf("PostHeader", module)
+storiesOf("components/PostHeader", module)
   .addDecorator(story => <Box m={1}>{story()}</Box>)
   .add("short title", () => (
     <PostHeader

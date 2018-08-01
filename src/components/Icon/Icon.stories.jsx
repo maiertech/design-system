@@ -4,7 +4,7 @@ import { NavLink, MemoryRouter } from "react-router-dom";
 import Icon from "./Icon";
 import Box from "../Box";
 
-storiesOf("Icon", module)
+storiesOf("components/Icon", module)
   .addDecorator(story => <Box m={1}>{story()}</Box>)
   .add("default anchor", () => (
     <React.Fragment>

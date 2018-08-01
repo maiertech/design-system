@@ -19,7 +19,7 @@ const links = [
   }
 ];
 
-storiesOf("Header", module)
+storiesOf("components/Header", module)
   .add("default anchor", () => <Header title={title} links={links} />)
   .add("custom anchor", () => (
     <MemoryRouter>

@@ -4,7 +4,7 @@ import { NavLink, MemoryRouter } from "react-router-dom";
 import posts from "../posts";
 import PostList from "./PostList";
 
-storiesOf("PostList", module)
+storiesOf("components/PostList", module)
   .add("default anchor", () => <PostList values={posts} />)
   .add("custom anchor", () => (
     <MemoryRouter>

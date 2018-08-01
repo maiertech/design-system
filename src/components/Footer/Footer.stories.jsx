@@ -18,7 +18,7 @@ const links = [
   }
 ];
 
-storiesOf("Footer", module)
+storiesOf("components/Footer", module)
   .add("default anchors", () => {
     return (
       <Footer

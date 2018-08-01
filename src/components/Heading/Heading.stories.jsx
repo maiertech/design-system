@@ -5,7 +5,7 @@ import Box from "../Box";
 
 const link = ({ href, children }) => <a href={href}>{children}</a>;
 
-storiesOf("Heading", module)
+storiesOf("components/Heading", module)
   .addDecorator(story => <Box m={1}>{story()}</Box>)
 
   .add("default heading without link", () => (

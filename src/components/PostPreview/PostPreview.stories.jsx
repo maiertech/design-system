@@ -4,7 +4,7 @@ import { NavLink, MemoryRouter } from "react-router-dom";
 import PostPreview from "./PostPreview";
 import posts from "../posts";
 
-storiesOf("PostPreview", module)
+storiesOf("components/PostPreview", module)
   .add("default anchor", () => <PostPreview {...posts[0]} />)
   .add("custom anchor", () => (
     <MemoryRouter>

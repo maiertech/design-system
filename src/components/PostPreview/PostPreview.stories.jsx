@@ -14,6 +14,18 @@ storiesOf("components/PostPreview", module)
       />
     </MemoryRouter>
   ))
+  .add("no excerpt", () => {
+    const { excerpt, ...post } = posts[2];
+    return <PostPreview {...post} />;
+  })
+  .add("no image", () => {
+    const { image, ...post } = posts[3];
+    return <PostPreview {...post} />;
+  })
+  .add("no excerpt and no image", () => {
+    const { excerpt, image, ...post } = posts[4];
+    return <PostPreview {...post} />;
+  })
   .add("multiple siblings", () => (
     <React.Fragment>
       <PostPreview {...posts[2]} pb={3} mb={3} />

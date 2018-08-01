@@ -76,7 +76,7 @@ const PostPreview = ({
   date,
   excerpt,
   href,
-  image: { src, alt },
+  image,
   title,
   ...props
 }) => (
@@ -85,18 +85,27 @@ const PostPreview = ({
       href,
       children: (
         <Padding px={[2, 3, 0]}>
-          <Preview flexDirection={["column", "row"]} mb={3}>
-            <Text order={[2, 1]} pr={[0, 3]} width={[1, 0.6]}>
-              <Heading fontSize={3} lineHeight="title" mt={0} mb={3}>
+          <Preview flexDirection={["column", "row"]} mb={excerpt ? 3 : 2}>
+            <Text order={[2, 1]} pr={[0, 3]} width={[1, image ? 0.6 : 1]}>
+              <Heading
+                fontSize={3}
+                lineHeight="title"
+                mt={0}
+                mb={excerpt ? 3 : 0}
+              >
                 {title}
               </Heading>
-              <Excerpt fontFamily="serif" fontSize={[6, 5]} lineHeight="copy">
-                {excerpt}
-              </Excerpt>
+              {excerpt && (
+                <Excerpt fontFamily="serif" fontSize={[6, 5]} lineHeight="copy">
+                  {excerpt}
+                </Excerpt>
+              )}
             </Text>
-            <Image mb={[3, 0]} order={[1, 2]} pl={[0, 3]} width={[1, 0.4]}>
-              <img src={src} alt={alt} />
-            </Image>
+            {image && (
+              <Image mb={[3, 0]} order={[1, 2]} pl={[0, 3]} width={[1, 0.4]}>
+                <img src={image.src} alt={image.alt} />
+              </Image>
+            )}
           </Preview>
           <Author fontSize={6} lineHeight="copy">
             {author}
@@ -114,7 +123,7 @@ PostPreview.propTypes = {
   author: PropTypes.string.isRequired,
   color: PropTypes.string,
   date: PropTypes.string.isRequired,
-  excerpt: PropTypes.string.isRequired,
+  excerpt: PropTypes.string,
   href: PropTypes.string.isRequired,
   image: PropTypes.shape({
     src: PropTypes.string.isRequired,

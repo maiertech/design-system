@@ -1,8 +1,8 @@
-import Container from "./components/Container";
-import Footer from "./components/Footer";
-import Header from "./components/Header";
-import PostHeader from "./components/PostHeader";
-import PostList from "./components/PostList";
-import Provider from "./components/Provider";
+import Container from "./Container";
+import Footer from "./Footer";
+import Header from "./Header";
+import PostHeader from "./PostHeader";
+import PostList from "./PostList";
+import Provider from "./Provider";
 
 export { Container, Footer, Header, PostHeader, PostList, Provider };

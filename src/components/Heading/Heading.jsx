@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
-import { fontSize, lineHeight, space } from "styled-system";
+import { fontFamily, fontSize, lineHeight, space } from "styled-system";
 import { anchorStyle } from "../../style";
 
 // Reset default browser margins.
@@ -18,11 +18,12 @@ const Wrapper = styled.div`
     ${lineHeight};
   }
   ${anchorStyle};
+  ${fontFamily};
   ${space};
 `;
 
 const Heading = ({ link, children, heading, href, ...props }) => (
-  <Wrapper {...props}>
+  <Wrapper fontFamily="sansSerif" {...props}>
     {link
       ? heading(link.anchor({ href: link.href, children }))
       : heading(children)}
@@ -46,7 +47,8 @@ Heading.propTypes = {
   ]),
   /** Render prop for heading element. */
   heading: PropTypes.func,
-  lineHeight: PropTypes.string
+  lineHeight: PropTypes.string,
+  ...space.propTypes
 };
 
 Heading.defaultProps = {

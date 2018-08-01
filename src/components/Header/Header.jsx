@@ -9,7 +9,7 @@ import {
   justifyContent,
   lineHeight
 } from "styled-system";
-import { anchorStyle } from "../style";
+import { anchorStyle } from "../../style";
 import Box from "../Box";
 import Container from "../Container";
 import Heading from "../Heading";

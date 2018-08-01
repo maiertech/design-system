@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
 import { fontSize, height, space, width } from "styled-system";
-import { anchorStyle } from "../style";
+import { anchorStyle } from "../../style";
 
 const icons = {
   github: {

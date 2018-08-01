@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
 import { fontSize, lineHeight, space } from "styled-system";
-import { anchorStyle } from "../style";
+import { anchorStyle } from "../../style";
 
 // Reset default browser margins.
 const Wrapper = styled.div`

@@ -13,7 +13,7 @@ import {
   width
 } from "styled-system";
 import Heading from "../Heading";
-import { anchorStyle } from "../style";
+import { anchorStyle } from "../../style";
 
 const Wrapper = styled.article`
   ${anchorStyle};

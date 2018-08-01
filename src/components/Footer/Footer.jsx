@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
 import { color, fontFamily, fontSize, lineHeight, space } from "styled-system";
-import { anchorStyle } from "../style";
+import { anchorStyle } from "../../style";
 import Icon from "../Icon";
 import Container from "../Container";
 import Heading from "../Heading";

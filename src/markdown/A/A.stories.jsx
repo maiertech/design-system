@@ -2,9 +2,9 @@ import React from "react";
 import { storiesOf } from "@storybook/react";
 import { NavLink, MemoryRouter } from "react-router-dom";
 import A from "../A";
-import Box from "../Box";
+import Box from "../../components/Box";
 
-storiesOf("A", module)
+storiesOf("markdown/A", module)
   .addDecorator(story => <Box m={3}>{story()}</Box>)
   .add("everything default", () => <A href="#">Test Link</A>)
   .add("custom color", () => (

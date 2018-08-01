@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import PropTypes from "prop-types";
 import { themeGet } from "styled-system";
-import { anchorStyle } from "../style";
+import { anchorStyle } from "../../style";
 
 const Wrapper = styled.span`
   ${anchorStyle};

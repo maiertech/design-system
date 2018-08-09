@@ -73,6 +73,7 @@ Icon.propTypes = {
 };
 
 Icon.defaultProps = {
+  // eslint-disable-next-line react/prop-types
   anchor: ({ href, children }) => <a href={href}>{children}</a>
 };
 

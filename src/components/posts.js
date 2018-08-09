@@ -9,7 +9,7 @@ const posts = [
       alt: "Black dimensions on green background.",
       src: "https://dummyimage.com/900x600.jpg/3cd8c3/000000"
     },
-    href: "#"
+    href: "/2018/07/04/slug"
   },
   {
     date: "June 12, 2018",
@@ -21,7 +21,7 @@ const posts = [
       alt: "Black dimensions on fuchsia background.",
       src: "https://dummyimage.com/900x600.jpg/e019cd/000000"
     },
-    href: "#"
+    href: "/2018/06/12/slug"
   },
   {
     date: "May 31, 2018",
@@ -33,7 +33,7 @@ const posts = [
       alt: "Balck dimensions on light green background.",
       src: "https://dummyimage.com/900x600.jpg/4af41f/000000"
     },
-    href: "#"
+    href: "/2018/05/31/slug"
   },
   {
     date: "May 15, 2018",
@@ -46,7 +46,7 @@ const posts = [
       alt: "Black dimensions on blue background.",
       src: "https://dummyimage.com/900x600.jpg/58d2ef/000000"
     },
-    href: "#"
+    href: "/2018/05/15/slug"
   },
   {
     date: "May 2, 2018",
@@ -58,7 +58,7 @@ const posts = [
       alt: "White dimensions on red background.",
       src: "https://dummyimage.com/900x600.jpg/cc0000/ffffff"
     },
-    href: "#"
+    href: "/2018/05/02/slug"
   },
   {
     date: "April 20, 2018",
@@ -70,7 +70,7 @@ const posts = [
       alt: "White dimensions on brown background.",
       src: "https://dummyimage.com/900x600.jpg/562414/ffffff"
     },
-    href: "#"
+    href: "/2018/04/20/slug"
   },
   {
     date: "April 5, 2018",
@@ -82,7 +82,7 @@ const posts = [
       alt: "Balck dimensions on weird yellow background.",
       src: "https://dummyimage.com/900x600.jpg/aea71d/000000"
     },
-    href: "#"
+    href: "/2018/04/05/slug"
   },
   {
     date: "March 14, 2018",
@@ -94,7 +94,7 @@ const posts = [
       alt: "White dimensions on turquoise background.",
       src: "https://dummyimage.com/900x600.jpg/0a919e/ffffff"
     },
-    href: "#"
+    href: "/2018/03/14/slug"
   },
   {
     date: "February 28, 2018",
@@ -107,7 +107,7 @@ const posts = [
       alt: "White dimensions on blue background.",
       src: "https://dummyimage.com/900x600.jpg/0343ef/ffffff"
     },
-    href: "#"
+    href: "/2018/02/28/slug"
   },
   {
     date: "February 13, 2018",
@@ -119,7 +119,7 @@ const posts = [
       alt: "White dimensions on pale purple background.",
       src: "https://dummyimage.com/900x600.jpg/89648e/ffffff"
     },
-    href: "#"
+    href: "/2018/02/13/slug"
   }
 ];
 

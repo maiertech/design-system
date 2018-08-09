@@ -7,6 +7,9 @@ import Icon from "../Icon";
 import Container from "../Container";
 import Heading from "../Heading";
 
+// eslint-disable-next-line react/prop-types
+const defaultAnchor = ({ href, children }) => <a href={href}>{children}</a>;
+
 const Wrapper = styled.footer`
   ${color};
   ${fontFamily};
@@ -55,6 +58,7 @@ const Footer = ({
   <Wrapper fontFamily="sansSerif" color="inverseText" bg="inverseBackground">
     <Container maxWidth={8} pt={3} pb={3}>
       <Heading
+        lineHeight="solid"
         link={{ anchor: internalAnchor, href: "/" }}
         align="center"
         fontSize={3}
@@ -64,8 +68,8 @@ const Footer = ({
         {title}
       </Heading>
       <Links fontSize={5} lineHeight="copy" mb={3}>
-        {links.map(({ href, text }, index) => (
-          <Box px={2} key={index}>
+        {links.map(({ href, text }) => (
+          <Box px={2} key={text}>
             {internalAnchor({ href, children: text })}
           </Box>
         ))}
@@ -85,10 +89,9 @@ const Footer = ({
         />
       </SocialIcons>
       {lastUpdated && (
-        <LastUpdated
-          fontSize={7}
-          mb={3}
-        >{`Last updated: ${lastUpdated}`}</LastUpdated>
+        <LastUpdated fontSize={7} mb={3}>
+          {`Last updated: ${lastUpdated}`}
+        </LastUpdated>
       )}
       <Copyright fontSize={6}>
         © {new Date().getFullYear()} by {name}
@@ -116,11 +119,10 @@ Footer.propTypes = {
   title: PropTypes.string.isRequired
 };
 
-const defaultAnchor = ({ href, children }) => <a href={href}>{children}</a>;
-
 Footer.defaultProps = {
   externalAnchor: defaultAnchor,
-  internalAnchor: defaultAnchor
+  internalAnchor: defaultAnchor,
+  lastUpdated: ""
 };
 
 export default Footer;

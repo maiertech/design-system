@@ -133,8 +133,11 @@ PostPreview.propTypes = {
 };
 
 PostPreview.defaultProps = {
+  // eslint-disable-next-line react/prop-types
   anchor: ({ href, children }) => <a href={href}>{children}</a>,
-  color: "accent"
+  color: "accent",
+  excerpt: "",
+  image: undefined
 };
 
 export default PostPreview;

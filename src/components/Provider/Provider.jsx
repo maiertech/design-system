@@ -26,8 +26,10 @@ const Provider = ({ theme, children }) => (
 );
 
 Provider.propTypes = {
-  /** Custom theme to be shallow merged into default theme. */
-  theme: PropTypes.object.isRequired
+  children: PropTypes.node.isRequired,
+  /** Custom theme is shallow merged into default theme. */
+  // eslint-disable-next-line react/forbid-prop-types
+  theme: PropTypes.object
 };
 
 // Undefined theme cannot be merged.

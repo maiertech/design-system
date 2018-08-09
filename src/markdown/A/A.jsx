@@ -12,17 +12,19 @@ const Wrapper = styled.span`
   }
 `;
 
-const A = ({ anchor, href, children, ...props }) => (
+const A = ({ anchor, children, href, ...props }) => (
   <Wrapper {...props}>{anchor({ href, children })}</Wrapper>
 );
 
 A.propTypes = {
   anchor: PropTypes.func,
+  children: PropTypes.node.isRequired,
   color: PropTypes.string,
   href: PropTypes.string.isRequired
 };
 
 A.defaultProps = {
+  // eslint-disable-next-line react/prop-types
   anchor: ({ href, children }) => <a href={href}>{children}</a>,
   color: "accent"
 };

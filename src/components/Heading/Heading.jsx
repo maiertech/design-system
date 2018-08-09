@@ -12,7 +12,7 @@ const Wrapper = styled.div`
   & > h4,
   & > h5,
   & > h6 {
-    margin: ${props => props.theme.space[0]};
+    margin: 0;
     text-align: ${({ align }) => align};
     ${fontSize};
     ${lineHeight};
@@ -53,7 +53,10 @@ Heading.propTypes = {
 
 Heading.defaultProps = {
   align: "left",
-  heading: children => <h1>{children}</h1>
+  fontSize: undefined,
+  heading: children => <h1>{children}</h1>,
+  lineHeight: "title",
+  link: undefined
 };
 
 export default Heading;

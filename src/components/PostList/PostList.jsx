@@ -10,10 +10,11 @@ const Wrapper = styled.div`
 
 const PostList = ({ anchor, values, mt, mb }) => (
   <Wrapper mt={mt} mb={mb}>
-    {values.map((post, index) => (
+    {values.map(({ href, ...post }) => (
       <PostPreview
-        key={index}
+        key={href}
         anchor={anchor}
+        href={href}
         px={[2, 3, 0]}
         pb={3}
         mb={3}
@@ -31,10 +32,11 @@ PostList.propTypes = {
     PropTypes.shape({
       ...PostPreview.propTypes
     })
-  )
+  ).isRequired
 };
 
 PostList.defaultProps = {
+  // eslint-disable-next-line react/prop-types
   anchor: ({ href, children }) => <a href={href}>{children}</a>,
   mt: 0,
   mb: 0

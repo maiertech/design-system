@@ -19,15 +19,9 @@ const links = [
 ];
 
 storiesOf("components/Footer", module)
-  .add("default anchors", () => {
-    return (
-      <Footer
-        title="This is the Footer Title"
-        name="Thilo Maier"
-        links={links}
-      />
-    );
-  })
+  .add("default anchors", () => (
+    <Footer title="This is the Footer Title" name="Thilo Maier" links={links} />
+  ))
   .add("custom internal anchor", () => (
     <MemoryRouter>
       <Footer
@@ -52,29 +46,27 @@ storiesOf("components/Footer", module)
       )}
     />
   ))
-  .add("last updated", () => {
-    return (
-      <Footer
-        lastUpdated="Aug 1, 2018"
-        title="This is the Footer Title"
-        name="Thilo Maier"
-        links={[
-          {
-            href: "#",
-            text: "Blog"
-          },
-          {
-            href: "#",
-            text: "About"
-          },
-          {
-            href: "#",
-            text: "Archive"
-          }
-        ]}
-      />
-    );
-  })
+  .add("last updated", () => (
+    <Footer
+      lastUpdated="Aug 1, 2018"
+      title="This is the Footer Title"
+      name="Thilo Maier"
+      links={[
+        {
+          href: "#",
+          text: "Blog"
+        },
+        {
+          href: "#",
+          text: "About"
+        },
+        {
+          href: "#",
+          text: "Archive"
+        }
+      ]}
+    />
+  ))
   .add("many links that wrap", () => (
     <Footer
       title="This is the Footer Title"

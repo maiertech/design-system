@@ -13,14 +13,15 @@ storiesOf("components/Icon", module)
     </React.Fragment>
   ))
   .add("custom anchor", () => {
-    const routerLink = ({ href, children }) => (
+    // eslint-disable-next-line react/prop-types
+    const anchor = ({ href, children }) => (
       <NavLink to={href}>{children}</NavLink>
     );
     return (
       <MemoryRouter>
         <React.Fragment>
-          <Icon anchor={routerLink} type="github" username="mdotasia" m={1} />
-          <Icon anchor={routerLink} type="twitter" username="mdotasia" m={1} />
+          <Icon anchor={anchor} type="github" username="mdotasia" m={1} />
+          <Icon anchor={anchor} type="twitter" username="mdotasia" m={1} />
         </React.Fragment>
       </MemoryRouter>
     );

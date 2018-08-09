@@ -1,6 +1,6 @@
 import React from "react";
 import { storiesOf } from "@storybook/react";
-import P from "../P";
+import P from "./P";
 import Box from "../../components/Box";
 
 const firstParagraph =

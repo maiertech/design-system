@@ -41,7 +41,12 @@ const Header = ({ anchor, links, title }) => (
         flexDirection={["column", "row"]}
         justifyContent={["center", "space-between"]}
       >
-        <Heading link={{ anchor, href: "/" }} fontSize={[4, 3, 2]} mr={[0, 3]}>
+        <Heading
+          link={{ anchor, href: "/" }}
+          fontSize={[4, 3, 2]}
+          mb={[1, 0]}
+          mr={[0, 3]}
+        >
           {title}
         </Heading>
         <Links fontSize={[6, 5, 4]} fontWeight={6}>
@@ -70,6 +75,7 @@ Header.propTypes = {
 };
 
 Header.defaultProps = {
+  // eslint-disable-next-line react/prop-types
   anchor: ({ href, children }) => <a href={href}>{children}</a>
 };
 

@@ -3,8 +3,8 @@ import path from "path";
 import devices from "../devices";
 
 const url =
-  "http://localhost:9009/?selectedKind=PostList&selectedStory=default%20anchor&full=1";
-const platform = process.platform;
+  "http://localhost:9009/?selectedKind=components%2FPostList&selectedStory=default%20anchor&full=1";
+const { platform } = process;
 
 describe("Footer", () => {
   devices.forEach(device => {

@@ -23,15 +23,13 @@
     "start": "start-storybook -p 9009",
     "build": "rimraf ./dist && babel ./src -d ./dist --ignore test.js,stories.jsx",
     "build-storybook": "rimraf ./storybook-static && build-storybook",
-    "deploy": "yarn run build-storybook && now && now alias",
+    "deploy": "npm run build-storybook && now && now alias",
     "format": "pretty-quick",
     "inspect": "node --inspect-brk node_modules/.bin/jest --runInBand",
     "lint": "eslint --ignore-path .gitignore .",
     "precommit": "pretty-quick --staged",
-    "prepublishOnly": "yarn run build",
-    "release": "release",
-    "postrelease": "yarn run deploy && npm publish",
-    "serve": "yarn run build-storybook && serve",
+    "prepublishOnly": "npm run deploy && npm run build",
+    "serve": "npm run build-storybook && serve",
     "test": "jest --watch"
   },
   "dependencies": {

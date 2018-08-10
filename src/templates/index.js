@@ -1,4 +1,4 @@
-import Page from "./Page";
+import ContentPage from "./ContentPage";
+import HeadingPage from "./HeadingPage";
 
-// eslint-disable-next-line import/prefer-default-export
-export { Page };
+export { ContentPage, HeadingPage };

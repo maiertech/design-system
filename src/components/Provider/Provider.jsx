@@ -18,7 +18,7 @@ injectGlobal`
 `;
 
 // ThemeProvider can have one child only.
-// You can use <React.Fragment> around multiple children.
+// You can use React's <Fragment> around multiple children.
 const Provider = ({ theme, children }) => (
   <ThemeProvider theme={{ ...defaultTheme, ...theme }}>
     {children}

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Fragment } from "react";
 import { storiesOf } from "@storybook/react";
 import P from "./P";
 import Box from "../../components/Box";
@@ -12,14 +12,14 @@ const secondParagraph =
 storiesOf("markdown/P", module)
   .addDecorator(story => <Box m={3}>{story()}</Box>)
   .add("default margin-bottom", () => (
-    <React.Fragment>
+    <Fragment>
       <P>{firstParagraph}</P>
       <P>{secondParagraph}</P>
-    </React.Fragment>
+    </Fragment>
   ))
   .add("custom margin-bottom", () => (
-    <React.Fragment>
+    <Fragment>
       <P mb={5}>{firstParagraph}</P>
       <P>{secondParagraph}</P>
-    </React.Fragment>
+    </Fragment>
   ));

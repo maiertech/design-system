@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Fragment } from "react";
 import { storiesOf } from "@storybook/react";
 import Heading from "./Heading";
 import Box from "../Box";
@@ -39,7 +39,7 @@ storiesOf("components/Heading", module)
     </Heading>
   ))
   .add("custom lineHeight", () => (
-    <React.Fragment>
+    <Fragment>
       <Heading>
         Default line height heading which is very very very very very very very
         very very very long to demonstrate title line height
@@ -52,5 +52,5 @@ storiesOf("components/Heading", module)
         Custom line height heading which is very very very very very very very
         very very very long to demonstrate copy line height
       </Heading>
-    </React.Fragment>
+    </Fragment>
   ));

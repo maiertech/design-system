@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Fragment } from "react";
 import { storiesOf } from "@storybook/react";
 import { NavLink, MemoryRouter } from "react-router-dom";
 import PostPreview from "./PostPreview";
@@ -27,8 +27,8 @@ storiesOf("components/PostPreview", module)
     return <PostPreview {...post} />;
   })
   .add("multiple siblings", () => (
-    <React.Fragment>
+    <Fragment>
       <PostPreview {...posts[2]} pb={3} mb={3} />
       <PostPreview {...posts[3]} pb={3} mb={3} />
-    </React.Fragment>
+    </Fragment>
   ));

@@ -60,12 +60,14 @@ const Image = styled.div`
 `;
 
 const Author = styled.div`
+  ${fontFamily};
   ${fontSize};
   ${lineHeight};
 `;
 
 const Date = styled.time`
   display: block;
+  ${fontFamily};
   ${fontSize};
 `;
 
@@ -107,10 +109,12 @@ const PostPreview = ({
               </Image>
             )}
           </Preview>
-          <Author fontSize={6} lineHeight="copy">
+          <Author fontFamily="sansSerif" fontSize={6} lineHeight="copy">
             {author}
           </Author>
-          <Date fontSize={6}>{date}</Date>
+          <Date fontFamily="sansSerif" fontSize={6}>
+            {date}
+          </Date>
         </Padding>
       )
     })}

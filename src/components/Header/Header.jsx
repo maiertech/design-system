@@ -4,6 +4,7 @@ import styled from "styled-components";
 import {
   color,
   flexDirection,
+  fontFamily,
   fontSize,
   fontWeight,
   justifyContent,
@@ -30,6 +31,7 @@ const Navigation = styled.div`
 
 const Links = styled.div`
   display: flex;
+  ${fontFamily};
   ${fontSize};
   ${fontWeight};
 `;
@@ -49,7 +51,7 @@ const Header = ({ anchor, links, title }) => (
         >
           {title}
         </Heading>
-        <Links fontSize={[6, 5, 4]} fontWeight={6}>
+        <Links fontFamily="sansSerif" fontSize={[6, 5, 4]} fontWeight={6}>
           {links.map(({ href, text }) => (
             <Box key={text} ml={[2, 3, 4]} mr={[2, 0]}>
               {anchor({ href, children: text })}

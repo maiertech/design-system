@@ -30,7 +30,8 @@
     "precommit": "pretty-quick --staged && npm run lint",
     "prepublishOnly": "npm run deploy && npm run build",
     "serve": "npm run build-storybook && serve",
-    "test": "jest --watch"
+    "test": "npm run build-storybook && jest",
+    "watch": "jest --watch"
   },
   "dependencies": {
     "polished": "^1.9.3",

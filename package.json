@@ -20,9 +20,9 @@
     "dist"
   ],
   "scripts": {
-    "start": "start-storybook -p 9009",
+    "start": "start-storybook -p 9009 -c config/storybook",
     "build": "rimraf ./dist && babel ./src -d ./dist --ignore test.js,stories.jsx",
-    "build-storybook": "rimraf ./storybook-static && build-storybook",
+    "build-storybook": "rimraf ./storybook-static && build-storybook -c config/storybook",
     "deploy": "npm run build-storybook && now && now alias",
     "format": "pretty-quick",
     "inspect": "node --inspect-brk node_modules/.bin/jest --runInBand",

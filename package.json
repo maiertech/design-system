@@ -30,8 +30,9 @@
     "precommit": "pretty-quick --staged && npm run lint",
     "prepublishOnly": "npm run deploy && npm run build",
     "serve": "npm run build-storybook && serve",
-    "test": "npm run build-storybook && jest",
-    "watch": "jest --watch"
+    "pretest": "npm run build-storybook",
+    "test": "JEST_PUPPETEER_CONFIG=config/jest/puppeteer.js jest --config config/jest/config.js",
+    "watch": "npm run test --watch"
   },
   "dependencies": {
     "polished": "^2.0.3",
@@ -73,9 +74,5 @@
     "release": "^4.0.0",
     "rimraf": "^2.6.2",
     "serve": "^10.0.0"
-  },
-  "jest": {
-    "preset": "jest-puppeteer",
-    "setupTestFrameworkScriptFile": "<rootDir>/jest-setup.js"
   }
 }

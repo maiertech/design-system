@@ -2,7 +2,7 @@ import React from "react";
 import { configure, addDecorator } from "@storybook/react";
 import { setOptions } from "@storybook/addon-options";
 import "@storybook/addon-console";
-import Provider from "../../src/components/Provider";
+import Provider from "../../src/helpers/Provider";
 import pkg from "../../package.json";
 
 // Set Storybook UI options.

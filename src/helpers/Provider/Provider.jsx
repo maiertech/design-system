@@ -1,11 +1,11 @@
-import React from "react";
+import React, { Fragment } from "react";
 import PropTypes from "prop-types";
-import { injectGlobal, ThemeProvider } from "styled-components";
+import { createGlobalStyle, ThemeProvider } from "styled-components";
 import { normalize } from "polished";
 import defaultTheme from "../../themes/default";
 
 // https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/
-injectGlobal`
+const GlobalStyle = createGlobalStyle`
   ${normalize()};
   html {
     box-sizing: border-box;
@@ -17,11 +17,12 @@ injectGlobal`
   }
 `;
 
-// ThemeProvider can have one child only.
-// You can use React's <Fragment> around multiple children.
 const Provider = ({ theme, children }) => (
   <ThemeProvider theme={{ ...defaultTheme, ...theme }}>
-    {children}
+    <Fragment>
+      <GlobalStyle />
+      {children}
+    </Fragment>
   </ThemeProvider>
 );
 

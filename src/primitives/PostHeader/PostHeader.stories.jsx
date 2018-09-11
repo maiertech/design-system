@@ -1,10 +1,8 @@
 import React from "react";
 import { storiesOf } from "@storybook/react";
 import PostHeader from "./PostHeader";
-import Box from "../Box";
 
-storiesOf("components/PostHeader", module)
-  .addDecorator(story => <Box m={1}>{story()}</Box>)
+storiesOf("Primitives/PostHeader", module)
   .add("short title", () => (
     <PostHeader
       author="Thilo Maier"

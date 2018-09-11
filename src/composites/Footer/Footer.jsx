@@ -5,7 +5,7 @@ import Icon from "../../primitives/Icon";
 
 const Footer = ({ title, name, links, extLink, intLink, lastUpdated }) => (
   <Box as="footer" color="inverseText" bg="inverseBackground">
-    <Box css={{ maxWidth: "64rem" }} mx="auto" pt={3} pb={3}>
+    <Box css={{ maxWidth: "64rem" }} mx="auto" p={3}>
       <Link as={intLink} href="/">
         <Heading
           as="h1"

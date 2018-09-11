@@ -64,7 +64,6 @@ export default {
   },
 
   letterSpacings: {
-    normal: "normal",
     tracked: ".1em",
     trackedTight: "-.05em",
     trackedMega: ".25em"

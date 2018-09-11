@@ -18,7 +18,7 @@ const links = [
   }
 ];
 
-storiesOf("Components/Footer", module)
+storiesOf("Composites/Footer", module)
   .add("default anchors", () => (
     <Footer title="This is the Footer Title" name="Thilo Maier" links={links} />
   ))

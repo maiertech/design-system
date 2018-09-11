@@ -1,8 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import styled from "styled-components";
-import { fontSize, height, space, width } from "styled-system";
-import { anchorStyle } from "../../style";
+import { Flex, Image, Link, Text } from "rebass";
 
 const icons = {
   github: {
@@ -21,60 +19,38 @@ const icons = {
   }
 };
 
-const Wrapper = styled.div`
-  display: inline-block;
-  ${anchorStyle};
-  ${space};
-`;
-
-const Box = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  ${space};
-`;
-
-const Svg = styled.svg`
-  ${height};
-  ${width};
-`;
-
-const Label = styled.span`
-  display: block;
-  ${fontSize};
-`;
-
-const Icon = ({ anchor, type, username, ...props }) => (
-  <Wrapper {...props}>
-    {anchor({
-      href: `${icons[type].url}${username}`,
-      children: (
-        <Box p={2}>
-          <Svg
-            fill="currentColor"
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 24 24"
-            height={2}
-            width={1}
-          >
-            {icons[type].path}
-          </Svg>
-          <Label fontSize={6}>{icons[type].text}</Label>
-        </Box>
-      )
-    })}
-  </Wrapper>
+const Icon = ({ link, type, username, ...props }) => (
+  <Link
+    as={link}
+    href={`${icons[type].url}${username}`}
+    css={{ display: "block" }}
+    {...props}
+  >
+    <Flex flexDirection="column" alignItems="center" p={2}>
+      <Image
+        as="svg"
+        fill="currentColor"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+        width={32}
+      >
+        {icons[type].path}
+      </Image>
+      <Text fontFamily="sans" fontSize={6}>
+        {icons[type].text}
+      </Text>
+    </Flex>
+  </Link>
 );
 
 Icon.propTypes = {
-  anchor: PropTypes.func,
+  link: PropTypes.func,
   type: PropTypes.oneOf(["github", "twitter"]).isRequired,
   username: PropTypes.string.isRequired
 };
 
 Icon.defaultProps = {
-  // eslint-disable-next-line react/prop-types
-  anchor: ({ href, children }) => <a href={href}>{children}</a>
+  link: undefined
 };
 
 export default Icon;

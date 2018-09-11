@@ -42,11 +42,9 @@ export default {
   },
 
   fonts: {
-    sans: "system-ui, sans-serif",
-    sansSerif:
-      "-apple-system, BlinkMacSystemFont, 'avenir next', avenir, 'helvetica neue', helvetica, ubuntu, roboto, noto, 'segoe ui', arial, sans-serif",
-    mono: "Menlo, monospace",
-    serif: "georgia, times, serif"
+    serif: "Merriweather, serif",
+    sans: "Lato, sans-serif",
+    mono: "Inconsolata, monospace"
   },
 
   fontSizes: [
@@ -60,7 +58,10 @@ export default {
     ".75rem"
   ],
 
-  fontWeights: ["normal", 100, 200, 300, 400, 500, 600, 700, 800, 900],
+  fontWeights: {
+    normal: 400,
+    bold: 700
+  },
 
   letterSpacings: {
     normal: "normal",

@@ -1,49 +1,41 @@
 import React from "react";
 import { storiesOf } from "@storybook/react";
-import { NavLink, MemoryRouter } from "react-router-dom";
 import Footer from "./Footer";
+import NewTabLink from "../../primitives/NewTabLink";
 
 const links = [
   {
-    href: "#",
+    href: "#blog",
     text: "Blog"
   },
   {
-    href: "#",
+    href: "#about",
     text: "About"
   },
   {
-    href: "#",
+    href: "#archive",
     text: "Archive"
   }
 ];
 
-storiesOf("components/Footer", module)
+storiesOf("Components/Footer", module)
   .add("default anchors", () => (
     <Footer title="This is the Footer Title" name="Thilo Maier" links={links} />
   ))
-  .add("custom internal anchor", () => (
-    <MemoryRouter>
-      <Footer
-        title="This is the Footer Title"
-        name="Thilo Maier"
-        links={links}
-        internalAnchor={({ href, children }) => (
-          <NavLink to={href}>{children}</NavLink>
-        )}
-      />
-    </MemoryRouter>
-  ))
-  .add("custom external anchor", () => (
+  .add("custom intLink", () => (
     <Footer
       title="This is the Footer Title"
       name="Thilo Maier"
       links={links}
-      externalAnchor={({ href, children }) => (
-        <a href={href} target="_blank" rel="noreferrer noopener">
-          {children}
-        </a>
-      )}
+      intLink={NewTabLink}
+    />
+  ))
+  .add("custom extLink", () => (
+    <Footer
+      title="This is the Footer Title"
+      name="Thilo Maier"
+      links={links}
+      extLink={NewTabLink}
     />
   ))
   .add("last updated", () => (
@@ -51,20 +43,7 @@ storiesOf("components/Footer", module)
       lastUpdated="Aug 1, 2018"
       title="This is the Footer Title"
       name="Thilo Maier"
-      links={[
-        {
-          href: "#",
-          text: "Blog"
-        },
-        {
-          href: "#",
-          text: "About"
-        },
-        {
-          href: "#",
-          text: "Archive"
-        }
-      ]}
+      links={links}
     />
   ))
   .add("many links that wrap", () => (
@@ -73,83 +52,83 @@ storiesOf("components/Footer", module)
       name="Thilo Maier"
       links={[
         {
-          href: "#",
+          href: "#one",
           text: "One"
         },
         {
-          href: "#",
+          href: "#two",
           text: "Two"
         },
         {
-          href: "#",
+          href: "#three",
           text: "Three"
         },
         {
-          href: "#",
+          href: "#four",
           text: "Four"
         },
         {
-          href: "#",
+          href: "#five",
           text: "Five"
         },
         {
-          href: "#",
+          href: "#six",
           text: "Six"
         },
         {
-          href: "#",
+          href: "#seven",
           text: "Seven"
         },
         {
-          href: "#",
+          href: "#eight",
           text: "Eight"
         },
         {
-          href: "#",
+          href: "#nine",
           text: "Nine"
         },
         {
-          href: "#",
+          href: "#ten",
           text: "Ten"
         },
         {
-          href: "#",
+          href: "#eleven",
           text: "Eleven"
         },
         {
-          href: "#",
+          href: "#twelve",
           text: "Twelve"
         },
         {
-          href: "#",
+          href: "#thirteen",
           text: "Thirteen"
         },
         {
-          href: "#",
+          href: "#fourteen",
           text: "Fourteen"
         },
         {
-          href: "#",
+          href: "#fifteen",
           text: "Fifteen"
         },
         {
-          href: "#",
+          href: "#sixteen",
           text: "Sixteen"
         },
         {
-          href: "#",
+          href: "#seventeen",
           text: "Seveteen"
         },
         {
-          href: "#",
+          href: "#eighteen",
           text: "Eighteen"
         },
         {
-          href: "#",
+          href: "#nineteen",
           text: "Nineteen"
         },
         {
-          href: "#",
+          href: "#twenty",
           text: "Twenty"
         }
       ]}

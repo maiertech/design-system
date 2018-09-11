@@ -1,7 +1,7 @@
 import * as deviceDescriptors from "puppeteer/DeviceDescriptors";
-import devices from "../devices";
+import devices from "../../devices";
 
-const file = `file://${process.cwd()}/storybook-static/index.html?selectedKind=components%2FFooter&selectedStory=last%20updated&full=1`;
+const file = `file://${process.cwd()}/storybook-static/index.html?selectedKind=Components%2FFooter&selectedStory=last%20updated&full=1`;
 
 describe("Footer", () => {
   devices.forEach(device => {

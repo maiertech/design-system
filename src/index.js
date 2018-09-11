@@ -1,3 +1,4 @@
-export * from "./components";
-export * from "./markdown";
-export * from "./templates";
+import Footer from "./composites/Footer";
+import Provider from "./helpers/Provider";
+
+export { Footer, Provider };

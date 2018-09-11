@@ -16,9 +16,15 @@ setOptions({
 // eslint-disable-next-line react/jsx-filename-extension
 addDecorator(story => <Provider>{story()}</Provider>);
 
-const req = require.context("../../src", true, /\.stories\.jsx$/);
-
 function loadStories() {
+  // Sort order of nested stories is determined by loading order.
+
+  // Load primitives.
+  let req = require.context("../../src/primitives", true, /\.stories\.jsx$/);
+  req.keys().forEach(filename => req(filename));
+
+  // Load composites.
+  req = require.context("../../src/composites", true, /\.stories\.jsx$/);
   req.keys().forEach(filename => req(filename));
 }
 

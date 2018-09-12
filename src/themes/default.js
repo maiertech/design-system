@@ -77,6 +77,13 @@ export default {
 
   heights: [0, "1rem", "2rem", "4rem", "8rem", "16rem"],
 
+  radii: {
+    none: 0,
+    circle: "100%",
+    pill: "9999px",
+    rounded: "1rem"
+  },
+
   space: [0, ".25rem", ".5rem", "1rem", "2rem", "4rem", "8rem", "16rem"],
 
   Link: {

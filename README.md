@@ -1,6 +1,6 @@
 # @mdotasia/components
 
-A library of reusable [React](https://facebook.github.io/react/) components. Built with [styled-system](http://jxnblk.com/styled-system/). Explore online: https://components.maier.asia.
+Design system for [@mdotasia](https://github.com/mdotasia/) websites. Built with [Rebass](https://rebassjs.org/). Explore online: https://components.maier.asia.
 
 ## Install
 

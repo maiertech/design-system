@@ -3,10 +3,10 @@ import { storiesOf } from "@storybook/react";
 import { Text } from "rebass";
 import TextPage from "./TextPage";
 
-storiesOf("Pages/NarrowPage", module).add("default", () => (
+storiesOf("Pages/TextPage", module).add("default", () => (
   <TextPage
-    title="Narrow Page"
-    description="This is a narrow page for easy reading."
+    title="Text Page"
+    description="This is a text page for easy reading."
   >
     <Text as="p" fontFamily="serif" lineHeight="copy" my={0}>
       Nunc mollis nulla sed nunc pharetra, sit amet rutrum mi volutpat. Aliquam

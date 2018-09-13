@@ -14,7 +14,7 @@ const Header = ({ title, links, link }) => (
         <Link as={link} href="/">
           <Heading
             fontFamily="sans"
-            fontSize={[4, 3, 2]}
+            fontSize={[3, 4, 5]}
             lineHeight="title"
             mb={[1, 0]}
             mr={[0, 3]}
@@ -28,7 +28,7 @@ const Header = ({ title, links, link }) => (
               <Text
                 as="span"
                 fontFamily="sans"
-                fontSize={[6, 5, 4]}
+                fontSize={[1, 2, 3]}
                 fontWeight="bold"
                 ml={[2, 3, 4]}
                 mr={[2, 0]}

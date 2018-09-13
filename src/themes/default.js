@@ -48,14 +48,14 @@ export default {
   },
 
   fontSizes: [
-    "medium",
-    "3rem",
-    "2.25rem",
-    "1.5rem",
-    "1.25rem",
-    "1rem",
+    ".75rem",
     ".875rem",
-    ".75rem"
+    "1rem",
+    "1.25rem",
+    "1.5re m",
+    "2.25rem",
+    "3rem",
+    "4rem"
   ],
 
   fontWeights: {
@@ -74,8 +74,6 @@ export default {
     title: 1.25,
     copy: 1.5
   },
-
-  heights: [0, "1rem", "2rem", "4rem", "8rem", "16rem"],
 
   radii: {
     none: 0,

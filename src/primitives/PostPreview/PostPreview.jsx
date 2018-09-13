@@ -27,23 +27,23 @@ const PostPreview = ({
           {image()}
         </Box>
         <Box width={[1, 2 / 3]}>
-          <Heading fontFamily="sans" fontSize={3} lineHeight="title" mb={3}>
+          <Heading fontFamily="sans" fontSize={4} lineHeight="title" mb={3}>
             {title}
           </Heading>
           <Text
             as="p"
             fontFamily="serif"
-            fontSize={[6, 5]}
+            fontSize={[1, 2]}
             lineHeight="copy"
             mt={0}
             mb={3}
           >
             {lead}
           </Text>
-          <Text fontFamily="sans" fontSize={6} lineHeight="copy">
+          <Text fontFamily="sans" fontSize={1} lineHeight="copy">
             {author}
           </Text>
-          <Text as="time" fontFamily="sans" fontSize={6} lineHeight="copy">
+          <Text as="time" fontFamily="sans" fontSize={1} lineHeight="copy">
             {date}
           </Text>
         </Box>

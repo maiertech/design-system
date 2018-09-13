@@ -6,17 +6,17 @@ const PostHeader = ({ author, date, title, ...props }) => (
   <Box {...props}>
     <Heading
       fontFamily="sans"
-      fontSize={[3, 2, 1]}
+      fontSize={[4, 5, 6]}
       lineHeight="solid"
       mt={0}
       mb={[2, 3]}
     >
       {title}
     </Heading>
-    <Text fontFamily="sans" fontSize={[7, 6, 5]} lineHeight="copy">
+    <Text fontFamily="sans" fontSize={[0, 1, 2]} lineHeight="copy">
       {author}
     </Text>
-    <Text as="time" fontFamily="sans" fontSize={[7, 6, 5]}>
+    <Text as="time" fontFamily="sans" fontSize={[0, 1, 2]}>
       {date}
     </Text>
   </Box>

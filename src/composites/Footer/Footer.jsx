@@ -10,7 +10,7 @@ const Footer = ({ title, name, links, extLink, intLink, lastUpdated }) => (
         <Heading
           as="h1"
           fontFamily="sans"
-          fontSize={3}
+          fontSize={4}
           lineHeight="solid"
           textAlign="center"
           mt={0}
@@ -22,7 +22,7 @@ const Footer = ({ title, name, links, extLink, intLink, lastUpdated }) => (
       <Flex flexDirection="row" flexWrap="wrap" justifyContent="center" mb={3}>
         {links.map(({ href, text }) => (
           <Link as={intLink} href={href} px={2} key={href}>
-            <Text as="span" fontFamily="sans" fontSize={5} lineHeight="copy">
+            <Text as="span" fontFamily="sans" fontSize={2} lineHeight="copy">
               {text}
             </Text>
           </Link>
@@ -43,11 +43,11 @@ const Footer = ({ title, name, links, extLink, intLink, lastUpdated }) => (
         />
       </Flex>
       {lastUpdated && (
-        <Text fontFamily="sans" fontSize={7} textAlign="center" mb={3}>
+        <Text fontFamily="sans" fontSize={0} textAlign="center" mb={3}>
           {`Last updated: ${lastUpdated}`}
         </Text>
       )}
-      <Text fontFamily="sans" fontSize={6} textAlign="center">
+      <Text fontFamily="sans" fontSize={1} textAlign="center">
         © {new Date().getFullYear()} by {name}
       </Text>
     </Box>

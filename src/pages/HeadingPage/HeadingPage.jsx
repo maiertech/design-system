@@ -8,7 +8,7 @@ const HeadingPage = ({ title, description, children }) => (
     <Heading
       as="h1"
       fontFamily="sans"
-      fontSize={[3, 2]}
+      fontSize={[4, 5]}
       lineHeight="solid"
       mb={[2, 3]}
     >

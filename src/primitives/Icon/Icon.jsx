@@ -36,7 +36,7 @@ const Icon = ({ link, type, username, ...props }) => (
       >
         {icons[type].path}
       </Image>
-      <Text fontFamily="sans" fontSize={6}>
+      <Text fontFamily="sans" fontSize={1}>
         {icons[type].text}
       </Text>
     </Flex>

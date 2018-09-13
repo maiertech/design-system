@@ -1,5 +1,6 @@
 import React from "react";
 import { storiesOf } from "@storybook/react";
+import { Text } from "rebass";
 import HeadingPage from "./HeadingPage";
 
 const content =
@@ -7,22 +8,21 @@ const content =
 const description =
   "Nunc mollis nulla sed nunc pharetra, sit amet rutrum mi volutpat.";
 
-storiesOf("templates/Page", module)
-  .add("short heading", () => (
-    <HeadingPage
-      debug
-      title="This is a short heading"
-      description={description}
-    >
-      {content}
+storiesOf("Pages/HeadingPage", module)
+  .add("short title", () => (
+    <HeadingPage title="This is a short heading" description={description}>
+      <Text as="p" fontFamily="serif" lineHeight="copy" my={0}>
+        {content}
+      </Text>
     </HeadingPage>
   ))
-  .add("long heading", () => (
+  .add("long title", () => (
     <HeadingPage
-      debug
       title="This is a very very very very very very very very very very very very very very very very very very very very very very very very very very very long heading"
       description={description}
     >
-      {content}
+      <Text as="p" fontFamily="serif" lineHeight="copy" my={0}>
+        {content}
+      </Text>
     </HeadingPage>
   ));

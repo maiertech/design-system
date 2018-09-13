@@ -16,7 +16,7 @@ const PostPreview = ({
     as="article"
     css={{ maxWidth: "48rem" }}
     borderRadius={["none", "none", "rounded"]}
-    boxShadow={["none", "none", "0 2px 16px rgba(0, 0, 0, 0.25)"]}
+    boxShadow={["none", "none", "small"]}
     p={[0, 0, 3]}
     mx={[0, 0, "auto"]}
     {...props}

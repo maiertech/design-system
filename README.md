@@ -32,7 +32,9 @@ to build image `puppeteer`. Then run
 
     docker run --rm -it -v $(pwd):/components -w /components puppeteer yarn test
 
-to launch visual regression tests.
+to launch visual regression tests. Every now and then you should rebuild the `puppeteer` image and pull the underlying base image to receive the latest patches and updates:
+
+    docker build --pull config/docker/puppeteer -t puppeteer
 
 ## Deployment
 

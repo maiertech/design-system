@@ -7,51 +7,37 @@ const lightPurple = "#A463F2";
 const purple = "#5E2CA5";
 const yellow = "#FFFF00";
 
-/**
- * Primary branding colors:
- * - contrast(primary default, high contrast inverse) = contrast(light pink, black) = 11.47 (AAA)
- * - contrast(primary default, secondary inverse) = contrast(light pink, purple) = 4.82 (AA)
- * - contrast(primary inverse, high contrast default) = contrast(dark pink, yellow) = 4.62 (AA)
- */
-const primaryColors = {
-  default: lightPink,
-  inverse: darkPink
+// Theme colors.
+const primary = lightPink;
+const primaryInverse = darkPink;
+const secondary = lightPurple;
+const secondaryInverse = purple;
+const highContrastText = yellow;
+const highContrastBackground = black;
+
+const colors = {
+  // Default colors:
+  // contrast(text, background): 19.55 (AAA)
+  // contrast(accent, background): 11.47 (AAA)
+  // contrast(alternate, background): 5.64 (AA)
+  background: highContrastBackground,
+  text: highContrastText,
+  accent: primary,
+  alternate: secondary,
+
+  // Branded colors:
+  // contrast(brandedText, brandedBackground): 11.47 (AAA)
+  // contrast(brandedAccent, brandedBackground): 4.82 (AA)
+  brandedBackground: primary,
+  brandedText: highContrastBackground,
+  brandedAccent: secondaryInverse,
+
+  // Inverse colors:
+  // contrast(inverseText, inverseBackground): 4.62 (AA)
+  inverseBackground: primaryInverse,
+  inverseText: highContrastText
 };
 
-/**
- * Secondary branding colors:
- * - contrast(secondary default, high contrast inverse) = contrast(light purple, black): 5.64 (AA)
- */
-const secondaryColors = {
-  default: lightPurple,
-  inverse: purple
-};
+const theme = { colors };
 
-/**
- * High contrast colors for easy reading:
- * - contrast(high contrast default, high contrast inverse) = contrast(yellow, black) = 19.55 (AAA)
- */
-const highContrastColors = {
-  default: yellow,
-  inverse: black
-};
-
-export default {
-  colors: {
-    default: {
-      background: highContrastColors.inverse,
-      text: highContrastColors.default,
-      accent: primaryColors.default,
-      alternate: secondaryColors.default
-    },
-    branded: {
-      background: primaryColors.default,
-      text: highContrastColors.inverse,
-      accent: secondaryColors.inverse
-    },
-    inverse: {
-      background: primaryColors.inverse,
-      text: highContrastColors.default
-    }
-  }
-};
+export default theme;

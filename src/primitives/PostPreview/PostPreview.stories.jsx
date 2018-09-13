@@ -21,16 +21,18 @@ storiesOf("Primitives/PostPreview", module)
       author={posts[0].author}
       date={posts[0].date}
       image={image}
+      m={3}
     />
   ))
   .add("custom link", () => (
     <PostPreview
-      title={posts[1].title}
-      lead={posts[1].lead}
-      href={posts[1].href}
-      author={posts[1].author}
-      date={posts[1].date}
+      title={posts[0].title}
+      lead={posts[0].lead}
+      href={posts[0].href}
+      author={posts[0].author}
+      date={posts[0].date}
       image={image}
       link={NewTabLink}
+      m={3}
     />
   ));

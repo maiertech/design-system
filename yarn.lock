@@ -7270,8 +7270,8 @@ realpath-native@^1.0.0:
     util.promisify "^1.0.0"
 
 rebass@^3.0.0-0:
-  version "3.0.0-5"
-  resolved "https://registry.yarnpkg.com/rebass/-/rebass-3.0.0-5.tgz#3d932dcf4abf9065945bb87f1b95a204db4bdb9b"
+  version "3.0.0-7"
+  resolved "https://registry.yarnpkg.com/rebass/-/rebass-3.0.0-7.tgz#5f2ff15ba5254612bb44f60acade444cf040b303"
   dependencies:
     styled-system "^3.1.0"
 
@@ -8264,8 +8264,8 @@ styled-components@^4.0.0-beta.2:
     stylis-rule-sheet "^0.0.10"
 
 styled-system@^3.1.0:
-  version "3.1.0"
-  resolved "https://registry.yarnpkg.com/styled-system/-/styled-system-3.1.0.tgz#d221c6f0343bbcdcb49976a7e24973d6a59488b5"
+  version "3.1.1"
+  resolved "https://registry.yarnpkg.com/styled-system/-/styled-system-3.1.1.tgz#9308f9709de5d4f7d210bdc260f2c73a0dfed269"
   dependencies:
     prop-types "^15.6.2"
 

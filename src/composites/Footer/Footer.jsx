@@ -29,18 +29,8 @@ const Footer = ({ title, name, links, extLink, intLink, lastUpdated }) => (
         ))}
       </Flex>
       <Flex flexDirection="row" flexWrap="wrap" justifyContent="center" mb={3}>
-        <Icon
-          link={extLink}
-          type="github"
-          username="mdotasia"
-          key="github-mdotasia"
-        />
-        <Icon
-          link={extLink}
-          type="twitter"
-          username="mdotasia"
-          key="twitter-mdotasia"
-        />
+        <Icon link={extLink} type="github" username="mdotasia" key="github" />
+        <Icon link={extLink} type="twitter" username="mdotasia" key="twitter" />
       </Flex>
       {lastUpdated && (
         <Text fontFamily="sans" fontSize={0} textAlign="center" mb={3}>

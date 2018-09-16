@@ -7,13 +7,13 @@ import pkg from "../../package.json";
 
 // Set Storybook UI options.
 setOptions({
-  name: `@mdotasia/components v${pkg.version}`
+  name: `${pkg.name} v${pkg.version}`
 });
 
 // Add decorators before require.context:
 // https://github.com/storybooks/storybook/issues/3246
 
-// eslint-disable-next-line react/jsx-filename-extension
+// eslint-disable-next-line
 addDecorator(story => <Provider>{story()}</Provider>);
 
 function loadStories() {

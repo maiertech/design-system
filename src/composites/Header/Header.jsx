@@ -2,8 +2,9 @@ import React from "react";
 import PropTypes from "prop-types";
 import { Box, Flex, Heading, Link, Text } from "rebass";
 
-const Header = ({ title, links, link }) => (
-  <Box bg="brandedBackground">
+// With ...props escape hatch all of Box's props can be used on Footer.
+const Header = ({ title, links, link, ...props }) => (
+  <Box bg="brandedBackground" {...props}>
     <Box css={{ maxWidth: "96rem" }} mx="auto" p={[2, 3]}>
       <Flex
         css={{ width: "100%" }}

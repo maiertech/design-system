@@ -21,7 +21,7 @@ const PostPreview = ({
     mx={[0, 0, "auto"]}
     {...props}
   >
-    <Link as={link} css={{ display: "block" }} href={href}>
+    <Link as={link} color="text" css={{ display: "block" }} href={href}>
       <Flex flexDirection={["column", "row"]}>
         <Box width={[1, 1 / 3]} mr={[0, 3]} mb={[2, 0]}>
           {image()}

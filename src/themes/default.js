@@ -91,7 +91,6 @@ const space = [0, ".25rem", ".5rem", "1rem", "2rem", "4rem", "8rem", "16rem"];
 
 const Link = {
   height: "100%",
-  color: "inherit",
   "text-decoration": "none",
   transition: "all 0.2s ease-out",
   "&:hover": {

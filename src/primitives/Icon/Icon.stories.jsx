@@ -8,4 +8,7 @@ storiesOf("Primitives/Icon", module)
   .add("Twitter", () => <Icon type="twitter" username="mdotasia" m={2} />)
   .add("custom anchor", () => (
     <Icon link={NewTabLink} type="github" username="mdotasia" m={2} />
+  ))
+  .add("custom color", () => (
+    <Icon color="alternate" type="github" username="mdotasia" m={2} />
   ));

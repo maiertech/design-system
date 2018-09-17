@@ -19,9 +19,10 @@ const icons = {
   }
 };
 
-const Icon = ({ link, type, username, ...props }) => (
+const Icon = ({ color, link, type, username, ...props }) => (
   <Link
     as={link}
+    color={color}
     href={`${icons[type].url}${username}`}
     css={{ display: "block" }}
     {...props}
@@ -44,12 +45,14 @@ const Icon = ({ link, type, username, ...props }) => (
 );
 
 Icon.propTypes = {
+  color: PropTypes.string,
   link: PropTypes.func,
   type: PropTypes.oneOf(["github", "twitter"]).isRequired,
   username: PropTypes.string.isRequired
 };
 
 Icon.defaultProps = {
+  color: "accent",
   link: undefined
 };
 

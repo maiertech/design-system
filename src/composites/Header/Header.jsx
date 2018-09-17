@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { Box, Flex, Heading, Link, Text } from "rebass";
 
 const Header = ({ title, links, link }) => (
-  <Box color="brandedText" bg="brandedBackground">
+  <Box bg="brandedBackground">
     <Box css={{ maxWidth: "96rem" }} mx="auto" p={[2, 3]}>
       <Flex
         css={{ width: "100%" }}
@@ -11,7 +11,7 @@ const Header = ({ title, links, link }) => (
         justifyContent={["center", "space-between"]}
         alignItems="center"
       >
-        <Link as={link} href="/">
+        <Link as={link} color="brandedText" href="/">
           <Heading
             fontFamily="sans"
             fontSize={[3, 4, 5]}
@@ -24,7 +24,7 @@ const Header = ({ title, links, link }) => (
         </Link>
         <Flex>
           {links.map(({ href, text }) => (
-            <Link as={link} href={href} key={href}>
+            <Link as={link} color="brandedText" href={href} key={href}>
               <Text
                 as="span"
                 fontFamily="sans"

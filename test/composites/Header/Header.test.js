@@ -1,9 +1,9 @@
 import * as deviceDescriptors from "puppeteer/DeviceDescriptors";
-import devices from "../../devices";
+import devices from "../../../src/devices";
 
-const file = `file://${process.cwd()}/storybook-static/index.html?selectedKind=Composites%2FFooter&selectedStory=last%20updated&full=1`;
+const file = `file://${process.cwd()}/storybook-static/index.html?selectedKind=Composites%2FHeader&selectedStory=default%20link&full=1`;
 
-describe("Footer", () => {
+describe("Header", () => {
   devices.forEach(device => {
     test(device, async () => {
       await page.emulate(deviceDescriptors[device]);

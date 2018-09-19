@@ -49,6 +49,7 @@
   },
   "devDependencies": {
     "@mdotasia/eslint-config": "^0.4.0",
+    "@storybook/addon-knobs": "^3.4.11",
     "@storybook/addon-options": "^3.4.8",
     "@storybook/addons": "^3.4.8",
     "@storybook/react": "^3.4.8",

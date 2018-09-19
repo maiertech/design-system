@@ -9,14 +9,14 @@ const description =
   "Nunc mollis nulla sed nunc pharetra, sit amet rutrum mi volutpat.";
 
 storiesOf("Pages/HeadingPage", module)
-  .add("short title", () => (
+  .addWithJSX("short title", () => (
     <HeadingPage title="This is a short heading" description={description}>
       <Text as="p" fontFamily="serif" lineHeight="copy" my={0}>
         {content}
       </Text>
     </HeadingPage>
   ))
-  .add("long title", () => (
+  .addWithJSX("long title", () => (
     <HeadingPage
       title="This is a very very very very very very very very very very very very very very very very very very very very very very very very very very very long heading"
       description={description}

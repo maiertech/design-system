@@ -1,14 +1,17 @@
 import React from "react";
-import { configure, addDecorator } from "@storybook/react";
+import { configure, addDecorator, setAddon } from "@storybook/react";
 import { setOptions } from "@storybook/addon-options";
-import "@storybook/addon-console";
+import JSXAddon from "storybook-addon-jsx";
 import Provider from "../../src/helpers/Provider";
 import pkg from "../../package.json";
 
 // Set Storybook UI options.
 setOptions({
-  name: `${pkg.name} v${pkg.version}`
+  name: `${pkg.name} v${pkg.version}`,
+  addonPanelInRight: true
 });
+
+setAddon(JSXAddon);
 
 // Add decorators before require.context:
 // https://github.com/storybooks/storybook/issues/3246

@@ -49,8 +49,6 @@
   },
   "devDependencies": {
     "@mdotasia/eslint-config": "^0.4.0",
-    "@storybook/addon-actions": "^3.4.8",
-    "@storybook/addon-console": "^1.0.4",
     "@storybook/addon-options": "^3.4.8",
     "@storybook/addons": "^3.4.8",
     "@storybook/react": "^3.4.8",
@@ -76,6 +74,7 @@
     "react-test-renderer": "^16.4.1",
     "release": "^4.0.0",
     "rimraf": "^2.6.2",
-    "serve": "^10.0.0"
+    "serve": "^10.0.0",
+    "storybook-addon-jsx": "^5.4.0"
   }
 }

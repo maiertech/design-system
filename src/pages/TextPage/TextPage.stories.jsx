@@ -3,7 +3,7 @@ import { storiesOf } from "@storybook/react";
 import { Text } from "rebass";
 import TextPage from "./TextPage";
 
-storiesOf("Pages/TextPage", module).add("default", () => (
+storiesOf("Pages/TextPage", module).addWithJSX("default", () => (
   <TextPage
     title="Text Page"
     description="This is a text page for easy reading."

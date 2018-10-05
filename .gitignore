@@ -1,7 +1,8 @@
 __image_snapshots__/
 node_modules/
 dist/
-public/
+screenshots/
+storybook-static/
 .DS_Store
 npm-debug.log*
 yarn-debug.log*

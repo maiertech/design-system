@@ -35,9 +35,9 @@
     "inspect": "node --inspect-brk node_modules/.bin/jest --runInBand",
     "lint": "eslint --ext .jsx,.js --ignore-path .gitignore .",
     "prepublishOnly": "npm run build",
-    "pretest": "npm run build-storybook && rm -rf screenshots",
+    "pretest": "rm -rf screenshots && npm run build-storybook",
     "test": "JEST_PUPPETEER_CONFIG=config/jest/puppeteer.js jest --config config/jest/config.js",
-    "posttest": "cp test/now.json screenshots",
+    "posttest": "cp test/now.screenshots.json screenshots/now.json",
     "watch": "npm run test --watch"
   },
   "dependencies": {

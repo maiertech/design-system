@@ -1,11 +1,5 @@
 {
   "name": "components",
   "alias": "components.maier.asia",
-  "files": ["storybook-static"],
-  "type": "static",
-  "public": false,
-  "static": {
-    "public": "storybook-static",
-    "directoryListing": false
-  }
+  "type": "static"
 }

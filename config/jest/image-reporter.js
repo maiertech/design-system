@@ -1,6 +1,6 @@
 /* eslint-disable no-underscore-dangle, class-methods-use-this */
 const { join } = require("path");
-const { copySync, ensureDirSync } = require("fs-extra");
+const { copySync, ensureDirSync, pathExistsSync } = require("fs-extra");
 
 class ImageReporter {
   constructor(globalConfig, options) {
@@ -17,25 +17,25 @@ class ImageReporter {
       .slice(1);
     // Copy *-snap.png files to screenshots/<componentName>.
     // Filter anything in __diff_output__.
-    ensureDirSync(join(process.cwd(), "screenshots"));
-    copySync(
-      join(process.cwd(), ...segments, "__image_snapshots__"),
-      join(process.cwd(), "screenshots", ...segments.slice(2)),
-      {
-        filter: file => !file.match(/__diff_output__/)
-      }
-    );
+    let source = join(process.cwd(), ...segments, "__image_snapshots__");
+    let target = join(process.cwd(), "screenshots");
+    ensureDirSync(target);
+    target = join(target, ...segments.slice(2));
+    copySync(source, target, {
+      filter: file => !file.match(/__diff_output__/)
+    });
 
-    // Copy anything in __diff_output__ to storybook-static/diff/<componentName>.
-    copySync(
-      join(
+    // If there is __diff_output__ copy content to storybook-static/diff/<componentName>.
+    source = join(source, "__diff_output__");
+    if (pathExistsSync(source)) {
+      target = join(
         process.cwd(),
-        ...segments,
-        "__image_snapshots__",
-        "__diff_output__"
-      ),
-      join(process.cwd(), "storybook-static", "diff", ...segments.slice(2))
-    );
+        "storybook-static",
+        "diff",
+        ...segments.slice(2)
+      );
+      copySync(source, target);
+    }
   }
 }
 

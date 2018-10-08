@@ -22,24 +22,20 @@ Then open your browser at http://localhost:9009/.
 
 ## Testing
 
-Visual regression testing is done with [Puppeteer](https://pptr.dev/). In order to eliminate cross-plattform rendering differences, we standardize component screenshots to Chromium screenshots on Linux. This means that on Mac and Windows you need to run visual regression tests with Docker.
+Visual regression testing is done with [Puppeteer](https://pptr.dev/). In order to eliminate cross-plattform rendering differences, we standardize component screenshots to Chromium screenshots on Linux. This means that on Mac you need to run visual regression tests with Docker.
 
-On Linux simply run `yarn test`. On Mac and Windows you need to build a Docker image that can run Puppeteer. Run
+On Linux simply run `yarn test`. On Mac you need to build a Docker image that can run Puppeteer. Run
 
     docker build config/docker/puppeteer -t puppeteer
 
-to build image `puppeteer`. Then run
+to build image `puppeteer` from `config/docker/puppeteer/Dockerfile`. Then run
 
     docker run --rm -it -v $(pwd):/components -w /components puppeteer yarn test
 
-to launch visual regression tests. Every now and then you should rebuild the `puppeteer` image and pull the underlying base image to receive the latest patches and updates:
+to run visual regression with Docker. Every now and then you should rebuild the `puppeteer` image and pull the underlying base image to receive the latest patches and updates:
 
     docker build --pull config/docker/puppeteer -t puppeteer
 
-## Deployment
+As an alternative to Docker, any pull request triggers visual regression testing on [Zeit Now](https://zeit.co/dashboard) via [Zeit's GitHub integration](https://zeit.co/github). Check GitHub's pull request checks for a link to the logs in case tests fail. You can access the latest screenshot diffs at https://diff.maier.asia.
 
-The storybook build is deployed to [Zeit](https://zeit.co/). If the deployed instance throws errors you can reproduce hosting on Zeit locally by running
-
-    yarn run serve
-
-This spins up [serve](https://github.com/zeit/serve) and serve a static pages as configured in `now.json`, just like in production.
+The screenshots used for testing are hosted on https://screenshots.maier.asia.

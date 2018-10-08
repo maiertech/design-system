@@ -6,5 +6,8 @@
     "env": {
       "NOW_TOKEN": "@now_token"
     }
+  },
+  "github": {
+    "autoAlias": false
   }
 }

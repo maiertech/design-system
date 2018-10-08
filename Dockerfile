@@ -1,5 +1,13 @@
 FROM node:8
 
+# Make NOW environment variable available to build.
+ARG NOW
+ENV NOW ${NOW}
+
+# Make NOW_TOKEN environment variable available to build.
+ARG NOW_TOKEN
+ENV NOW_TOKEN ${NOW_TOKEN}
+
 # Set working directory.
 WORKDIR /components
 
@@ -53,6 +61,9 @@ RUN yarn
 
 # Copy files whitelisted in .dockerignore.
 COPY . .
+
+# Install now-cli globally.
+RUN npm install -g --unsafe-perm now 
 
 # Build Storybook and run tests.
 RUN yarn test

@@ -1,5 +1,10 @@
 {
   "name": "components",
   "alias": "components.maier.asia",
-  "type": "static"
+  "type": "static",
+  "build": {
+    "env": {
+      "NOW_TOKEN": "@now_token"
+    }
+  }
 }

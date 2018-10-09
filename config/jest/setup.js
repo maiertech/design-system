@@ -4,8 +4,8 @@ const { configureToMatchImageSnapshot } = require("jest-image-snapshot");
 jest.setTimeout(15000);
 
 const toMatchImageSnapshot = configureToMatchImageSnapshot({
-  // Permit 0.5% difference.
-  failureThreshold: "0.005",
+  // Permit 0.1% difference.
+  failureThreshold: "0.001",
   failureThresholdType: "percent"
 });
 

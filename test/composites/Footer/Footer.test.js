@@ -1,5 +1,5 @@
 import * as deviceDescriptors from "puppeteer/DeviceDescriptors";
-import devices from "../../../src/devices";
+import devices from "../../devices";
 import {
   createCustomSnapshotIdentifier,
   downloadScreenshot
@@ -16,7 +16,8 @@ describe("Footer", () => {
         customSnapshotIdentifier,
         cwd: __dirname
       });
-      await page.emulate(deviceDescriptors[device]);
+      const { userAgent, viewport } = deviceDescriptors[device];
+      await page.emulate({ userAgent, viewport });
       await page.goto(file);
       const image = await page.screenshot();
       expect(image).toMatchImageSnapshot({

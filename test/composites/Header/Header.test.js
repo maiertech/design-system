@@ -1,5 +1,5 @@
 import * as deviceDescriptors from "puppeteer/DeviceDescriptors";
-import devices from "../../../src/devices";
+import devices from "../../devices";
 import {
   createCustomSnapshotIdentifier,
   downloadScreenshot

@@ -17,24 +17,30 @@ export const downloadScreenshot = async ({
   }
   path = join(path, filename);
   try {
-    if (!(await fs.pathExists(path))) {
+    const pathExists = await fs.pathExists(path);
+    if (!pathExists) {
       const response = await axios({
         method: "get",
         url,
         responseType: "stream"
       });
-      response.data.pipe(fs.createWriteStream(path));
+      const stream = fs.createWriteStream(path);
+      response.data.pipe(stream);
       return new Promise((resolve, reject) => {
-        response.data.on("end", () => {
+        stream.on("finish", () => {
           resolve();
         });
-        response.data.on("error", err => {
+        stream.on("error", err => {
           reject(err);
         });
       });
     }
-  } catch (err) {
-    Promise.reject(err);
+  } catch (error) {
+    // 404 means no screenshot has been taken yet for current device.
+    if (error.response && error.response.status === 404) {
+      return Promise.resolve();
+    }
+    return Promise.reject(error);
   }
   return Promise.resolve();
 };

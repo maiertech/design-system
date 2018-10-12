@@ -21,11 +21,11 @@ const icons = {
 
 const Icon = ({ color, link, type, username, ...props }) => (
   <Link
+    {...props}
     as={link}
     color={color}
     href={`${icons[type].url}${username}`}
     css={{ display: "block" }}
-    {...props}
   >
     <Flex flexDirection="column" alignItems="center" p={2}>
       <Image

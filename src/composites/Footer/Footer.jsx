@@ -3,7 +3,6 @@ import PropTypes from "prop-types";
 import { Box, Flex, Heading, Link, Text } from "rebass";
 import Icon from "../../primitives/Icon";
 
-// With ...props escape hatch all of Box's props can be used on Footer.
 const Footer = ({
   title,
   name,
@@ -13,7 +12,7 @@ const Footer = ({
   lastUpdated,
   ...props
 }) => (
-  <Box as="footer" bg="inverseBackground" {...props}>
+  <Box {...props} as="footer" bg="inverseBackground">
     <Box css={{ maxWidth: "64rem" }} mx="auto" p={3}>
       <Link as={intLink} color="inverseText" href="/">
         <Heading

@@ -21,7 +21,7 @@ storiesOf("Primitives/PostPreview", module)
       author={posts[0].author}
       date={posts[0].date}
       image={image}
-      m={3}
+      m={[0, 0, 3]}
     />
   ))
   .addWithJSX("custom link", () => (
@@ -33,6 +33,6 @@ storiesOf("Primitives/PostPreview", module)
       date={posts[0].date}
       image={image}
       link={NewTabLink}
-      m={3}
+      m={[0, 0, 3]}
     />
   ));

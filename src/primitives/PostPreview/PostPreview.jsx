@@ -13,20 +13,20 @@ const PostPreview = ({
   ...props
 }) => (
   <Card
+    {...props}
     as="article"
     css={{ maxWidth: "48rem" }}
     borderRadius={["none", "none", "rounded"]}
     boxShadow={["none", "none", "small"]}
     p={[0, 0, 3]}
     mx={[0, 0, "auto"]}
-    {...props}
   >
     <Link as={link} color="text" css={{ display: "block" }} href={href}>
       <Flex flexDirection={["column", "row"]}>
-        <Box width={[1, 1 / 3]} mr={[0, 3]} mb={[2, 0]}>
+        <Box order={[1, 2]} width={[1, 1 / 3]} mb={[2, 0]}>
           {image()}
         </Box>
-        <Box width={[1, 2 / 3]}>
+        <Box order={[2, 1]} width={[1, 2 / 3]} mr={[0, 3]}>
           <Heading fontFamily="sans" fontSize={4} lineHeight="title" mb={3}>
             {title}
           </Heading>

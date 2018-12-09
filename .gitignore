@@ -1,5 +1,6 @@
 __image_snapshots__/
 node_modules/
+diff/
 dist/
 screenshots/
 storybook-static/

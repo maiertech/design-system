@@ -13,47 +13,51 @@ class ImageReporter {
 
   // Runs after each test suite.
   onTestResult(test, testResult) {
-    // /path/to/project/test/composites/Footer/Footer.test.js results in
-    // ["test", "composites", "Footer"]
+    // test/composites/Footer/Footer.test.js results in segments ["test", "composites", "Footer"].
     const segments = testResult.testFilePath
       .match(/\/(\w+)\/(\w+)\/(\w+)\/\w+\./)
       .slice(1);
     // Copy *-snap.png files to screenshots/<componentName>.
-    // Filter anything in __diff_output__.
-    let source = join(process.cwd(), ...segments, "__image_snapshots__");
-    let target = join(process.cwd(), "screenshots");
-    ensureDirSync(target);
-    target = join(target, ...segments.slice(2));
-    copySync(source, target, {
+    let sourceDir = join(process.cwd(), ...segments, "__image_snapshots__");
+    let targetDir = join(process.cwd(), "screenshots");
+    ensureDirSync(targetDir);
+    targetDir = join(targetDir, ...segments.slice(2));
+    // Filter out anything in __diff_output__.
+    copySync(sourceDir, targetDir, {
       filter: file => !file.match(/__diff_output__/)
     });
 
-    if (process.env.NOW) {
-      // While running on Now, if there is __diff_output__ copy content to /public.
-      // Now does not support publishing /public if build script fails.
-      // Copy to Now anyway because this might be supported in the future.
-      source = join(source, "__diff_output__");
-      if (pathExistsSync(source)) {
-        this.diff = true;
-        target = join("/public", ...segments.slice(2));
-        copySync(source, target);
-      }
+    // If folder __diff_output__ exists, copy its content to diff/<componentName>.
+    sourceDir = join(sourceDir, "__diff_output__");
+    if (pathExistsSync(sourceDir)) {
+      this.diff = true;
+      targetDir = join(process.cwd(), "diff");
+      ensureDirSync(targetDir);
+      targetDir = join(targetDir, ...segments.slice(2));
+      copySync(sourceDir, targetDir);
     }
   }
 
   // Runs after all test suites.
   onRunComplete() {
-    if (process.env.NOW && this.diff) {
-      copySync(
-        join(process.cwd(), "test", "now.diff.json"),
-        join("/public", "now.json")
-      );
-      shell.cd("/public");
+    if (process.env.NOW) {
+      // Publish content of "screenshots" without creating alias.
       shell.exec(
-        `now --token ${process.env.NOW_TOKEN} && now alias --token ${
+        `now ./screenshots --local-config=./test/now.screenshots.json --token ${
           process.env.NOW_TOKEN
         }`
       );
+
+      if (this.diff) {
+        // Publish content of "diff" and create alias.
+        shell.exec(
+          `now ./diff --local-config=./test/now.diff.json --token ${
+            process.env.NOW_TOKEN
+          } && now alias --local-config=./test/now.diff.json --token ${
+            process.env.NOW_TOKEN
+          }`
+        );
+      }
     }
   }
 }

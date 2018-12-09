@@ -34,10 +34,9 @@
     "format": "pretty-quick",
     "inspect": "node --inspect-brk node_modules/.bin/jest --runInBand",
     "lint": "eslint --ext .jsx,.js --ignore-path .gitignore .",
-    "prepublishOnly": "npm run build && now alias",
+    "prepublishOnly": "npm run build",
     "pretest": "rm -rf screenshots && npm run build-storybook",
     "test": "JEST_PUPPETEER_CONFIG=config/jest/puppeteer.js jest --config config/jest/config.js",
-    "posttest": "cp test/now.screenshots.json screenshots/now.json",
     "watch": "npm run test --watch"
   },
   "dependencies": {
@@ -67,18 +66,16 @@
     "eslint": "^5.3.0",
     "fs-extra": "^7.0.0",
     "husky": "^1.0.1",
-    "jest": "^23.1.0",
+    "jest": "^23.6.0",
     "jest-image-snapshot": "^2.4.3",
     "jest-puppeteer": "^3.2.1",
     "lint-staged": "^8.0.4",
-    "now": "^11.4.6",
     "prettier": "^1.10.2",
     "pretty-quick": "^1.4.1",
     "puppeteer": "^1.5.0",
     "react": "^16.0.0",
     "react-dom": "^16.3.1",
     "react-test-renderer": "^16.4.1",
-    "release": "^4.0.0",
     "shelljs": "^0.8.2",
     "storybook-addon-jsx": "^5.4.0"
   }

@@ -40,7 +40,17 @@ COPY . .
 # Install now-cli globally.
 RUN npm install -g --unsafe-perm now 
 
-# Build Storybook and run tests.
+# Build Storybook.
+RUN yarn run build-storybook
+
+# Run visual regression tests to generate updated screenshots.
+RUN UPDATE_SCREENSHOTS=true yarn test -u
+
+# Remove updated screenshots after they have been published.
+RUN find ./test -type d -name __image_snapshots__ -prune -exec rm -r "{}" \;
+
+# Run visual regression tests again to determine diffs.
+# If there are diffs, build exits with error.
 RUN yarn test
 
 # Copy Storybook build to /public from where Zeit Now v1 makes static deployment.

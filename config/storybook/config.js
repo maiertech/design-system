@@ -1,25 +1,17 @@
 import React from "react";
-import { configure, addDecorator, setAddon } from "@storybook/react";
-import { setOptions } from "@storybook/addon-options";
-import JSXAddon from "storybook-addon-jsx";
-import { withKnobs } from "@storybook/addon-knobs/react";
+import { configure, addDecorator, addParameters } from "@storybook/react";
 import Provider from "../../src/helpers/Provider";
-import pkg from "../../package.json";
 
-// Set Storybook UI options.
-setOptions({
-  name: `${pkg.name} v${pkg.version}`,
-  addonPanelInRight: true
+addParameters({
+  options: {
+    panelPosition: "bottom"
+  }
 });
 
 // Add decorators before require.context:
 // https://github.com/storybooks/storybook/issues/3246
-
-// eslint-disable-next-line
+// eslint-disable-next-line react/jsx-filename-extension
 addDecorator(story => <Provider>{story()}</Provider>);
-addDecorator(withKnobs);
-
-setAddon(JSXAddon);
 
 function loadStories() {
   // Sort order of nested stories is determined by loading order.

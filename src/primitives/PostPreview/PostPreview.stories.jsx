@@ -13,7 +13,7 @@ const image = () => (
 );
 
 storiesOf("Primitives/PostPreview", module)
-  .addWithJSX("default link", () => (
+  .add("default link", () => (
     <PostPreview
       title={posts[0].title}
       lead={posts[0].lead}
@@ -24,7 +24,7 @@ storiesOf("Primitives/PostPreview", module)
       m={[0, 0, 3]}
     />
   ))
-  .addWithJSX("custom link", () => (
+  .add("custom link", () => (
     <PostPreview
       title={posts[0].title}
       lead={posts[0].lead}

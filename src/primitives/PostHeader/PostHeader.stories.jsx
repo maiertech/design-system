@@ -3,7 +3,7 @@ import { storiesOf } from "@storybook/react";
 import PostHeader from "./PostHeader";
 
 storiesOf("Primitives/PostHeader", module)
-  .addWithJSX("short title", () => (
+  .add("short title", () => (
     <PostHeader
       author="Thilo Maier"
       date="Aug 1, 2017"
@@ -11,7 +11,7 @@ storiesOf("Primitives/PostHeader", module)
       m={2}
     />
   ))
-  .addWithJSX("long title", () => (
+  .add("long title", () => (
     <PostHeader
       author="Thilo Maier"
       date="Aug 1, 2017"

@@ -1,18 +1,19 @@
 import React from "react";
 import { storiesOf } from "@storybook/react";
-import { select, text } from "@storybook/addon-knobs/react";
+import { withKnobs, select, text } from "@storybook/addon-knobs";
 import Icon from "./Icon";
 import NewTabLink from "../NewTabLink";
 
 storiesOf("Primitives/Icon", module)
-  .addWithJSX("knobs", () => (
+  .addDecorator(withKnobs)
+  .add("knobs", () => (
     <Icon
-      type={select("type", { github: "GitHub", twitter: "Twitter" }, "github")}
-      username={text("username", "mdotasia")}
+      type={select("type", { GitHub: "github", Twitter: "twitter" }, "github")}
+      username={text("username", "454de6e")}
       color={text("color", "accent")}
       m={2}
     />
   ))
-  .addWithJSX("custom link", () => (
+  .add("custom link", () => (
     <Icon link={NewTabLink} type="github" username="mdotasia" m={2} />
   ));

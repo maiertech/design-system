@@ -2,7 +2,7 @@
   "name": "@mdotasia/components",
   "version": "0.17.0",
   "description": "Reusable React components.",
-  "homepage": "https://github.com/mdotasia/components",
+  "homepage": "https://components.maier.asia",
   "bugs": "https://github.com/mdotasia/components/issues",
   "author": {
     "name": "Thilo Maier",
@@ -28,7 +28,7 @@
     "*.{js,jsx}": "eslint"
   },
   "scripts": {
-    "start": "start-storybook -p 9009 -c config/storybook",
+    "start": "start-storybook -p 8000 -c config/storybook",
     "build": "rm -rf ./dist && babel ./src -d ./dist --ignore test.js,stories.jsx",
     "build-storybook": "rm -rf ./storybook-static && build-storybook -c config/storybook",
     "format": "pretty-quick",
@@ -50,19 +50,15 @@
     "react": "^16.0.0"
   },
   "devDependencies": {
-    "@mdotasia/eslint-config": "^0.5.0",
-    "@storybook/addon-knobs": "^3.4.11",
-    "@storybook/addon-options": "^3.4.8",
-    "@storybook/addons": "^3.4.8",
-    "@storybook/react": "^3.4.8",
+    "@babel/core": "^7.4.3",
+    "@mdotasia/eslint-config": "^0.7.0",
+    "@storybook/addon-knobs": "^5.0.10",
+    "@storybook/addon-storysource": "^5.0.10",
+    "@storybook/react": "^5.0.10",
     "axios": "^0.18.0",
-    "babel-cli": "^6.26.0",
-    "babel-core": "^6.26.0",
+    "babel-loader": "^8.0.5",
     "babel-plugin-styled-components": "^1.7.1",
-    "babel-preset-env": "^1.7.0",
-    "babel-preset-react": "^6.24.1",
-    "babel-preset-stage-3": "^6.24.1",
-    "babel-runtime": "^6.26.0",
+    "babel-preset-react-app": "^8.0.0",
     "eslint": "^5.3.0",
     "fs-extra": "^7.0.0",
     "husky": "^1.0.1",
@@ -76,7 +72,6 @@
     "react": "^16.0.0",
     "react-dom": "^16.3.1",
     "react-test-renderer": "^16.4.1",
-    "shelljs": "^0.8.2",
-    "storybook-addon-jsx": "^5.4.0"
+    "shelljs": "^0.8.2"
   }
 }

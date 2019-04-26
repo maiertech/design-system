@@ -11,7 +11,7 @@ const posts = rawPosts.map(({ image: { alt, src }, ...props }) => ({
 }));
 
 storiesOf("Composites/PostList", module)
-  .addWithJSX("default link", () => <PostList values={posts} m={3} />)
-  .addWithJSX("custom link", () => (
+  .add("default link", () => <PostList values={posts} m={3} />)
+  .add("custom link", () => (
     <PostList values={posts} link={NewTabLink} m={3} />
   ));

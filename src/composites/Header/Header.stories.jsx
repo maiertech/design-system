@@ -20,7 +20,7 @@ const links = [
 ];
 
 storiesOf("Composites/Header", module)
-  .addWithJSX("default link", () => <Header title={title} links={links} />)
-  .addWithJSX("custom link", () => (
+  .add("default link", () => <Header title={title} links={links} />)
+  .add("custom link", () => (
     <Header title={title} links={links} link={NewTabLink} />
   ));

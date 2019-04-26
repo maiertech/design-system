@@ -2,5 +2,18 @@
   "extends": ["@mdotasia"],
   "globals": {
     "page": true
+  },
+  "rules": {
+    "import/no-extraneous-dependencies": [
+      "error",
+      {
+        "devDependencies": [
+          "**/*.test.js",
+          "**/*.stories.jsx",
+          "config/**/*.js",
+          "test/**/*.js"
+        ]
+      }
+    ]
   }
 }

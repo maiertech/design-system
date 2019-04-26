@@ -19,10 +19,10 @@ const links = [
 ];
 
 storiesOf("Composites/Footer", module)
-  .addWithJSX("default anchors", () => (
+  .add("default anchors", () => (
     <Footer title="This is the Footer Title" name="Thilo Maier" links={links} />
   ))
-  .addWithJSX("custom intLink", () => (
+  .add("custom intLink", () => (
     <Footer
       title="This is the Footer Title"
       name="Thilo Maier"
@@ -30,7 +30,7 @@ storiesOf("Composites/Footer", module)
       intLink={NewTabLink}
     />
   ))
-  .addWithJSX("custom extLink", () => (
+  .add("custom extLink", () => (
     <Footer
       title="This is the Footer Title"
       name="Thilo Maier"
@@ -38,7 +38,7 @@ storiesOf("Composites/Footer", module)
       extLink={NewTabLink}
     />
   ))
-  .addWithJSX("last updated", () => (
+  .add("last updated", () => (
     <Footer
       lastUpdated="Aug 1, 2018"
       title="This is the Footer Title"
@@ -46,7 +46,7 @@ storiesOf("Composites/Footer", module)
       links={links}
     />
   ))
-  .addWithJSX("many links that wrap", () => (
+  .add("many links that wrap", () => (
     <Footer
       title="This is the Footer Title"
       name="Thilo Maier"

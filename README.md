@@ -30,7 +30,7 @@ Then open your browser at http://localhost:9009/.
 
 Visual regression testing is done with [Puppeteer](https://pptr.dev/) on [Zeit Now v1](https://zeit.co/docs/v1/). Standardizing on Chromium screenshots on Linux eliminates cross-plattform rendering differences that would occur when running visual regression tests locally on different operating systems.
 
-To run visual regression tests on Zeit Now you have to install [Now CLI](https://github.com/zeit/now-cli) globally. Then run `now` from the project root. Obviously, this only works if you have sufficient permissions. If visual regression tests fail, you can access diffs of the most recent visual regression tests at https://diff.maier.asia and updated screenshots at the URL provided by Zeit Now (app ID: `screenshots`). If you are satisfied with the screenshots you need to manually create an alias for https://screenshots.maier.asia, which is the URL from which the comparison screenshots are pulled when running visual regression tests.
+To launch visual regression tests on Zeit Now, run `npx now` from the project root. Obviously, this only works if you have sufficient permissions. If visual regression tests fail, you can access diffs of the most recent visual regression tests at https://diff.maier.asia and updated screenshots at the URL provided by Zeit Now (app ID: `screenshots`). If you are satisfied with the screenshots you need to manually create an alias for https://screenshots.maier.asia, which is the URL from which the comparison screenshots are pulled when running visual regression tests.
 
 Here is an overview of the deployments that get triggered when running visual regression tests:
 

@@ -5,7 +5,7 @@ import {
   downloadScreenshot
 } from "../../helpers";
 
-const file = `file://${process.cwd()}/storybook-static/index.html?selectedKind=Composites%2FHeader&selectedStory=default%20link&full=1`;
+const file = `file://${process.cwd()}/storybook-static/iframe.html?id=composites-header--default-link`;
 
 describe("Header", () => {
   devices.forEach(device => {
@@ -17,7 +17,7 @@ describe("Header", () => {
         cwd: __dirname
       });
       await page.emulate(deviceDescriptors[device]);
-      await page.goto(file);
+      await page.goto(file, { waitUntil: ["load", "networkidle0"] });
       const image = await page.screenshot();
       expect(image).toMatchImageSnapshot({
         customSnapshotIdentifier

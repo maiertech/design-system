@@ -19,25 +19,31 @@
   "files": [
     "dist"
   ],
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged && pretty-quick --staged"
-    }
-  },
-  "lint-staged": {
-    "*.{js,jsx}": "eslint"
-  },
   "scripts": {
     "start": "start-storybook -p 8000 -c config/storybook",
-    "build": "rm -rf ./dist && babel ./src -d ./dist --ignore test.js,stories.jsx",
+    "build": "rm -rf ./dist && cross-env NODE_ENV=production babel ./src -d ./dist --ignore 'test/**/*.test.js','src/**/*.stories.jsx'",
     "build-storybook": "rm -rf ./storybook-static && build-storybook -c config/storybook",
-    "format": "pretty-quick",
+    "clean": "rm -rf node_modules",
     "inspect": "node --inspect-brk node_modules/.bin/jest --runInBand",
     "lint": "eslint --ext .jsx,.js --ignore-path .gitignore .",
+    "lint:fix": "npm run lint --fix",
+    "format": "pretty-quick",
     "prepublishOnly": "npm run build",
     "pretest": "rm -rf ./screenshots && rm -rf ./diff",
     "test": "JEST_PUPPETEER_CONFIG=config/jest/puppeteer.js jest --config config/jest/config.js",
     "watch": "npm run test --watch"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,jsx}": [
+      "pretty-quick --staged",
+      "yarn run lint:fix",
+      "git add"
+    ]
   },
   "dependencies": {
     "polished": "^2.0.3",
@@ -50,25 +56,30 @@
     "react": "^16.0.0"
   },
   "devDependencies": {
+    "@babel/cli": "^7.4.4",
     "@babel/core": "^7.4.3",
+    "@babel/preset-env": "^7.4.4",
+    "@babel/preset-react": "^7.0.0",
     "@mdotasia/eslint-config": "^0.7.0",
-    "@storybook/addon-knobs": "^5.0.10",
-    "@storybook/addon-storysource": "^5.0.10",
-    "@storybook/react": "^5.0.10",
+    "@storybook/addon-knobs": "^5.0.11",
+    "@storybook/addon-storysource": "^5.0.11",
+    "@storybook/react": "^5.0.11",
     "axios": "^0.18.0",
+    "babel-jest": "^24.7.1",
     "babel-loader": "^8.0.5",
     "babel-plugin-styled-components": "^1.7.1",
-    "babel-preset-react-app": "^8.0.0",
+    "cross-env": "^5.2.0",
     "eslint": "^5.3.0",
     "fs-extra": "^7.0.0",
-    "husky": "^1.0.1",
-    "jest": "^23.6.0",
+    "husky": "^2.1.0",
+    "jest": "^24.7.1",
     "jest-image-snapshot": "^2.4.3",
-    "jest-puppeteer": "^3.2.1",
-    "lint-staged": "^8.0.4",
-    "prettier": "^1.10.2",
-    "pretty-quick": "^1.4.1",
-    "puppeteer": "^1.5.0",
+    "jest-puppeteer": "^4.1.1",
+    "lint-staged": "^8.1.5",
+    "now": "^15.0.8",
+    "prettier": "^1.17.0",
+    "pretty-quick": "^1.10.0",
+    "puppeteer": "^1.15.0",
     "react": "^16.0.0",
     "react-dom": "^16.3.1",
     "react-test-renderer": "^16.4.1",

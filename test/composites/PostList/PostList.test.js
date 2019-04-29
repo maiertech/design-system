@@ -5,7 +5,7 @@ import {
   downloadScreenshot
 } from "../../helpers";
 
-const file = `file://${process.cwd()}/storybook-static/index.html?selectedKind=Composites%2FPostList&selectedStory=default%20link&full=1`;
+const file = `file://${process.cwd()}/storybook-static/iframe.html?id=composites-postlist--default-link`;
 
 describe("Footer", () => {
   devices.forEach(device => {
@@ -17,8 +17,7 @@ describe("Footer", () => {
         cwd: __dirname
       });
       await page.emulate(deviceDescriptors[device]);
-      await page.goto(file);
-      // Full page screenshot is broken.
+      await page.goto(file, { waitUntil: ["load", "networkidle0"] });
       const image = await page.screenshot({ fullPage: true });
       expect(image).toMatchImageSnapshot({
         customSnapshotIdentifier

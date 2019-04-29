@@ -22,10 +22,6 @@ function loadStories() {
   // Load composites.
   req = require.context('../../src/composites', true, /\.stories\.js$/);
   req.keys().forEach(filename => req(filename));
-
-  // Load pages.
-  req = require.context('../../src/pages', true, /\.stories\.js$/);
-  req.keys().forEach(filename => req(filename));
 }
 
 configure(loadStories, module);

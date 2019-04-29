@@ -3,6 +3,6 @@
 module.exports = {
   launch: {
     // https://github.com/GoogleChrome/puppeteer/blob/master/docs/troubleshooting.md
-    args: ["--no-sandbox", "--disable-setuid-sandbox"]
-  }
+    args: ['--no-sandbox', '--disable-setuid-sandbox'],
+  },
 };

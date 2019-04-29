@@ -1,1 +1,1 @@
-export { default } from "./TextPage";
+export { default } from './TextPage';

@@ -1,9 +1,9 @@
-import React from "react";
-import { storiesOf } from "@storybook/react";
-import PostHeader from "./PostHeader";
+import React from 'react';
+import { storiesOf } from '@storybook/react';
+import PostHeader from './PostHeader';
 
-storiesOf("Primitives/PostHeader", module)
-  .add("short title", () => (
+storiesOf('Primitives/PostHeader', module)
+  .add('short title', () => (
     <PostHeader
       author="Thilo Maier"
       date="Aug 1, 2017"
@@ -11,7 +11,7 @@ storiesOf("Primitives/PostHeader", module)
       m={2}
     />
   ))
-  .add("long title", () => (
+  .add('long title', () => (
     <PostHeader
       author="Thilo Maier"
       date="Aug 1, 2017"

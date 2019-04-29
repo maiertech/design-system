@@ -1,26 +1,26 @@
-import * as deviceDescriptors from "puppeteer/DeviceDescriptors";
-import devices from "../../devices";
+import * as deviceDescriptors from 'puppeteer/DeviceDescriptors';
+import devices from '../../devices';
 import {
   createCustomSnapshotIdentifier,
-  downloadScreenshot
-} from "../../helpers";
+  downloadScreenshot,
+} from '../../helpers';
 
 const file = `file://${process.cwd()}/storybook-static/iframe.html?id=composites-postlist--default-link`;
 
-describe("Footer", () => {
+describe('Footer', () => {
   devices.forEach(device => {
     const customSnapshotIdentifier = createCustomSnapshotIdentifier(device);
-    test(customSnapshotIdentifier, async () => {
+    it(customSnapshotIdentifier, async () => {
       await downloadScreenshot({
-        componentName: "PostList",
+        componentName: 'PostList',
         customSnapshotIdentifier,
-        cwd: __dirname
+        cwd: __dirname,
       });
       await page.emulate(deviceDescriptors[device]);
-      await page.goto(file, { waitUntil: ["load", "networkidle0"] });
+      await page.goto(file, { waitUntil: ['load', 'networkidle0'] });
       const image = await page.screenshot({ fullPage: true });
       expect(image).toMatchImageSnapshot({
-        customSnapshotIdentifier
+        customSnapshotIdentifier,
       });
     });
   });

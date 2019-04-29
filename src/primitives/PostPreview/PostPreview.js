@@ -1,6 +1,6 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { Box, Card, Flex, Heading, Link, Text } from "rebass";
+import React from 'react';
+import PropTypes from 'prop-types';
+import { Box, Card, Flex, Heading, Link, Text } from 'rebass';
 
 const PostPreview = ({
   title,
@@ -15,14 +15,14 @@ const PostPreview = ({
   <Card
     {...props}
     as="article"
-    css={{ maxWidth: "48rem" }}
-    borderRadius={["none", "none", "rounded"]}
-    boxShadow={["none", "none", "small"]}
+    css={{ maxWidth: '48rem' }}
+    borderRadius={['none', 'none', 'rounded']}
+    boxShadow={['none', 'none', 'small']}
     p={[0, 0, 3]}
-    mx={[0, 0, "auto"]}
+    mx={[0, 0, 'auto']}
   >
-    <Link as={link} color="text" css={{ display: "block" }} href={href}>
-      <Flex flexDirection={["column", "row"]}>
+    <Link as={link} color="text" css={{ display: 'block' }} href={href}>
+      <Flex flexDirection={['column', 'row']}>
         <Box order={[1, 2]} width={[1, 1 / 3]} mb={[2, 0]}>
           {image()}
         </Box>
@@ -59,11 +59,11 @@ PostPreview.propTypes = {
   lead: PropTypes.string.isRequired,
   href: PropTypes.string.isRequired,
   image: PropTypes.func.isRequired,
-  link: PropTypes.func
+  link: PropTypes.func,
 };
 
 PostPreview.defaultProps = {
-  link: undefined
+  link: undefined,
 };
 
 export default PostPreview;

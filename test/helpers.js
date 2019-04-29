@@ -1,36 +1,36 @@
-import fs from "fs-extra";
-import { join } from "path";
-import axios from "axios";
+import { join } from 'path';
+import fs from 'fs-extra';
+import axios from 'axios';
 
 export const downloadScreenshot = async ({
   componentName,
   customSnapshotIdentifier,
-  cwd
+  cwd,
 }) => {
   const filename = `${customSnapshotIdentifier}-snap.png`;
   const url = `https://screenshots.maier.asia/${componentName}/${filename}`;
-  let path = join(cwd, "__image_snapshots__");
+  let path = join(cwd, '__image_snapshots__');
   try {
     await fs.ensureDir(path);
   } catch (err) {
-    Promise.reject(err);
+    return Promise.reject(err);
   }
   path = join(path, filename);
   try {
     const pathExists = await fs.pathExists(path);
     if (!pathExists) {
       const response = await axios({
-        method: "get",
+        method: 'get',
         url,
-        responseType: "stream"
+        responseType: 'stream',
       });
       const stream = fs.createWriteStream(path);
       response.data.pipe(stream);
       return new Promise((resolve, reject) => {
-        stream.on("finish", () => {
+        stream.on('finish', () => {
           resolve();
         });
-        stream.on("error", err => {
+        stream.on('error', err => {
           reject(err);
         });
       });
@@ -46,4 +46,4 @@ export const downloadScreenshot = async ({
 };
 
 export const createCustomSnapshotIdentifier = device =>
-  device.toLocaleLowerCase().replace(/ /g, "-");
+  device.toLocaleLowerCase().replace(/ /g, '-');

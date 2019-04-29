@@ -1,7 +1,7 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { Box, Flex, Heading, Link, Text } from "rebass";
-import Icon from "../../primitives/Icon";
+import React from 'react';
+import PropTypes from 'prop-types';
+import { Box, Flex, Heading, Link, Text } from 'rebass';
+import Icon from '../../primitives/Icon';
 
 const Footer = ({
   title,
@@ -13,7 +13,7 @@ const Footer = ({
   ...props
 }) => (
   <Box {...props} as="footer" bg="inverseBackground">
-    <Box css={{ maxWidth: "64rem" }} mx="auto" p={3}>
+    <Box css={{ maxWidth: '64rem' }} mx="auto" p={3}>
       <Link as={intLink} color="inverseText" href="/">
         <Heading
           as="h1"
@@ -82,19 +82,17 @@ Footer.propTypes = {
   links: PropTypes.arrayOf(
     PropTypes.shape({
       href: PropTypes.string.isRequired,
-      text: PropTypes.string.isRequired
+      text: PropTypes.string.isRequired,
     })
   ).isRequired,
-  /** Copyright name. */
   name: PropTypes.string.isRequired,
-  /** Footer title. */
-  title: PropTypes.string.isRequired
+  title: PropTypes.string.isRequired,
 };
 
 Footer.defaultProps = {
   extLink: undefined,
   intLink: undefined,
-  lastUpdated: ""
+  lastUpdated: '',
 };
 
 export default Footer;

@@ -1,6 +1,6 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { Box, Heading, Text } from "rebass";
+import React from 'react';
+import PropTypes from 'prop-types';
+import { Box, Heading, Text } from 'rebass';
 
 const PostHeader = ({ author, date, title, ...props }) => (
   <Box {...props}>
@@ -25,7 +25,7 @@ const PostHeader = ({ author, date, title, ...props }) => (
 PostHeader.propTypes = {
   author: PropTypes.string.isRequired,
   date: PropTypes.string.isRequired,
-  title: PropTypes.string.isRequired
+  title: PropTypes.string.isRequired,
 };
 
 export default PostHeader;

@@ -3,17 +3,16 @@
   "version": "0.17.0",
   "description": "Reusable React components.",
   "homepage": "https://components.maier.asia",
-  "bugs": "https://github.com/mdotasia/components/issues",
   "author": {
     "name": "Thilo Maier",
     "email": "git@maier.asia"
   },
-  "repository": "git@github.com:mdotasia/components.git",
+  "repository": "https://github.com/454de6e/components/",
+  "bugs": "https://github.com/mdotasia/components/issues",
   "license": "MIT",
   "keywords": [
     "react",
-    "components",
-    "styleguide"
+    "components"
   ],
   "main": "dist/index.js",
   "files": [
@@ -23,9 +22,9 @@
     "start": "start-storybook -p 8000 -c config/storybook",
     "build": "rm -rf ./dist && cross-env NODE_ENV=production babel ./src -d ./dist --ignore 'test/**/*.test.js','src/**/*.stories.jsx'",
     "build-storybook": "rm -rf ./storybook-static && build-storybook -c config/storybook",
-    "clean": "rm -rf node_modules",
+    "clean": "rm -rf ./node_modules",
     "inspect": "node --inspect-brk node_modules/.bin/jest --runInBand",
-    "lint": "eslint --ext .jsx,.js --ignore-path .gitignore .",
+    "lint": "eslint . --ignore-path .gitignore",
     "lint:fix": "npm run lint --fix",
     "format": "pretty-quick",
     "prepublishOnly": "npm run build",
@@ -33,17 +32,17 @@
     "test": "JEST_PUPPETEER_CONFIG=config/jest/puppeteer.js jest --config config/jest/config.js",
     "watch": "npm run test --watch"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
   "lint-staged": {
-    "*.{js,jsx}": [
+    "*.js": [
       "pretty-quick --staged",
       "yarn run lint:fix",
       "git add"
     ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
   },
   "dependencies": {
     "polished": "^2.0.3",
@@ -60,7 +59,6 @@
     "@babel/core": "^7.4.3",
     "@babel/preset-env": "^7.4.4",
     "@babel/preset-react": "^7.0.0",
-    "@mdotasia/eslint-config": "^0.7.0",
     "@storybook/addon-knobs": "^5.0.11",
     "@storybook/addon-storysource": "^5.0.11",
     "@storybook/react": "^5.0.11",
@@ -69,7 +67,8 @@
     "babel-loader": "^8.0.5",
     "babel-plugin-styled-components": "^1.7.1",
     "cross-env": "^5.2.0",
-    "eslint": "^5.3.0",
+    "eslint": "^5.16.0",
+    "eslint-plugin-shopify": "^28.0.0",
     "fs-extra": "^7.0.0",
     "husky": "^2.1.0",
     "jest": "^24.7.1",

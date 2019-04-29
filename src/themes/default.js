@@ -1,11 +1,11 @@
 // Color palette.
 // https://tachyons.io/docs/themes/skins/
-const black = "#000000";
-const darkBlue = "#00449E";
-const darkGreen = "#137752;";
-const lightestBlue = "#CDECFF";
-const washedGreen = "#E8FDF5";
-const white = "#FFFFFF";
+const black = '#000000';
+const darkBlue = '#00449E';
+const darkGreen = '#137752;';
+const lightestBlue = '#CDECFF';
+const washedGreen = '#E8FDF5';
+const white = '#FFFFFF';
 
 // Theme colors.
 const primary = darkBlue;
@@ -15,7 +15,7 @@ const secondaryInverse = washedGreen;
 const highContrastText = black;
 const highContrastBackground = white;
 
-const breakpoints = ["30em", "60em"];
+const breakpoints = ['30em', '60em'];
 
 const colors = {
   // Default colors:
@@ -37,70 +37,70 @@ const colors = {
   // Inverse colors:
   // contrast(inverseText, inverseBackground): 17.04 (AAA)
   inverseBackground: primaryInverse,
-  inverseText: highContrastText
+  inverseText: highContrastText,
 };
 
 const fonts = {
-  serif: "Merriweather, serif",
-  sans: "Lato, sans-serif",
-  mono: "Inconsolata, monospace"
+  serif: 'Merriweather, serif',
+  sans: 'Lato, sans-serif',
+  mono: 'Inconsolata, monospace',
 };
 
 const fontSizes = [
-  ".75rem",
-  ".875rem",
-  "1rem",
-  "1.25rem",
-  "1.5rem",
-  "2.25rem",
-  "3rem",
-  "4rem"
+  '.75rem',
+  '.875rem',
+  '1rem',
+  '1.25rem',
+  '1.5rem',
+  '2.25rem',
+  '3rem',
+  '4rem',
 ];
 
 const fontWeights = {
   normal: 400,
-  bold: 700
+  bold: 700,
 };
 
 const letterSpacings = {
-  tracked: ".1em",
-  trackedTight: "-.05em",
-  trackedMega: ".25em"
+  tracked: '.1em',
+  trackedTight: '-.05em',
+  trackedMega: '.25em',
 };
 
 const lineHeights = {
   solid: 1,
   title: 1.25,
-  copy: 1.5
+  copy: 1.5,
 };
 
 const radii = {
   none: 0,
-  circle: "100%",
-  pill: "9999px",
-  rounded: "1rem"
+  circle: '100%',
+  pill: '9999px',
+  rounded: '1rem',
 };
 
 const shadows = {
   small: `0 0 8px ${colors.text}`,
   medium: `0 0 16px ${colors.text}`,
-  large: `0 0 24px ${colors.text}`
+  large: `0 0 24px ${colors.text}`,
 };
 
-const space = [0, ".25rem", ".5rem", "1rem", "2rem", "4rem", "8rem", "16rem"];
+const space = [0, '.25rem', '.5rem', '1rem', '2rem', '4rem', '8rem', '16rem'];
 
 const Link = {
-  height: "100%",
-  "text-decoration": "none",
-  transition: "all 0.2s ease-out",
-  "&:hover": {
-    opacity: "0.5",
-    transition: "all 0.2s ease-in"
+  height: '100%',
+  'text-decoration': 'none',
+  transition: 'all 0.2s ease-out',
+  '&:hover': {
+    opacity: '0.5',
+    transition: 'all 0.2s ease-in',
   },
-  "&:active": {
-    transition: "all 0.2s ease-in",
-    outline: "2px dotted currentColor"
-  }
+  '&:active': {
+    transition: 'all 0.2s ease-in',
+    outline: '2px dotted currentColor',
+  },
 };
 
 const theme = {
@@ -114,7 +114,7 @@ const theme = {
   radii,
   shadows,
   space,
-  Link
+  Link,
 };
 
 export default theme;

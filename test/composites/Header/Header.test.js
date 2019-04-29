@@ -1,26 +1,26 @@
-import * as deviceDescriptors from "puppeteer/DeviceDescriptors";
-import devices from "../../devices";
+import * as deviceDescriptors from 'puppeteer/DeviceDescriptors';
+import devices from '../../devices';
 import {
   createCustomSnapshotIdentifier,
-  downloadScreenshot
-} from "../../helpers";
+  downloadScreenshot,
+} from '../../helpers';
 
 const file = `file://${process.cwd()}/storybook-static/iframe.html?id=composites-header--default-link`;
 
-describe("Header", () => {
+describe('Header', () => {
   devices.forEach(device => {
     const customSnapshotIdentifier = createCustomSnapshotIdentifier(device);
-    test(customSnapshotIdentifier, async () => {
+    it(customSnapshotIdentifier, async () => {
       await downloadScreenshot({
-        componentName: "Header",
+        componentName: 'Header',
         customSnapshotIdentifier,
-        cwd: __dirname
+        cwd: __dirname,
       });
       await page.emulate(deviceDescriptors[device]);
-      await page.goto(file, { waitUntil: ["load", "networkidle0"] });
+      await page.goto(file, { waitUntil: ['load', 'networkidle0'] });
       const image = await page.screenshot();
       expect(image).toMatchImageSnapshot({
-        customSnapshotIdentifier
+        customSnapshotIdentifier,
       });
     });
   });

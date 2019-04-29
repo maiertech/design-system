@@ -1,31 +1,30 @@
-import React from "react";
-import { configure, addDecorator, addParameters } from "@storybook/react";
-import Provider from "../../src/helpers/Provider";
+import React from 'react';
+import { configure, addDecorator, addParameters } from '@storybook/react';
+import Provider from '../../src/helpers/Provider';
 
 addParameters({
   options: {
-    panelPosition: "bottom"
-  }
+    panelPosition: 'bottom',
+  },
 });
 
 // Add decorators before require.context:
 // https://github.com/storybooks/storybook/issues/3246
-// eslint-disable-next-line react/jsx-filename-extension
 addDecorator(story => <Provider>{story()}</Provider>);
 
 function loadStories() {
   // Sort order of nested stories is determined by loading order.
 
   // Load primitives.
-  let req = require.context("../../src/primitives", true, /\.stories\.jsx$/);
+  let req = require.context('../../src/primitives', true, /\.stories\.js$/);
   req.keys().forEach(filename => req(filename));
 
   // Load composites.
-  req = require.context("../../src/composites", true, /\.stories\.jsx$/);
+  req = require.context('../../src/composites', true, /\.stories\.js$/);
   req.keys().forEach(filename => req(filename));
 
   // Load pages.
-  req = require.context("../../src/pages", true, /\.stories\.jsx$/);
+  req = require.context('../../src/pages', true, /\.stories\.js$/);
   req.keys().forEach(filename => req(filename));
 }
 

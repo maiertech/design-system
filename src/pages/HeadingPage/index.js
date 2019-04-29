@@ -1,1 +1,1 @@
-export { default } from "./HeadingPage";
+export { default } from './HeadingPage';

@@ -1,7 +1,7 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { Heading } from "rebass";
-import TextPage from "../TextPage";
+import React from 'react';
+import PropTypes from 'prop-types';
+import { Heading } from 'rebass';
+import TextPage from '../TextPage';
 
 const HeadingPage = ({ title, description, children }) => (
   <TextPage title={title} description={description}>
@@ -21,7 +21,7 @@ const HeadingPage = ({ title, description, children }) => (
 HeadingPage.propTypes = {
   title: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
-  children: PropTypes.node.isRequired
+  children: PropTypes.node.isRequired,
 };
 
 export default HeadingPage;

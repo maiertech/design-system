@@ -1,11 +1,11 @@
 // Color pallette.
 // https://tachyons.io/docs/themes/skins/
-const black = "#000000";
-const darkPink = "#D5008F";
-const lightPink = "#FFA3D7";
-const lightPurple = "#A463F2";
-const purple = "#5E2CA5";
-const yellow = "#FFFF00";
+const black = '#000000';
+const darkPink = '#D5008F';
+const lightPink = '#FFA3D7';
+const lightPurple = '#A463F2';
+const purple = '#5E2CA5';
+const yellow = '#FFFF00';
 
 // Theme colors.
 const primary = lightPink;
@@ -35,7 +35,7 @@ const colors = {
   // Inverse colors:
   // contrast(inverseText, inverseBackground): 4.62 (AA)
   inverseBackground: primaryInverse,
-  inverseText: highContrastText
+  inverseText: highContrastText,
 };
 
 const theme = { colors };

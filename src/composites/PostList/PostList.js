@@ -1,7 +1,7 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { Box } from "rebass";
-import PostPreview from "../../primitives/PostPreview";
+import React from 'react';
+import PropTypes from 'prop-types';
+import { Box } from 'rebass';
+import PostPreview from '../../primitives/PostPreview';
 
 const PostList = ({ values, link, ...props }) => (
   <Box {...props}>
@@ -17,17 +17,21 @@ const PostList = ({ values, link, ...props }) => (
   </Box>
 );
 
+/* eslint-disable react/forbid-foreign-prop-types */
+
 PostList.propTypes = {
   values: PropTypes.arrayOf(
     PropTypes.shape({
-      ...PostPreview.propTypes
+      ...PostPreview.propTypes,
     })
   ).isRequired,
-  link: PropTypes.func
+  link: PropTypes.func,
 };
 
+/* eslint-enable react/forbid-foreign-prop-types */
+
 PostList.defaultProps = {
-  link: undefined
+  link: undefined,
 };
 
 export default PostList;

@@ -1,5 +1,5 @@
-import React from "react";
-import PropTypes from "prop-types";
+import React from 'react';
+import PropTypes from 'prop-types';
 
 const NewTabLink = ({ children, href, className }) => (
   <a
@@ -15,11 +15,11 @@ const NewTabLink = ({ children, href, className }) => (
 NewTabLink.propTypes = {
   children: PropTypes.node.isRequired,
   href: PropTypes.string.isRequired,
-  className: PropTypes.string
+  className: PropTypes.string,
 };
 
 NewTabLink.defaultProps = {
-  className: ""
+  className: '',
 };
 
 export default NewTabLink;

@@ -1,14 +1,14 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { Box, Flex, Heading, Link, Text } from "rebass";
+import React from 'react';
+import PropTypes from 'prop-types';
+import { Box, Flex, Heading, Link, Text } from 'rebass';
 
 const Header = ({ title, links, link, ...props }) => (
   <Box {...props} bg="brandedBackground">
-    <Box css={{ maxWidth: "96rem" }} mx="auto" p={[2, 3]}>
+    <Box css={{ maxWidth: '96rem' }} mx="auto" p={[2, 3]}>
       <Flex
-        css={{ width: "100%" }}
-        flexDirection={["column", "row"]}
-        justifyContent={["center", "space-between"]}
+        css={{ width: '100%' }}
+        flexDirection={['column', 'row']}
+        justifyContent={['center', 'space-between']}
         alignItems="center"
       >
         <Link as={link} color="brandedText" href="/">
@@ -49,13 +49,13 @@ Header.propTypes = {
   links: PropTypes.arrayOf(
     PropTypes.shape({
       href: PropTypes.string.isRequired,
-      text: PropTypes.string.isRequired
+      text: PropTypes.string.isRequired,
     })
-  ).isRequired
+  ).isRequired,
 };
 
 Header.defaultProps = {
-  link: undefined
+  link: undefined,
 };
 
 export default Header;

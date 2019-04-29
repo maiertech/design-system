@@ -1,7 +1,7 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { Box } from "rebass";
-import Helmet from "react-helmet";
+import React from 'react';
+import PropTypes from 'prop-types';
+import { Box } from 'rebass';
+import Helmet from 'react-helmet';
 
 const Page = ({ title, description, children }) => (
   <Box mb={[2, 3]}>
@@ -16,7 +16,7 @@ const Page = ({ title, description, children }) => (
 Page.propTypes = {
   title: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
-  children: PropTypes.node.isRequired
+  children: PropTypes.node.isRequired,
 };
 
 export default Page;

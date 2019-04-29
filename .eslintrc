@@ -1,19 +1,20 @@
 {
-  "extends": ["@mdotasia"],
+  "extends": [
+    "plugin:shopify/react",
+    "plugin:shopify/node",
+    "plugin:shopify/jest",
+    "plugin:shopify/prettier"
+  ],
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  },
   "globals": {
     "page": true
   },
   "rules": {
-    "import/no-extraneous-dependencies": [
-      "error",
-      {
-        "devDependencies": [
-          "**/*.test.js",
-          "**/*.stories.jsx",
-          "config/**/*.js",
-          "test/**/*.js"
-        ]
-      }
-    ]
+    "babel/object-curly-spacing": ["error", "always"],
+    "shopify/jsx-no-hardcoded-content": "off"
   }
 }

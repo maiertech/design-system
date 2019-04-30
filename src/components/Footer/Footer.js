@@ -1,7 +1,7 @@
 import React from 'react';
 import { arrayOf, func, shape, string } from 'prop-types';
 import { Box, Flex, Heading, Link, Text } from 'rebass';
-import Icon from '../../primitives/Icon';
+import { Icon } from '..';
 
 const Footer = ({
   title,

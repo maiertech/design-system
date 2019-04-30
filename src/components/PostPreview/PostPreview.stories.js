@@ -4,7 +4,7 @@ import NewTabLink from '../NewTabLink';
 import posts, { normalize } from '../../../test/posts';
 import PostPreview from './PostPreview';
 
-storiesOf('Primitives/PostPreview', module)
+storiesOf('PostPreview', module)
   .add('default link', () => (
     <PostPreview post={normalize(posts[0])} m={[0, 0, 3]} />
   ))

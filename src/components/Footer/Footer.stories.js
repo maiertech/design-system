@@ -1,6 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import NewTabLink from '../../primitives/NewTabLink';
+import { NewTabLink } from '..';
 import Footer from './Footer';
 
 const links = [
@@ -18,7 +18,7 @@ const links = [
   },
 ];
 
-storiesOf('Composites/Footer', module)
+storiesOf('Footer', module)
   .add('default anchors', () => (
     <Footer title="This is the Footer Title" name="Thilo Maier" links={links} />
   ))

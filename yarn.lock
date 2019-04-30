@@ -8733,9 +8733,9 @@ normalize-range@^0.1.2:
   resolved "https://registry.yarnpkg.com/normalize-range/-/normalize-range-0.1.2.tgz#2d10c06bdfd312ea9777695a4d28439456b75942"
 
 now@^15.0.8:
-  version "15.0.10"
-  resolved "https://registry.yarnpkg.com/now/-/now-15.0.10.tgz#b54ed9f1275cb198e50ccb1e8c8cadc23f72db26"
-  integrity sha512-KE9zs5kNmU9xFYhYJtyzDdO+ycV5e1Ahwv4zs3Bza/KWbiwzku1NExJES0tv7l5yoe2nE2QubdKwWukqEdhRdg==
+  version "15.0.11"
+  resolved "https://registry.yarnpkg.com/now/-/now-15.0.11.tgz#0c06227d0be16cdc5b388c6bacc6a5297e273956"
+  integrity sha512-ABNSy28mCgz6BQgNQy6ettSI1e0L647xN7fthsMlcA0mienDxPpUpxc8XfprjSdwCLD8kj7Zfp3z7WP33JHBVw==
 
 npm-bundled@^1.0.1:
   version "1.0.5"

@@ -1,7 +1,7 @@
 import React from 'react';
 import { arrayOf, shape, string } from 'prop-types';
 import { Box } from 'rebass';
-import PostPreview from '../../primitives/PostPreview';
+import { PostPreview } from '..';
 import { postType } from '../../types';
 
 const PostList = ({ values, ...props }) => (

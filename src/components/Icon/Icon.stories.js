@@ -4,7 +4,7 @@ import { withKnobs, select, text } from '@storybook/addon-knobs';
 import NewTabLink from '../NewTabLink';
 import Icon from './Icon';
 
-storiesOf('Primitives/Icon', module)
+storiesOf('Icon', module)
   .addDecorator(withKnobs)
   .add('knobs', () => (
     <Icon

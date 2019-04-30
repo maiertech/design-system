@@ -2,7 +2,7 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import PostHeader from './PostHeader';
 
-storiesOf('Primitives/PostHeader', module)
+storiesOf('PostHeader', module)
   .add('short title', () => (
     <PostHeader
       author="Thilo Maier"

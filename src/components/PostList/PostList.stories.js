@@ -1,6 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import NewTabLink from '../../primitives/NewTabLink';
+import { NewTabLink } from '..';
 import posts, { normalize } from '../../../test/posts';
 import PostList from './PostList';
 
@@ -9,7 +9,7 @@ const normalizedPosts = posts.map(({ id, ...post }) => ({
   post: normalize(post),
 }));
 
-storiesOf('Composites/PostList', module)
+storiesOf('PostList', module)
   .add('default link', () => <PostList values={normalizedPosts} m={3} />)
   .add('custom link', () => (
     <PostList

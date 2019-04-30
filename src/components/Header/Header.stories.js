@@ -1,6 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import NewTabLink from '../../primitives/NewTabLink';
+import { NewTabLink } from '..';
 import Header from './Header';
 
 const title = 'Header Title';
@@ -19,7 +19,7 @@ const links = [
   },
 ];
 
-storiesOf('Composites/Header', module)
+storiesOf('Header', module)
   .add('default link', () => <Header title={title} links={links} />)
   .add('custom link', () => (
     <Header title={title} links={links} link={NewTabLink} />

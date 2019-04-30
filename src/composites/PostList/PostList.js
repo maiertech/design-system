@@ -1,37 +1,24 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import { arrayOf, shape, string } from 'prop-types';
 import { Box } from 'rebass';
 import PostPreview from '../../primitives/PostPreview';
+import { postType } from '../../types';
 
-const PostList = ({ values, link, ...props }) => (
+const PostList = ({ values, ...props }) => (
   <Box {...props}>
-    {values.map(({ href, ...post }) => (
-      <PostPreview
-        key={href}
-        {...post}
-        href={href}
-        link={link}
-        mb={[4, 4, 3]}
-      />
+    {values.map(({ id, post }) => (
+      <PostPreview key={id} post={post} mb={[4, 4, 3]} />
     ))}
   </Box>
 );
 
-/* eslint-disable react/forbid-foreign-prop-types */
-
 PostList.propTypes = {
-  values: PropTypes.arrayOf(
-    PropTypes.shape({
-      ...PostPreview.propTypes,
+  values: arrayOf(
+    shape({
+      id: string.isRequired,
+      post: postType.isRequired,
     })
   ).isRequired,
-  link: PropTypes.func,
-};
-
-/* eslint-enable react/forbid-foreign-prop-types */
-
-PostList.defaultProps = {
-  link: undefined,
 };
 
 export default PostList;

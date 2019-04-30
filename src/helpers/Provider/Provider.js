@@ -1,5 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import { node, object } from 'prop-types';
 import { createGlobalStyle, ThemeProvider } from 'styled-components';
 import { normalize } from 'polished';
 import defaultTheme from '../../themes/default';
@@ -27,8 +27,8 @@ const Provider = ({ theme, children }) => (
 );
 
 Provider.propTypes = {
-  children: PropTypes.node.isRequired,
-  theme: PropTypes.object,
+  children: node.isRequired,
+  theme: object,
 };
 
 // Undefined theme cannot be merged.

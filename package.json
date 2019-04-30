@@ -24,8 +24,7 @@
     "build-storybook": "rm -rf ./storybook-static && build-storybook -c config/storybook",
     "clean": "rm -rf ./node_modules",
     "inspect": "node --inspect-brk node_modules/.bin/jest --runInBand",
-    "lint": "eslint . --ignore-path .gitignore",
-    "lint:fix": "npm run lint --fix",
+    "lint": "eslint . --ignore-path .gitignore --fix",
     "format": "pretty-quick",
     "prepublishOnly": "npm run build",
     "pretest": "rm -rf ./screenshots && rm -rf ./diff",
@@ -34,14 +33,13 @@
   },
   "lint-staged": {
     "*.js": [
-      "pretty-quick --staged",
-      "yarn run lint:fix",
+      "eslint --ignore-path .gitignore --fix",
       "git add"
     ]
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged"
+      "pre-commit": "pretty-quick --staged && lint-staged"
     }
   },
   "dependencies": {

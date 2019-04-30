@@ -2,7 +2,7 @@ import React from 'react';
 import { node, object } from 'prop-types';
 import { createGlobalStyle, ThemeProvider } from 'styled-components';
 import { normalize } from 'polished';
-import defaultTheme from '../../themes/default';
+import defaultTheme from '../../theme';
 
 // https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/
 const GlobalStyle = createGlobalStyle`

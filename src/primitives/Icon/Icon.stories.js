@@ -15,5 +15,5 @@ storiesOf('Primitives/Icon', module)
     />
   ))
   .add('custom link', () => (
-    <Icon link={NewTabLink} type="github" username="mdotasia" m={2} />
+    <Icon link={NewTabLink} type="github" username="454de6e" m={2} />
   ));

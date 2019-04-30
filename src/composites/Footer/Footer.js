@@ -1,5 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import { arrayOf, func, shape, string } from 'prop-types';
 import { Box, Flex, Heading, Link, Text } from 'rebass';
 import Icon from '../../primitives/Icon';
 
@@ -76,23 +76,17 @@ const Footer = ({
 );
 
 Footer.propTypes = {
-  extLink: PropTypes.func,
-  intLink: PropTypes.func,
-  lastUpdated: PropTypes.string,
-  links: PropTypes.arrayOf(
-    PropTypes.shape({
-      href: PropTypes.string.isRequired,
-      text: PropTypes.string.isRequired,
+  extLink: func,
+  intLink: func,
+  lastUpdated: string,
+  links: arrayOf(
+    shape({
+      href: string.isRequired,
+      text: string.isRequired,
     })
   ).isRequired,
-  name: PropTypes.string.isRequired,
-  title: PropTypes.string.isRequired,
-};
-
-Footer.defaultProps = {
-  extLink: undefined,
-  intLink: undefined,
-  lastUpdated: '',
+  name: string.isRequired,
+  title: string.isRequired,
 };
 
 export default Footer;

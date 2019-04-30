@@ -1,6 +1,6 @@
 import React from 'react';
 import Helmet from 'react-helmet';
-import PropTypes from 'prop-types';
+import { bool, string } from 'prop-types';
 
 /* eslint-disable jsx-a11y/control-has-associated-label */
 
@@ -18,11 +18,11 @@ const Head = ({ title, description, href, noRobots, url }) => (
 /* eslint-enable jsx-a11y/control-has-associated-label */
 
 Head.propTypes = {
-  title: PropTypes.string.isRequired,
-  description: PropTypes.string.isRequired,
-  href: PropTypes.string,
-  noRobots: PropTypes.bool,
-  url: PropTypes.string,
+  title: string.isRequired,
+  description: string.isRequired,
+  href: string,
+  noRobots: bool,
+  url: string,
 };
 
 Head.defaultProps = {

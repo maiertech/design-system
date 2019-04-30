@@ -1,5 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import { func, oneOf, string } from 'prop-types';
 import { Flex, Image, Link, Text } from 'rebass';
 
 const icons = {
@@ -45,15 +45,14 @@ const Icon = ({ color, link, type, username, ...props }) => (
 );
 
 Icon.propTypes = {
-  color: PropTypes.string,
-  link: PropTypes.func,
-  type: PropTypes.oneOf(['github', 'twitter']).isRequired,
-  username: PropTypes.string.isRequired,
+  color: string,
+  link: func,
+  type: oneOf(['github', 'twitter']).isRequired,
+  username: string.isRequired,
 };
 
 Icon.defaultProps = {
   color: 'accent',
-  link: undefined,
 };
 
 export default Icon;

@@ -1,5 +1,16 @@
+import React from 'react';
+import { Image } from 'rebass';
+
+export const normalize = ({ image, ...post }) => ({
+  ...post,
+  renderImage: function renderImage() {
+    return <Image css={{ display: 'block' }} alt={image.alt} src={image.src} />;
+  },
+});
+
 const posts = [
   {
+    id: 'f0c6b008-19bc-4e78-b79b-1e9a437afc16',
     title: 'Aliquet maecenas leo odio condimentum id luctus nec molestie',
     author: 'Abigail Lyptratt',
     date: 'July 4, 2018',
@@ -12,6 +23,7 @@ const posts = [
     },
   },
   {
+    id: '008fbc3b-102e-41d1-8ccf-11e2a3235aba',
     title: 'Pretium iaculis justo in hac habitasse platea',
     author: 'Lon Kamena',
     date: 'June 12, 2018',
@@ -24,6 +36,7 @@ const posts = [
     },
   },
   {
+    id: 'a3e1d0c3-7188-49b1-945b-0c079c160064',
     title: 'Vestibulum proin eu mi nulla ac enim in tempor turpis',
     author: 'Orin Sissons',
     date: 'May 31, 2018',
@@ -36,6 +49,7 @@ const posts = [
     },
   },
   {
+    id: 'e72b1ae2-c1a2-4255-bf19-976074f78291',
     title:
       'Vivamus vel nulla eget eros elementum pellentesque quisque porta volutpat',
     author: 'Knox Simes',
@@ -49,6 +63,7 @@ const posts = [
     },
   },
   {
+    id: 'f8374972-768d-4f54-be36-ae986da7343e',
     title: 'Primis in faucibus orci luctus est',
     author: 'Adelaida Hurndall',
     date: 'May 2, 2018',
@@ -61,6 +76,7 @@ const posts = [
     },
   },
   {
+    id: 'de501562-fc22-4c38-984e-db27623273fc',
     title: 'Suscipit ligula in lacus curabitur at ipsum',
     author: 'Jeff Holsall',
     date: 'April 20, 2018',
@@ -73,6 +89,7 @@ const posts = [
     },
   },
   {
+    id: 'e4c404a7-1d41-4a35-bd0f-6e18b2c54926',
     title: 'Orci eget orci vehicula condimentum curabitur in',
     date: 'April 5, 2018',
     author: 'Chaddie Bordes',
@@ -85,6 +102,7 @@ const posts = [
     },
   },
   {
+    id: '8328492a-335f-4226-bd56-a8c5f3778242',
     title: 'Quam pede lobortis ligula sit',
     author: 'Ruthi Kunat',
     date: 'March 14, 2018',
@@ -97,6 +115,7 @@ const posts = [
     },
   },
   {
+    id: '99272059-a47a-4609-8318-3bdca47d0a80',
     title:
       'Diam cras pellentesque volutpat dui maecenas tristique est et tempus',
     author: 'Deanna Effnert',
@@ -110,6 +129,7 @@ const posts = [
     },
   },
   {
+    id: 'b1760e59-3cd4-46b7-a929-e6208442503a',
     title: 'Metus sapien ut nunc vestibulum ante',
     author: 'Carr Missenden',
     date: 'February 13, 2018',

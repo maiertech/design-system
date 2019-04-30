@@ -1,5 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import { arrayOf, func, shape, string } from 'prop-types';
 import { Box, Flex, Heading, Link, Text } from 'rebass';
 
 const Header = ({ title, links, link, ...props }) => (
@@ -44,18 +44,14 @@ const Header = ({ title, links, link, ...props }) => (
 );
 
 Header.propTypes = {
-  title: PropTypes.string.isRequired,
-  link: PropTypes.func,
-  links: PropTypes.arrayOf(
-    PropTypes.shape({
-      href: PropTypes.string.isRequired,
-      text: PropTypes.string.isRequired,
+  title: string.isRequired,
+  link: func,
+  links: arrayOf(
+    shape({
+      href: string.isRequired,
+      text: string.isRequired,
     })
   ).isRequired,
-};
-
-Header.defaultProps = {
-  link: undefined,
 };
 
 export default Header;

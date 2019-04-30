@@ -1,17 +1,8 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { Box, Card, Flex, Heading, Link, Text } from 'rebass';
+import { postType } from '../../types';
 
-const PostPreview = ({
-  title,
-  author,
-  date,
-  lead,
-  href,
-  image,
-  link,
-  ...props
-}) => (
+const PostPreview = ({ post, ...props }) => (
   <Card
     {...props}
     as="article"
@@ -21,14 +12,19 @@ const PostPreview = ({
     p={[0, 0, 3]}
     mx={[0, 0, 'auto']}
   >
-    <Link as={link} color="text" css={{ display: 'block' }} href={href}>
+    <Link
+      as={post.link}
+      color="text"
+      css={{ display: 'block' }}
+      href={post.href}
+    >
       <Flex flexDirection={['column', 'row']}>
         <Box order={[1, 2]} width={[1, 1 / 3]} mb={[2, 0]}>
-          {image()}
+          {post.renderImage()}
         </Box>
         <Box order={[2, 1]} width={[1, 2 / 3]} mr={[0, 3]}>
           <Heading fontFamily="sans" fontSize={4} lineHeight="title" mb={3}>
-            {title}
+            {post.title}
           </Heading>
           <Text
             as="p"
@@ -38,13 +34,13 @@ const PostPreview = ({
             mt={0}
             mb={3}
           >
-            {lead}
+            {post.lead}
           </Text>
           <Text fontFamily="sans" fontSize={1} lineHeight="copy">
-            {author}
+            {post.author}
           </Text>
           <Text as="time" fontFamily="sans" fontSize={1} lineHeight="copy">
-            {date}
+            {post.date}
           </Text>
         </Box>
       </Flex>
@@ -53,17 +49,7 @@ const PostPreview = ({
 );
 
 PostPreview.propTypes = {
-  title: PropTypes.string.isRequired,
-  author: PropTypes.string.isRequired,
-  date: PropTypes.string.isRequired,
-  lead: PropTypes.string.isRequired,
-  href: PropTypes.string.isRequired,
-  image: PropTypes.func.isRequired,
-  link: PropTypes.func,
-};
-
-PostPreview.defaultProps = {
-  link: undefined,
+  post: postType,
 };
 
 export default PostPreview;

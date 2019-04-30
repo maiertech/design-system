@@ -1,6 +1,7 @@
 import React from 'react';
 import { configure, addDecorator, addParameters } from '@storybook/react';
 import Provider from '../../src/helpers/Provider';
+import '@storybook/addon-console';
 
 addParameters({
   options: {

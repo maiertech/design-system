@@ -1,7 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import NewTabLink from '../../primitives/NewTabLink';
-import posts, { normalize } from '../../posts';
+import posts, { normalize } from '../../../test/posts';
 import PostList from './PostList';
 
 const normalizedPosts = posts.map(({ id, ...post }) => ({

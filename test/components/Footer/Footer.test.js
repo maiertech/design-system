@@ -5,18 +5,19 @@ import {
   downloadScreenshot,
 } from '../../helpers';
 
-const file = `file://${process.cwd()}/storybook-static/iframe.html?id=composites-header--default-link`;
+const file = `file://${process.cwd()}/storybook-static/iframe.html?id=footer--last-updated`;
 
-describe('Header', () => {
+describe('Footer', () => {
   devices.forEach(device => {
     const customSnapshotIdentifier = createCustomSnapshotIdentifier(device);
     it(customSnapshotIdentifier, async () => {
       await downloadScreenshot({
-        componentName: 'Header',
+        componentName: 'Footer',
         customSnapshotIdentifier,
         cwd: __dirname,
       });
-      await page.emulate(deviceDescriptors[device]);
+      const { userAgent, viewport } = deviceDescriptors[device];
+      await page.emulate({ userAgent, viewport });
       await page.goto(file, { waitUntil: ['load', 'networkidle0'] });
       const image = await page.screenshot();
       expect(image).toMatchImageSnapshot({

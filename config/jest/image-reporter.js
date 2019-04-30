@@ -15,7 +15,7 @@ class ImageReporter {
       return;
     }
 
-    // test/composites/Footer/Footer.test.js results in segments ["test", "composites", "Footer"].
+    // test/components/Footer/Footer.test.js results in segments ["test", "components", "Footer"].
     const segments = testResult.testFilePath
       .match(/\/(\w+)\/(\w+)\/(\w+)\/\w+\./)
       .slice(1);

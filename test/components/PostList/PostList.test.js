@@ -5,7 +5,7 @@ import {
   downloadScreenshot,
 } from '../../helpers';
 
-const file = `file://${process.cwd()}/storybook-static/iframe.html?id=composites-postlist--default-link`;
+const file = `file://${process.cwd()}/storybook-static/iframe.html?id=postlist--default-link`;
 
 describe('Footer', () => {
   devices.forEach(device => {

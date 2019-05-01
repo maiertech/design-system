@@ -5,7 +5,7 @@ import {
   downloadScreenshot,
 } from '../../helpers';
 
-const file = `file://${process.cwd()}/storybook-static/iframe.html?id=footer--last-updated`;
+const file = `file://${process.cwd()}/storybook-static/iframe.html?id=footer--knobs`;
 
 describe('Footer', () => {
   devices.forEach(device => {

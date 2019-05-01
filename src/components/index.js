@@ -7,3 +7,4 @@ export { default as PostHeader } from './PostHeader';
 export { default as PostList } from './PostList';
 export { default as PostPreview } from './PostPreview';
 export { default as Provider } from './Provider';
+export { default as SmartLink } from './SmartLink';

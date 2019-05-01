@@ -1,4 +1,5 @@
 import colors from './colors';
+import { NewTabLink } from './components';
 
 const theme = {
   breakpoints: ['30em', '60em'],
@@ -68,6 +69,11 @@ const theme = {
       outline: '2px dotted currentColor',
     },
   },
+
+  // Set `internalLink` to overwrite Rebass Link default behavior.
+
+  // Make external links by open in a new tab.
+  externalLink: NewTabLink,
 };
 
 export default theme;

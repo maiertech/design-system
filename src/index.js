@@ -1,10 +1,10 @@
-export { Box, Flex, Heading, Link, Text } from 'rebass';
+export { Box, Flex, Heading, Text } from 'rebass';
 export {
   Footer,
   Head,
   Header,
-  NewTabLink,
   PostHeader,
   PostList,
   Provider,
+  SmartLink,
 } from './components';

@@ -9,3 +9,8 @@ export const postType = shape({
   href: string.isRequired,
   link: func,
 });
+
+export const themeType = shape({
+  internalLink: func,
+  externalLink: func,
+});

@@ -1,20 +1,13 @@
 import React from 'react';
-import { arrayOf, func, shape, string } from 'prop-types';
-import { Box, Flex, Heading, Link, Text } from 'rebass';
-import { Icon } from '..';
+import { arrayOf, shape, string } from 'prop-types';
+import { Box, Flex, Heading, Text } from 'rebass';
+import Icon from '../Icon';
+import SmartLink from '../SmartLink';
 
-const Footer = ({
-  title,
-  name,
-  links,
-  extLink,
-  intLink,
-  lastUpdated,
-  ...props
-}) => (
+const Footer = ({ title, name, links, lastUpdated, ...props }) => (
   <Box {...props} as="footer" bg="inverseBackground">
     <Box css={{ maxWidth: '64rem' }} mx="auto" p={3}>
-      <Link as={intLink} color="inverseText" href="/">
+      <SmartLink color="inverseText" href="/">
         <Heading
           as="h1"
           fontFamily="sans"
@@ -26,29 +19,27 @@ const Footer = ({
         >
           {title}
         </Heading>
-      </Link>
+      </SmartLink>
       <Flex flexDirection="row" flexWrap="wrap" justifyContent="center" mb={3}>
         {links.map(({ href, text }) => (
-          <Link as={intLink} color="inverseText" href={href} px={2} key={href}>
+          <SmartLink color="inverseText" href={href} px={2} key={href}>
             <Text as="span" fontFamily="sans" fontSize={2} lineHeight="copy">
               {text}
             </Text>
-          </Link>
+          </SmartLink>
         ))}
       </Flex>
       <Flex flexDirection="row" flexWrap="wrap" justifyContent="center" mb={3}>
         <Icon
           color="inverseText"
-          link={extLink}
           type="github"
-          username="mdotasia"
+          username="454de6e"
           key="github"
         />
         <Icon
           color="inverseText"
-          link={extLink}
           type="twitter"
-          username="mdotasia"
+          username="454de6e"
           key="twitter"
         />
       </Flex>
@@ -76,8 +67,8 @@ const Footer = ({
 );
 
 Footer.propTypes = {
-  extLink: func,
-  intLink: func,
+  name: string.isRequired,
+  title: string.isRequired,
   lastUpdated: string,
   links: arrayOf(
     shape({
@@ -85,8 +76,6 @@ Footer.propTypes = {
       text: string.isRequired,
     })
   ).isRequired,
-  name: string.isRequired,
-  title: string.isRequired,
 };
 
 export default Footer;

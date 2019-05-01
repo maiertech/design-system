@@ -1,136 +1,116 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { NewTabLink } from '..';
+import { withKnobs, object, text } from '@storybook/addon-knobs';
 import Footer from './Footer';
 
-const links = [
-  {
-    href: '#blog',
-    text: 'Blog',
-  },
-  {
-    href: '#about',
-    text: 'About',
-  },
-  {
-    href: '#archive',
-    text: 'Archive',
-  },
-];
-
 storiesOf('Footer', module)
-  .add('default anchors', () => (
-    <Footer title="This is the Footer Title" name="Thilo Maier" links={links} />
-  ))
-  .add('custom intLink', () => (
+  .addDecorator(withKnobs)
+  .add('knobs', () => (
     <Footer
-      title="This is the Footer Title"
-      name="Thilo Maier"
-      links={links}
-      intLink={NewTabLink}
-    />
-  ))
-  .add('custom extLink', () => (
-    <Footer
-      title="This is the Footer Title"
-      name="Thilo Maier"
-      links={links}
-      extLink={NewTabLink}
-    />
-  ))
-  .add('last updated', () => (
-    <Footer
-      lastUpdated="Aug 1, 2018"
-      title="This is the Footer Title"
-      name="Thilo Maier"
-      links={links}
+      title={text('title', 'This is the Footer Title')}
+      name={text('name', 'Thilo Maier')}
+      lastUpdated={text('lastUpdated', 'Aug 1, 2018')}
+      links={object('links', [
+        {
+          href: '/blog',
+          text: 'Blog',
+        },
+        {
+          href: '/about',
+          text: 'About',
+        },
+        {
+          href: '/archive',
+          text: 'Archive',
+        },
+      ])}
     />
   ))
   .add('many links that wrap', () => (
     <Footer
-      title="This is the Footer Title"
-      name="Thilo Maier"
-      links={[
+      title={text('title', 'This is the Footer Title')}
+      name={text('name', 'Thilo Maier')}
+      links={object('links', [
         {
-          href: '#one',
+          href: '/one',
           text: 'One',
         },
         {
-          href: '#two',
+          href: '/two',
           text: 'Two',
         },
         {
-          href: '#three',
+          href: '/three',
           text: 'Three',
         },
         {
-          href: '#four',
+          href: '/four',
           text: 'Four',
         },
         {
-          href: '#five',
+          href: '/five',
           text: 'Five',
         },
         {
-          href: '#six',
+          href: '/six',
           text: 'Six',
         },
         {
-          href: '#seven',
+          href: '/seven',
           text: 'Seven',
         },
         {
-          href: '#eight',
+          href: '/eight',
           text: 'Eight',
         },
         {
-          href: '#nine',
+          href: '/nine',
           text: 'Nine',
         },
         {
-          href: '#ten',
+          href: '/ten',
           text: 'Ten',
         },
         {
-          href: '#eleven',
+          href: '/eleven',
           text: 'Eleven',
         },
         {
-          href: '#twelve',
+          href: '/twelve',
           text: 'Twelve',
         },
         {
-          href: '#thirteen',
+          href: '/thirteen',
           text: 'Thirteen',
         },
         {
-          href: '#fourteen',
+          href: '/fourteen',
           text: 'Fourteen',
         },
         {
-          href: '#fifteen',
+          href: '/fifteen',
           text: 'Fifteen',
         },
         {
-          href: '#sixteen',
+          href: '/sixteen',
           text: 'Sixteen',
         },
         {
-          href: '#seventeen',
-          text: 'Seveteen',
+          href: '/seventeen',
+          text: 'Seventeen',
         },
         {
-          href: '#eighteen',
+          href: '/eighteen',
           text: 'Eighteen',
         },
         {
-          href: '#nineteen',
+          href: '/nineteen',
           text: 'Nineteen',
         },
         {
-          href: '#twenty',
+          href: '/twenty',
           text: 'Twenty',
         },
-      ]}
+      ])}
     />
   ));

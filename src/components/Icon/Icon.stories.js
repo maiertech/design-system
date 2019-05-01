@@ -1,7 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { withKnobs, select, text } from '@storybook/addon-knobs';
-import NewTabLink from '../NewTabLink';
 import Icon from './Icon';
 
 storiesOf('Icon', module)
@@ -13,7 +12,4 @@ storiesOf('Icon', module)
       color={text('color', 'accent')}
       m={2}
     />
-  ))
-  .add('custom link', () => (
-    <Icon link={NewTabLink} type="github" username="454de6e" m={2} />
   ));

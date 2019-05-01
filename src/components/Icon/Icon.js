@@ -1,6 +1,7 @@
 import React from 'react';
-import { func, oneOf, string } from 'prop-types';
-import { Flex, Image, Link, Text } from 'rebass';
+import { oneOf, string } from 'prop-types';
+import { Flex, Image, Text } from 'rebass';
+import SmartLink from '../SmartLink';
 
 const icons = {
   github: {
@@ -19,13 +20,12 @@ const icons = {
   },
 };
 
-const Icon = ({ color, link, type, username, ...props }) => (
-  <Link
+const Icon = ({ color, type, username, ...props }) => (
+  <SmartLink
     {...props}
-    as={link}
+    css={{ display: 'block' }}
     color={color}
     href={`${icons[type].url}${username}`}
-    css={{ display: 'block' }}
   >
     <Flex flexDirection="column" alignItems="center" p={2}>
       <Image
@@ -41,12 +41,11 @@ const Icon = ({ color, link, type, username, ...props }) => (
         {icons[type].text}
       </Text>
     </Flex>
-  </Link>
+  </SmartLink>
 );
 
 Icon.propTypes = {
   color: string,
-  link: func,
   type: oneOf(['github', 'twitter']).isRequired,
   username: string.isRequired,
 };

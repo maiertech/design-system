@@ -1,8 +1,9 @@
 import React from 'react';
-import { arrayOf, func, shape, string } from 'prop-types';
-import { Box, Flex, Heading, Link, Text } from 'rebass';
+import { arrayOf, shape, string } from 'prop-types';
+import { Box, Flex, Heading, Text } from 'rebass';
+import SmartLink from '../SmartLink';
 
-const Header = ({ title, links, link, ...props }) => (
+const Header = ({ title, links, ...props }) => (
   <Box {...props} bg="brandedBackground">
     <Box css={{ maxWidth: '96rem' }} mx="auto" p={[2, 3]}>
       <Flex
@@ -11,7 +12,7 @@ const Header = ({ title, links, link, ...props }) => (
         justifyContent={['center', 'space-between']}
         alignItems="center"
       >
-        <Link as={link} color="brandedText" href="/">
+        <SmartLink color="brandedText" href="/">
           <Heading
             fontFamily="sans"
             fontSize={[3, 4, 5]}
@@ -21,10 +22,10 @@ const Header = ({ title, links, link, ...props }) => (
           >
             {title}
           </Heading>
-        </Link>
+        </SmartLink>
         <Flex>
           {links.map(({ href, text }) => (
-            <Link as={link} color="brandedText" href={href} key={href}>
+            <SmartLink color="brandedText" href={href} key={href}>
               <Text
                 as="span"
                 fontFamily="sans"
@@ -35,7 +36,7 @@ const Header = ({ title, links, link, ...props }) => (
               >
                 {text}
               </Text>
-            </Link>
+            </SmartLink>
           ))}
         </Flex>
       </Flex>
@@ -45,7 +46,6 @@ const Header = ({ title, links, link, ...props }) => (
 
 Header.propTypes = {
   title: string.isRequired,
-  link: func,
   links: arrayOf(
     shape({
       href: string.isRequired,

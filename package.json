@@ -20,7 +20,7 @@
   ],
   "scripts": {
     "start": "start-storybook -p 8000 -c config/storybook",
-    "build": "rm -rf ./dist && cross-env NODE_ENV=production babel ./src -d ./dist --ignore 'test/**/*.test.js','src/**/*.stories.jsx'",
+    "build": "rm -rf ./dist && cross-env NODE_ENV=production babel ./src -d ./dist --ignore 'test/**/*.test.js','src/**/*.stories.js'",
     "build-storybook": "rm -rf ./storybook-static && build-storybook -c config/storybook",
     "clean": "rm -rf ./node_modules",
     "inspect": "node --inspect-brk node_modules/.bin/jest --runInBand",

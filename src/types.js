@@ -7,7 +7,6 @@ export const postType = shape({
   lead: string.isRequired,
   renderImage: func.isRequired,
   href: string.isRequired,
-  link: func,
 });
 
 export const themeType = shape({

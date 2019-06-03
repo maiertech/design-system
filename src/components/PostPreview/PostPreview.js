@@ -1,6 +1,7 @@
 import React from 'react';
-import { Box, Card, Flex, Heading, Link, Text } from 'rebass';
+import { Box, Card, Flex, Heading, Text } from 'rebass';
 import { postType } from '../../types';
+import SmartLink from '../SmartLink';
 
 const PostPreview = ({ post, ...props }) => (
   <Card
@@ -12,10 +13,11 @@ const PostPreview = ({ post, ...props }) => (
     p={[0, 0, 3]}
     mx={[0, 0, 'auto']}
   >
-    <Link
-      as={post.link}
+    <SmartLink
       color="text"
-      css={{ display: 'block' }}
+      css="
+        display: block;
+      "
       href={post.href}
     >
       <Flex flexDirection={['column', 'row']}>
@@ -44,7 +46,7 @@ const PostPreview = ({ post, ...props }) => (
           </Text>
         </Box>
       </Flex>
-    </Link>
+    </SmartLink>
   </Card>
 );
 

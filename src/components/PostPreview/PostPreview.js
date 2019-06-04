@@ -25,12 +25,12 @@ const PostPreview = ({ post, ...props }) => (
           {post.renderImage()}
         </Box>
         <Box order={[2, 1]} width={[1, 2 / 3]} mr={[0, 3]}>
-          <Heading fontFamily="sans" fontSize={4} lineHeight="title" mb={3}>
+          <Heading fontFamily="body" fontSize={4} lineHeight="title" mb={3}>
             {post.title}
           </Heading>
           <Text
             as="p"
-            fontFamily="serif"
+            fontFamily="body"
             fontSize={[1, 2]}
             lineHeight="copy"
             mt={0}
@@ -38,10 +38,10 @@ const PostPreview = ({ post, ...props }) => (
           >
             {post.lead}
           </Text>
-          <Text fontFamily="sans" fontSize={1} lineHeight="copy">
+          <Text fontFamily="body" fontSize={1} lineHeight="copy">
             {post.author}
           </Text>
-          <Text as="time" fontFamily="sans" fontSize={1} lineHeight="copy">
+          <Text as="time" fontFamily="body" fontSize={1} lineHeight="copy">
             {post.date}
           </Text>
         </Box>

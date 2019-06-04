@@ -37,7 +37,7 @@ const Icon = ({ color, type, username, ...props }) => (
       >
         {icons[type].path}
       </Image>
-      <Text fontFamily="sans" fontSize={1}>
+      <Text fontFamily="body" fontSize={1}>
         {icons[type].text}
       </Text>
     </Flex>

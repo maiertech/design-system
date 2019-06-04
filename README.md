@@ -13,12 +13,12 @@ yarn add @mdotasia/components
 to add package [@mdotasia/components](https://github.com/mdotasia/components) to your dependencies. Import components like this
 
 ```jsx
-import { Header, Footer } from "@mdotasia/components";
+import { Header, Footer } from '@mdotasia/components';
 ```
 
 ## Development
 
-Use [Storybook](https://storybook.js.org/) to develop components in isolation. Run
+Use [Storybook](https://storybook.js.org/) to develop components. Run
 
 ```bash
 yarn start

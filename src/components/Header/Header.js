@@ -14,7 +14,7 @@ const Header = ({ title, links, ...props }) => (
       >
         <SmartLink color="brandedText" href="/">
           <Heading
-            fontFamily="sans"
+            fontFamily="body"
             fontSize={[3, 4, 5]}
             lineHeight="title"
             mb={[1, 0]}
@@ -28,7 +28,7 @@ const Header = ({ title, links, ...props }) => (
             <SmartLink color="brandedText" href={href} key={href}>
               <Text
                 as="span"
-                fontFamily="sans"
+                fontFamily="body"
                 fontSize={[1, 2, 3]}
                 fontWeight="bold"
                 ml={[2, 3, 4]}

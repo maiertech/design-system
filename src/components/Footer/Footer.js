@@ -10,7 +10,7 @@ const Footer = ({ title, name, links, lastUpdated, ...props }) => (
       <SmartLink color="inverseText" href="/">
         <Heading
           as="h1"
-          fontFamily="sans"
+          fontFamily="body"
           fontSize={4}
           lineHeight="solid"
           textAlign="center"
@@ -23,7 +23,7 @@ const Footer = ({ title, name, links, lastUpdated, ...props }) => (
       <Flex flexDirection="row" flexWrap="wrap" justifyContent="center" mb={3}>
         {links.map(({ href, text }) => (
           <SmartLink color="inverseText" href={href} px={2} key={href}>
-            <Text as="span" fontFamily="sans" fontSize={2} lineHeight="copy">
+            <Text as="span" fontFamily="body" fontSize={2} lineHeight="copy">
               {text}
             </Text>
           </SmartLink>
@@ -46,7 +46,7 @@ const Footer = ({ title, name, links, lastUpdated, ...props }) => (
       {lastUpdated && (
         <Text
           color="inverseText"
-          fontFamily="sans"
+          fontFamily="body"
           fontSize={0}
           textAlign="center"
           mb={3}
@@ -56,7 +56,7 @@ const Footer = ({ title, name, links, lastUpdated, ...props }) => (
       )}
       <Text
         color="inverseText"
-        fontFamily="sans"
+        fontFamily="body"
         fontSize={1}
         textAlign="center"
       >

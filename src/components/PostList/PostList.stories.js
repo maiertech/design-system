@@ -22,7 +22,6 @@ storiesOf('PostList', module)
             renderImage: function renderImage() {
               return (
                 <Image
-                  css={{ display: 'block' }}
                   alt="Spaceman."
                   src="https://source.unsplash.com/dBaz0xhCkPY/900x600"
                 />
@@ -42,7 +41,6 @@ storiesOf('PostList', module)
             renderImage: function renderImage() {
               return (
                 <Image
-                  css={{ display: 'block' }}
                   alt="Parking."
                   src="https://source.unsplash.com/EI32DgwN450/900x600"
                 />
@@ -62,7 +60,6 @@ storiesOf('PostList', module)
             renderImage: function renderImage() {
               return (
                 <Image
-                  css={{ display: 'block' }}
                   alt="Tea."
                   src="https://source.unsplash.com/ulPd2UCwZYk/900x600"
                 />
@@ -83,7 +80,6 @@ storiesOf('PostList', module)
             renderImage: function renderImage() {
               return (
                 <Image
-                  css={{ display: 'block' }}
                   alt="Structure."
                   src="https://source.unsplash.com/AU1rKyKPJco/900x600"
                 />
@@ -103,7 +99,6 @@ storiesOf('PostList', module)
             renderImage: function renderImage() {
               return (
                 <Image
-                  css={{ display: 'block' }}
                   alt="Tiger."
                   src="https://source.unsplash.com/Yju1DCmp39I/900x600"
                 />
@@ -123,7 +118,6 @@ storiesOf('PostList', module)
             renderImage: function renderImage() {
               return (
                 <Image
-                  css={{ display: 'block' }}
                   alt="Code."
                   src="https://source.unsplash.com/466ENaLuhLY/900x600"
                 />
@@ -143,7 +137,6 @@ storiesOf('PostList', module)
             renderImage: function renderImage() {
               return (
                 <Image
-                  css={{ display: 'block' }}
                   alt="Seattle."
                   src="https://source.unsplash.com/dpVJtfywdX4/900x600"
                 />
@@ -163,7 +156,6 @@ storiesOf('PostList', module)
             renderImage: function renderImage() {
               return (
                 <Image
-                  css={{ display: 'block' }}
                   alt="Colors."
                   src="https://source.unsplash.com/8UeQgz9Wazw/900x600"
                 />
@@ -184,7 +176,6 @@ storiesOf('PostList', module)
             renderImage: function renderImage() {
               return (
                 <Image
-                  css={{ display: 'block' }}
                   alt="Road."
                   src="https://source.unsplash.com/bciXX0xjcwc/900x600"
                 />
@@ -204,7 +195,6 @@ storiesOf('PostList', module)
             renderImage: function renderImage() {
               return (
                 <Image
-                  css={{ display: 'block' }}
                   alt="Architecture."
                   src="https://source.unsplash.com/FK0RhfEeY0w/900x600"
                 />

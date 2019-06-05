@@ -19,7 +19,6 @@ storiesOf('PostPreview', module)
         renderImage: function renderImage() {
           return (
             <Image
-              css={{ display: 'block' }}
               alt="Spaceman."
               src="https://source.unsplash.com/dBaz0xhCkPY/900x600"
             />

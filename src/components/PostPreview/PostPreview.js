@@ -7,7 +7,9 @@ const PostPreview = ({ post, ...props }) => (
   <Card
     {...props}
     as="article"
-    css={{ maxWidth: '48rem' }}
+    css="
+      max-width: 48rem;
+    "
     borderRadius={['none', 'none', 'rounded']}
     boxShadow={['none', 'none', 'small']}
     p={[0, 0, 3]}

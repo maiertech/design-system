@@ -5,9 +5,17 @@ import SmartLink from '../SmartLink';
 
 const Header = ({ title, links, ...props }) => (
   <Box {...props} bg="brandedBackground">
-    <Box css={{ maxWidth: '96rem' }} mx="auto" p={[2, 3]}>
+    <Box
+      css="
+        max-width: 96rem;
+      "
+      mx="auto"
+      p={[2, 3]}
+    >
       <Flex
-        css={{ width: '100%' }}
+        css="
+          width: 100%;
+        "
         flexDirection={['column', 'row']}
         justifyContent={['center', 'space-between']}
         alignItems="center"

@@ -6,7 +6,13 @@ import SmartLink from '../SmartLink';
 
 const Footer = ({ title, name, links, lastUpdated, ...props }) => (
   <Box {...props} as="footer" bg="inverseBackground">
-    <Box css={{ maxWidth: '64rem' }} mx="auto" p={3}>
+    <Box
+      css="
+        max-width: 64rem;
+      "
+      mx="auto"
+      p={3}
+    >
       <SmartLink color="inverseText" href="/">
         <Heading
           as="h1"

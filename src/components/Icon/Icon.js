@@ -23,7 +23,9 @@ const icons = {
 const Icon = ({ color, type, username, ...props }) => (
   <SmartLink
     {...props}
-    css={{ display: 'block' }}
+    css="
+      display: block;
+    "
     color={color}
     href={`${icons[type].url}${username}`}
   >

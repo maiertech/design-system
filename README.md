@@ -37,7 +37,7 @@ Here is an overview of the deployments that get triggered when running visual re
 | URL                      | Type            | Config                      | Source Directory                    | Comment                                                                                                                                                       |
 | :----------------------- | :-------------- | :-------------------------- | :---------------------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `components.maier.asia`  | v1 static build | `now.json` and `Dockerfile` | `/public` (inside Docker container) | Default deployment behavior for static builds on Zeit Now v1. Deploys only if visual regression tests pass. Run `now alias components` manually upon release. |
-| `screenshots.maier.asia` | v1 static       | `test/now.screenshots.json` | `screenshots`                       | Deployment is triggered by `image-reporter.js`. Run `now alias screenshots` manually after verifying screenshots.                                             |
+| `screenshots.maier.asia` | v1 static       | `test/now.screenshots.json` | `screenshots`                       | Deployment is triggered by `image-reporter.js`. Alias manually after verifying screenshots.                                                                   |
 | `diff.maier.asia`        | v1 static       | `test/now.diff.json`        | `/public` (inside Docker container) | Deployment and alias is triggerd by `image-reporter.js`.                                                                                                      |
 
 You should normally never run

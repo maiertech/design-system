@@ -8768,10 +8768,10 @@ normalize-range@^0.1.2:
   version "0.1.2"
   resolved "https://registry.yarnpkg.com/normalize-range/-/normalize-range-0.1.2.tgz#2d10c06bdfd312ea9777695a4d28439456b75942"
 
-now@^15.3.0:
-  version "15.3.0"
-  resolved "https://registry.yarnpkg.com/now/-/now-15.3.0.tgz#cae6d6e37d9babea524c4125e842d6dbd54cd217"
-  integrity sha512-QuPHIlvcDKHaj39lR2VugeguO7JOtMZ5Ff2XcEPzy2VxsV/ocIhlDiNxV5P4nhl5rzzQt8bn9TFh33n4vO5yIA==
+now@^16.3.1:
+  version "16.3.1"
+  resolved "https://registry.yarnpkg.com/now/-/now-16.3.1.tgz#e1109145d0e8a4508b3e011f1c2b7047cb8733da"
+  integrity sha512-bn+xHUiPRH1YRfe/hSo5WZUskOLX3igL4PTe9gnoLaUoq9ZuBQw5/6A4gG4VvW2HVQLgeRkp2OASfYnjuD+lcQ==
 
 npm-bundled@^1.0.1:
   version "1.0.5"

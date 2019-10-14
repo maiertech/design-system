@@ -1,14 +1,11 @@
 {
-  "version": 1,
-  "name": "components",
-  "alias": "components.maier.asia",
-  "type": "static",
-  "build": {
-    "env": {
-      "NOW_TOKEN": "@now_token"
+  "version": 2,
+  "scope": "maiertech",
+  "builds": [
+    {
+      "src": "package.json",
+      "use": "@now/static-build",
+      "config": { "distDir": "storybook-static" }
     }
-  },
-  "github": {
-    "autoAlias": false
-  }
+  ]
 }

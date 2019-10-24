@@ -1,10 +1,4 @@
-__image_snapshots__/
-node_modules/
-diff/
-dist/
-screenshots/
-storybook-static/
 .DS_Store
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
+dist
+node_modules
+public

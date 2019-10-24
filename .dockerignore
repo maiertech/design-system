@@ -1,7 +1,0 @@
-*
-!config
-!src
-!test
-!.babelrc
-!package.json
-!yarn.lock

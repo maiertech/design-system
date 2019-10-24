@@ -19,17 +19,17 @@
     "dist"
   ],
   "scripts": {
-    "start": "start-storybook -p 8000 -c config/storybook",
-    "build-npm": "rm -rf ./dist && cross-env NODE_ENV=production babel ./src -d ./dist --ignore 'test/**/*.test.js','src/**/*.stories.js'",
-    "build": "rm -rf ./storybook-static && build-storybook -c config/storybook",
-    "clean": "rm -rf ./node_modules",
+    "develop": "start-storybook -p 8000",
     "inspect": "node --inspect-brk node_modules/.bin/jest --runInBand",
+    "serve": "yarn run build && serve public",
+    "build": "rm -rf ./public && build-storybook -o ./public",
+    "babel": "rm -rf ./dist && cross-env NODE_ENV=production babel ./src -d ./dist --ignore 'test/**/*.test.js','src/**/*.stories.js'",
+    "prepublishOnly": "yarn run babel",
     "lint": "eslint . --ignore-path .gitignore",
     "format": "pretty-quick",
-    "prepublishOnly": "npm run build-npm",
-    "pretest": "rm -rf ./screenshots && rm -rf ./diff",
-    "test": "JEST_PUPPETEER_CONFIG=config/jest/puppeteer.js jest --config config/jest/config.js",
-    "watch": "npm run test --watch"
+    "purge": "rm -rf ./node_modules",
+    "pretest": "now",
+    "test": "jest"
   },
   "lint-staged": {
     "*.js": [
@@ -41,6 +41,9 @@
     "hooks": {
       "pre-commit": "pretty-quick --staged && lint-staged"
     }
+  },
+  "jest": {
+    "globalSetup": "./test/setup.js"
   },
   "dependencies": {
     "prop-types": "^15.6.0",
@@ -57,8 +60,6 @@
     "@babel/core": "^7.4.5",
     "@babel/preset-env": "^7.4.5",
     "@babel/preset-react": "^7.0.0",
-    "@storybook/addon-actions": "^5.0.11",
-    "@storybook/addon-console": "^1.1.0",
     "@storybook/addon-knobs": "^5.0.11",
     "@storybook/addon-storysource": "^5.0.11",
     "@storybook/react": "^5.0.11",
@@ -66,24 +67,20 @@
     "babel-jest": "^24.8.0",
     "babel-loader": "^8.0.6",
     "babel-plugin-styled-components": "^1.7.1",
+    "clipboardy": "^2.1.0",
     "cross-env": "^5.2.0",
     "eslint": "^5.16.0",
     "eslint-plugin-shopify": "^28.0.0",
-    "fs-extra": "^8.0.1",
     "husky": "^2.3.0",
     "jest": "^24.8.0",
-    "jest-image-snapshot": "^2.8.2",
-    "jest-puppeteer": "^4.2.0",
     "lint-staged": "^8.1.7",
-    "now": "^16.3.1",
+    "now": "^16.4.0",
     "prettier": "^1.17.1",
     "pretty-quick": "^1.11.0",
-    "puppeteer": "^1.17.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-test-renderer": "^16.4.1",
-    "release": "^6.0.1",
-    "shelljs": "^0.8.2",
+    "serve": "^11.2.0",
     "styled-components": "^4.2.1"
   }
 }

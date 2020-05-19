@@ -1,6 +1,7 @@
 import React from 'react';
 import { oneOf, string } from 'prop-types';
 import { Flex, Image, Text } from 'rebass';
+
 import SmartLink from '../SmartLink';
 
 const icons = {

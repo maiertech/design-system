@@ -1,10 +1,5 @@
 {
-  "extends": [
-    "plugin:shopify/react",
-    "plugin:shopify/node",
-    "plugin:shopify/jest",
-    "plugin:shopify/prettier"
-  ],
+  "extends": "@maiertech",
   "settings": {
     "react": {
       "version": "detect"

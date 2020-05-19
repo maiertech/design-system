@@ -2,6 +2,7 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { withKnobs, object } from '@storybook/addon-knobs';
 import { Image } from 'rebass';
+
 import PostList from './PostList';
 
 storiesOf('PostList', module)

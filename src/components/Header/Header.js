@@ -1,6 +1,7 @@
 import React from 'react';
 import { arrayOf, shape, string } from 'prop-types';
 import { Box, Flex, Heading, Text } from 'rebass';
+
 import SmartLink from '../SmartLink';
 
 const Header = ({ title, links, ...props }) => (

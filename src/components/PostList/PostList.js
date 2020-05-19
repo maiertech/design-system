@@ -1,6 +1,7 @@
 import React from 'react';
 import { arrayOf, shape, string } from 'prop-types';
 import { Box } from 'rebass';
+
 import PostPreview from '../PostPreview';
 import { postType } from '../../types';
 

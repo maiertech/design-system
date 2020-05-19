@@ -2,6 +2,7 @@ import React from 'react';
 import { node, string } from 'prop-types';
 import { withTheme } from 'styled-components';
 import { Link as RebassLink } from 'rebass';
+
 import { themeType } from '../../types';
 
 const Link = ({ children, href, theme, ...props }) => {

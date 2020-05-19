@@ -1,5 +1,6 @@
 import React from 'react';
 import { Box, Card, Flex, Heading, Text } from 'rebass';
+
 import { postType } from '../../types';
 import SmartLink from '../SmartLink';
 

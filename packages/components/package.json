@@ -1,0 +1,45 @@
+{
+  "name": "@maiertech/components",
+  "version": "0.19.0",
+  "description": "React component library.",
+  "author": "Thilo Maier <git@maier.asia>",
+  "license": "MIT",
+  "homepage": "https://github.com/maiertech/design-system/tree/master/packages/components",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/maiertech/design-system.git",
+    "directory": "packages/components"
+  },
+  "keywords": [
+    "react",
+    "rebass"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "dev": "start-storybook -p 8000 -c config/storybook",
+    "build": "rm -rf ./storybook-static && build-storybook -c config/storybook",
+    "purge": "rm -rf ./node_modules"
+  },
+  "peerDependencies": {
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "styled-components": "^4.2.1"
+  },
+  "dependencies": {
+    "prop-types": "^15.6.0",
+    "react-helmet": "^5.2.0",
+    "rebass": "^3.0.0-8"
+  },
+  "devDependencies": {
+    "@storybook/addon-actions": "^5.0.11",
+    "@storybook/addon-console": "^1.1.0",
+    "@storybook/addon-knobs": "^5.0.11",
+    "@storybook/addon-storysource": "^5.0.11",
+    "@storybook/react": "^5.0.11",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "styled-components": "^4.2.1"
+  }
+}

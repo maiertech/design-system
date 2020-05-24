@@ -1,5 +1,5 @@
 {
-  "name": "@mdotasia/design-system",
+  "name": "@maiertech/design-system",
   "version": "0.19.0",
   "description": "Design system for @maiertech websites.",
   "homepage": "https://components.maier.tech",
@@ -18,8 +18,8 @@
     "node": "12.x"
   },
   "scripts": {
-    "start": "start-storybook -p 8000 -c config/storybook",
-    "build-storybook": "rm -rf ./storybook-static && build-storybook -c config/storybook",
+    "dev": "start-storybook -p 8000 -c config/storybook",
+    "build": "rm -rf ./storybook-static && build-storybook -c config/storybook",
     "lint": "run-s lint:*",
     "lint:eslint": "eslint . --ignore-path .gitignore",
     "lint:prettier": "yarn run prettier --check",

@@ -1,29 +1,25 @@
 {
-  "name": "@mdotasia/components",
+  "name": "@mdotasia/design-system",
   "version": "0.19.0",
-  "description": "Reusable React components.",
-  "homepage": "https://components.maier.asia",
-  "author": {
-    "name": "Thilo Maier",
-    "email": "git@maier.asia"
-  },
-  "repository": "https://github.com/454de6e/components/",
-  "bugs": "https://github.com/mdotasia/components/issues",
+  "description": "Design system for @maiertech websites.",
+  "homepage": "https://components.maier.tech",
+  "author": "Thilo Maier <git@maier.asia>",
+  "repository": "github:maiertech/design-system",
   "license": "MIT",
   "keywords": [
     "react",
-    "components"
+    "rebass"
   ],
   "main": "dist/index.js",
   "files": [
     "dist"
   ],
+  "engines": {
+    "node": "12.x"
+  },
   "scripts": {
     "start": "start-storybook -p 8000 -c config/storybook",
-    "prepublishOnly": "npm run build",
-    "build": "rm -rf ./dist && cross-env NODE_ENV=production babel ./src -d ./dist --ignore 'test/**/*.test.js','src/**/*.stories.js'",
     "build-storybook": "rm -rf ./storybook-static && build-storybook -c config/storybook",
-    "clean": "rm -rf ./node_modules",
     "lint": "run-s lint:*",
     "lint:eslint": "eslint . --ignore-path .gitignore",
     "lint:prettier": "yarn run prettier --check",

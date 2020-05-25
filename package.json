@@ -25,18 +25,18 @@
     "purge": "rm -rf ./node_modules && yarn workspaces run purge"
   },
   "devDependencies": {
-    "@babel/cli": "^7.4.4",
-    "@babel/core": "^7.4.5",
-    "@babel/preset-env": "^7.4.5",
-    "@babel/preset-react": "^7.0.0",
-    "@maiertech/eslint-config": "^0.10.0",
-    "@maiertech/prettier-config": "^0.1.1",
-    "babel-loader": "^8.0.6",
-    "babel-plugin-styled-components": "^1.7.1",
-    "eslint": "^6.8.0",
-    "husky": "^4.2.5",
-    "lint-staged": "^10.2.6",
-    "npm-run-all": "^4.1.5",
-    "prettier": "^2.0.5"
+    "@babel/cli": "7.8.4",
+    "@babel/core": "7.9.6",
+    "@babel/preset-env": "7.9.6",
+    "@babel/preset-react": "7.9.4",
+    "@maiertech/eslint-config": "0.10.0",
+    "@maiertech/prettier-config": "0.1.1",
+    "babel-loader": "8.1.0",
+    "babel-plugin-styled-components": "1.10.7",
+    "eslint": "6.8.0",
+    "husky": "4.2.5",
+    "lint-staged": "10.2.6",
+    "npm-run-all": "4.1.5",
+    "prettier": "2.0.5"
   }
 }

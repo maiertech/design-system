@@ -1,6 +1,7 @@
 {
   "private": true,
   "workspaces": [
+    "docs",
     "packages/*"
   ],
   "engines": {
@@ -14,6 +15,7 @@
   },
   "scripts": {
     "dev": "yarn workspace @maiertech/components run dev",
+    "prepare": "yarn workspaces run prepare",
     "build": "yarn workspace @maiertech/components run storybook-build",
     "lint": "run-s lint:*",
     "lint:eslint": "eslint . --ignore-path .gitignore",

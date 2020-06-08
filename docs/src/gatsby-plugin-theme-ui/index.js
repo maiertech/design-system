@@ -1,3 +1,3 @@
-import { theme } from '@maiertech/components';
+import preset from '@theme-ui/preset-base';
 
-export default theme;
+export default preset;

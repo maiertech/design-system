@@ -1,12 +1,10 @@
 import React from 'react';
 import { node } from 'prop-types';
-import { Box, ThemeProvider } from 'theme-ui';
-import { theme } from '@maiertech/components';
+import { Box } from 'theme-ui';
 
+// No need to wrap with ThemeProvider since we already use gatsby-plugin-theme-ui.
 const LivePreviewWrapper = ({ children }) => (
-  <ThemeProvider theme={theme}>
-    <Box sx={{ m: 2 }}>{children}</Box>
-  </ThemeProvider>
+  <Box sx={{ m: 2 }}>{children}</Box>
 );
 
 LivePreviewWrapper.propTypes = {

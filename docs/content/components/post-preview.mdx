@@ -1,0 +1,74 @@
+---
+title: PostPreview
+status: Experimental
+source: https://github.com/maiertech/design-system/blob/master/packages/components/src/post-preview.js
+---
+
+## Examples
+
+In this example we render `PostPreview` with a description:
+
+```jsx live
+<PostPreview
+  post={{
+    title: (
+      <Heading as="h2" mb={3}>
+        Et voluptate nisi deserunt consectetur esse fugiat velit occaecat veniam
+        esse
+      </Heading>
+    ),
+    description: (
+      <Text as="p" mb={3}>
+        Nulla ut erat id mauris vulputate elementum. Nullam varius. Nulla
+        facilisi. Cras non velit nec nisi vulputate nonummy. Maecenas tincidunt
+        lacus at velit. Vivamus vel nulla eget eros elementum pellentesque.
+        Quisque porta volutpat erat. Quisque erat eros, viverra eget, congue
+        eget, semper rutrum, nulla. Nunc purus.
+      </Text>
+    ),
+    author: 'Thilo Maier',
+    date: 'July 4, 2018',
+  }}
+/>
+```
+
+Note that the React component provided as `title` prop manages the spacing
+between the title and the description using `mb` system prop.
+
+In this example we render `PostPreview` without a description:
+
+```jsx live
+<PostPreview
+  post={{
+    title: (
+      <Heading as="h2" mb={3}>
+        Et voluptate nisi deserunt consectetur esse fugiat velit occaecat veniam
+        esse
+      </Heading>
+    ),
+    author: 'Thilo Maier',
+    date: 'July 4, 2018',
+  }}
+/>
+```
+
+## System props
+
+`PostPreview` supports [space props](https://styled-system.com/api#space) and
+[color props](https://styled-system.com/api#color) from
+[Styled System](https://styled-system.com/).
+
+## Component props
+
+| Name | Type   | Default | Required | Description |
+| :--- | :----- | :------ | :------- | :---------- |
+| post | Object |         | ✓        | See below.  |
+
+### Post
+
+| Name        | Type   | Default | Required | Description                                                 |
+| :---------- | :----- | :------ | :------- | ----------------------------------------------------------- |
+| title       | Node   |         | ✓        | Component that renders a title (composition pattern).       |
+| description | Node   |         |          | Component that renders a description (composition pattern). |
+| author      | String |         | ✓        |                                                             |
+| date        | String |         | ✓        | Formatted date.                                             |

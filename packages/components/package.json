@@ -15,14 +15,12 @@
   },
   "keywords": [
     "react",
-    "rebass"
+    "theme-ui"
   ],
   "publishConfig": {
     "access": "public"
   },
   "scripts": {
-    "dev": "start-storybook -p 8000 -c config/storybook",
-    "storybook-build": "rm -rf ./storybook-static && build-storybook -c config/storybook",
     "prepare": "microbundle --format modern,cjs --jsx React.createElement",
     "watch": "microbundle watch --format modern,cjs --jsx React.createElement --compress false",
     "clean": "rm -rf ./dist",
@@ -31,7 +29,8 @@
   "peerDependencies": {
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "styled-components": "^4.2.1"
+    "styled-components": "^4.2.1",
+    "theme-ui": "^0.3.1"
   },
   "dependencies": {
     "prop-types": "15.7.2",
@@ -39,13 +38,14 @@
     "rebass": "3.2.2"
   },
   "devDependencies": {
-    "@storybook/addon-actions": "5.3.19",
-    "@storybook/addon-console": "1.2.1",
+    "@storybook/addon-docs": "5.3.19",
     "@storybook/addon-knobs": "5.3.19",
     "@storybook/addon-storysource": "5.3.19",
     "@storybook/react": "5.3.19",
+    "@theme-ui/preset-base": "0.3.0",
     "react": "16.13.1",
     "react-dom": "16.13.1",
-    "styled-components": "4.4.1"
+    "styled-components": "4.4.1",
+    "theme-ui": "0.3.1"
   }
 }

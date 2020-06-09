@@ -1,3 +1,3 @@
-import preset from '@theme-ui/preset-base';
+import preset from '@maiertech/preset';
 
 export default preset;

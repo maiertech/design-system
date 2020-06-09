@@ -15,6 +15,7 @@
   },
   "dependencies": {
     "@maiertech/components": "*",
+    "@maiertech/preset": "*",
     "@primer/gatsby-theme-doctocat": "0.19.0",
     "@theme-ui/preset-base": "0.3.0",
     "gatsby": "2.22.12",

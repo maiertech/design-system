@@ -6,8 +6,9 @@
   "author": "Thilo Maier <maier@un.org>",
   "repository": "maiertech/design-system",
   "scripts": {
-    "dev": "node -r dotenv/config node_modules/.bin/gatsby develop",
-    "build": "rm -rf public && gatsby build",
+    "dev": "gatsby develop",
+    "build": "gatsby build",
+    "serve": "gatsby serve",
     "clean": "gatsby clean",
     "prepare": "exit",
     "purge": "rm -rf ./node_modules"
@@ -15,9 +16,8 @@
   "dependencies": {
     "@maiertech/components": "*",
     "@primer/gatsby-theme-doctocat": "0.19.0",
-    "dotenv": "8.2.0",
     "gatsby": "2.22.12",
-    "gatsby-plugin-theme-ui": "^0.3.0",
+    "gatsby-plugin-theme-ui": "0.3.0",
     "prop-types": "15.7.2",
     "react": "16.13.1",
     "react-dom": "16.13.1",

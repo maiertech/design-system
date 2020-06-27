@@ -2333,10 +2333,10 @@
   resolved "https://registry.yarnpkg.com/@kwsites/exec-p/-/exec-p-0.4.0.tgz#ab3765d482849ba6e825721077c248cf9f3323b7"
   integrity sha512-44DWNv5gDR9EwrCTVQ4ZC99yPqVS0VCWrYIBl45qNR8XQy+4lbl0IQG8kBDf6NHwj4Ib4c2z1Fq1IUJOCbkZcw==
 
-"@maiertech/eslint-config@0.10.0":
-  version "0.10.0"
-  resolved "https://registry.yarnpkg.com/@maiertech/eslint-config/-/eslint-config-0.10.0.tgz#98201f6da4d02d657653d940f73959adcba71d09"
-  integrity sha512-U6zqQ0yiOc7pQ5kX0Y0Xf9By1YxAmIb7ioCl6DR/T0FViOF2Fqx62SNSbDlL8EYGJOArNxUs3qRv57NG/Gd02g==
+"@maiertech/eslint-config@0.12.0":
+  version "0.12.0"
+  resolved "https://registry.yarnpkg.com/@maiertech/eslint-config/-/eslint-config-0.12.0.tgz#d6629594f89604bba8baa00c9e9b6d0f41d7bf3c"
+  integrity sha512-+9czcpIRKF2jNSNLhL+C4kWXj4RzXYQcjOmFLe83WSKruSS6ivUzQdIiGa1472nsPcyjRKyRJDaBGMFsG0zQ8w==
   dependencies:
     "@shopify/eslint-plugin" "37.0.0"
 

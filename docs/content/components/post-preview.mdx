@@ -4,9 +4,13 @@ status: Experimental
 source: https://github.com/maiertech/design-system/blob/master/packages/components/src/post-preview.js
 ---
 
+A `PostPreview` renders a preview of a post on a posts overview page or it can
+be used to render the top of a post page.
+
 ## Examples
 
-In this example we render `PostPreview` with a description:
+In this example we render `PostPreview` with a description, which is what you
+would do on a posts overview page:
 
 ```jsx live
 <PostPreview
@@ -29,13 +33,18 @@ In this example we render `PostPreview` with a description:
     author: 'Thilo Maier',
     date: 'July 4, 2018',
   }}
+  m={2}
 />
 ```
 
-Note that the React component provided as `title` prop manages the spacing
-between the title and the description using `mb` system prop.
+Since `title` is a React component, you have full control over how it is
+rendered. E.g., on a posts overview page you can render it as `h2`, but on a
+post page you can render it as `h1`. The component provided as `title` also
+manages the spacing between the title and the description using the `mb` system
+prop.
 
-In this example we render `PostPreview` without a description:
+In the following example we render `PostPreview` without a description, which is
+what you would do on a post page:
 
 ```jsx live
 <PostPreview
@@ -49,6 +58,7 @@ In this example we render `PostPreview` without a description:
     author: 'Thilo Maier',
     date: 'July 4, 2018',
   }}
+  m={2}
 />
 ```
 
@@ -70,5 +80,19 @@ In this example we render `PostPreview` without a description:
 | :---------- | :----- | :------ | :------- | ----------------------------------------------------------- |
 | title       | Node   |         | ✓        | Component that renders a title (composition pattern).       |
 | description | Node   |         |          | Component that renders a description (composition pattern). |
-| author      | String |         | ✓        |                                                             |
+| author      | String |         | ✓        | Author name.                                                |
 | date        | String |         | ✓        | Formatted date.                                             |
+
+## Variants
+
+`PostPreview` does not support variants. Variants are not needed because with
+the composition pattern you have full control over how `title` and `description`
+render.
+
+## Visual regression testing
+
+The following links can be used for visual regression testing:
+
+- [`PostPreview` with description](/post-preview/with-description)
+- [`PostPreview` without description](/post-preview/without-description)
+- [Grid of posts](/post-preview/grid-of-posts)

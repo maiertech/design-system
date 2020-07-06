@@ -1,5 +1,6 @@
 import React from 'react';
-import { Container, Heading, Grid, Link, Text } from 'theme-ui';
+import { Container, Heading, Grid, Link, Text, ThemeProvider } from 'theme-ui';
+import preset from '@theme-ui/preset-base';
 import { PostPreview } from '@maiertech/components';
 
 const posts = [
@@ -210,16 +211,22 @@ const posts = [
   },
 ];
 
-const GridOfPosts = () => (
-  <Container variant="narrow" my={3}>
-    <Grid gap={4} columns={1}>
-      {posts.map(({ id, href, ...post }) => (
-        <Link key={id} href={href} variant="text">
-          <PostPreview post={{ ...post }} />
-        </Link>
-      ))}
-    </Grid>
-  </Container>
+const VisualRegressionTest = () => (
+  <ThemeProvider theme={preset}>
+    <Container sx={{ maxWidth: '48rem', my: 3 }}>
+      <Grid gap={4} columns={1}>
+        {posts.map(({ id, href, ...post }) => (
+          <Link
+            key={id}
+            href={href}
+            sx={{ color: 'inherit', textDecoration: 'none' }}
+          >
+            <PostPreview post={{ ...post }} />
+          </Link>
+        ))}
+      </Grid>
+    </Container>
+  </ThemeProvider>
 );
 
-export default GridOfPosts;
+export default VisualRegressionTest;

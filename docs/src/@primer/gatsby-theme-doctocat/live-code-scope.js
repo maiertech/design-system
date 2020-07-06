@@ -1,6 +1,6 @@
+import * as themeUI from 'theme-ui';
 import * as components from '@maiertech/components';
-import * as themeUi from 'theme-ui';
 
-const scope = { ...components, ...themeUi };
+const scope = { ...themeUI, ...components };
 
 export default scope;

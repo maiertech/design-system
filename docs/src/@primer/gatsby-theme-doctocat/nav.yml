@@ -1,5 +1,7 @@
 - title: Components
   url: /components
   children:
+    - title: Header
+      url: /components/header
     - title: PostPreview
       url: /components/post-preview

@@ -1,12 +1,10 @@
 import React from 'react';
 import { node } from 'prop-types';
-import { Box, ThemeProvider } from 'theme-ui';
-import { theme } from '@maiertech/components';
+import { ThemeProvider } from 'theme-ui';
+import preset from '@theme-ui/preset-base';
 
 const LivePreviewWrapper = ({ children }) => (
-  <ThemeProvider theme={theme}>
-    <Box sx={{ m: 2 }}>{children}</Box>
-  </ThemeProvider>
+  <ThemeProvider theme={preset}>{children}</ThemeProvider>
 );
 
 LivePreviewWrapper.propTypes = {

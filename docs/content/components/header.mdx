@@ -1,0 +1,93 @@
+---
+title: Header
+status: Experimental
+source: https://github.com/maiertech/design-system/blob/master/packages/components/src/header.js
+---
+
+A `Header` renders a page header and can be used in layouts.
+
+## Examples
+
+This example shows a header with a few navigation links:
+
+```jsx live
+<Header
+  title="Header title"
+  links={[
+    { href: '/blog', text: 'Blog' },
+    { href: '/notes', text: 'Notes' },
+    { href: '/about', text: 'About' },
+  ]}
+/>
+```
+
+This example shows a header with many navigation links:
+
+```jsx live
+<Header
+  title="Header title"
+  links={[
+    { href: '/1', text: 'One' },
+    { href: '/2', text: 'Two' },
+    { href: '/3', text: 'Three' },
+    { href: '/4', text: 'Four' },
+    { href: '/5', text: 'Five' },
+    { href: '/6', text: 'Six' },
+    { href: '/7', text: 'Seven' },
+    { href: '/8', text: 'Eight' },
+    { href: '/9', text: 'Nine' },
+    { href: '/10', text: 'Ten' },
+    { href: '/11', text: 'Eleven' },
+    { href: '/12', text: 'Twelve' },
+  ]}
+/>
+```
+
+## System props
+
+`Header` supports [space props](https://styled-system.com/api#space) and
+[color props](https://styled-system.com/api#color) from
+[Styled System](https://styled-system.com/).
+
+## Component props
+
+| Name  | Type          | Default | Required | Description                         |
+| :---- | :------------ | :------ | :------- | :---------------------------------- |
+| title | String        |         | ✓        |                                     |
+| links | Array of Link |         | ✓        | Links to be displayed in navigaton. |
+
+### Link
+
+| Name | Type   | Default | Required | Description |
+| :--- | :----- | :------ | :------- | ----------- |
+| href | String |         | ✓        |             |
+| text | String |         | ✓        |             |
+
+## Variants
+
+| Key                | Description                     |
+| :----------------- | :------------------------------ |
+| `header`           | Set `color` and `bg`.           |
+| `header.container` | Set Set `maxWidth` and padding. |
+
+This example shows how to custmize a header with variants:
+
+```jsx live
+<ThemeProvider theme={{ header: { color: 'primary', bg: 'background' } }}>
+  <Header
+    title="Header title"
+    links={[
+      { href: '/blog', text: 'Blog' },
+      { href: '/notes', text: 'Notes' },
+      { href: '/about', text: 'About' },
+    ]}
+  />
+</ThemeProvider>
+```
+
+## Visual regression testing
+
+The following links can be used for visual regression testing:
+
+- [Few navigation links](/header/few-nav-links)
+- [Many navigation links](/header/many-nav-links)

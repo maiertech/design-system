@@ -1,0 +1,170 @@
+---
+title: SocialIcons
+status: Experimental
+source: https://github.com/maiertech/design-system/blob/master/packages/components/src/social-icons.js
+---
+
+`SocialIcons` is used to render one or more social media icons, e.g., in a
+footer. You can use [`GitHubIcon`](/components/github-icon) and
+[`TwitterIcon`](/components/twitter-icon) or create your own social media icon
+with [`Icon`](/components/icon).
+
+## Examples
+
+This example renders social icons with default alignment (start):
+
+```jsx live
+<SocialIcons
+  values={[
+    {
+      id: 'github',
+      icon: (
+        <Link href="https://github.com/454de6e" sx={{ color: 'inherit' }}>
+          <GitHubIcon size={48} title="Follow us on GitHub" />
+        </Link>
+      ),
+    },
+    {
+      id: 'twitter',
+      icon: (
+        <Link href="https://twitter.com/454de6e" sx={{ color: 'inherit' }}>
+          <TwitterIcon size={48} title="Follow us on Twitter" />
+        </Link>
+      ),
+    },
+  ]}
+  m={2}
+/>
+```
+
+You can align center:
+
+```jsx live
+<SocialIcons
+  values={[
+    {
+      id: 'github',
+      icon: (
+        <Link href="https://github.com/454de6e" sx={{ color: 'inherit' }}>
+          <GitHubIcon size={48} title="Follow us on GitHub" />
+        </Link>
+      ),
+    },
+    {
+      id: 'twitter',
+      icon: (
+        <Link href="https://twitter.com/454de6e" sx={{ color: 'inherit' }}>
+          <TwitterIcon size={48} title="Follow us on Twitter" />
+        </Link>
+      ),
+    },
+  ]}
+  align="center"
+  m={2}
+/>
+```
+
+And align end (right):
+
+```jsx live
+<SocialIcons
+  values={[
+    {
+      id: 'github',
+      icon: (
+        <Link href="https://github.com/454de6e" sx={{ color: 'inherit' }}>
+          <GitHubIcon size={48} title="Follow us on GitHub" />
+        </Link>
+      ),
+    },
+    {
+      id: 'twitter',
+      icon: (
+        <Link href="https://twitter.com/454de6e" sx={{ color: 'inherit' }}>
+          <TwitterIcon size={48} title="Follow us on Twitter" />
+        </Link>
+      ),
+    },
+  ]}
+  align="end"
+  m={2}
+/>
+```
+
+`SocialIcons` behaves like fonts and renders with the parent element's `color`:
+
+```jsx live
+<Box color="primary">
+  <SocialIcons
+    values={[
+      {
+        id: 'github',
+        icon: (
+          <Link href="https://github.com/454de6e" sx={{ color: 'inherit' }}>
+            <GitHubIcon size={48} title="Follow us on GitHub" />
+          </Link>
+        ),
+      },
+      {
+        id: 'twitter',
+        icon: (
+          <Link href="https://twitter.com/454de6e" sx={{ color: 'inherit' }}>
+            <TwitterIcon size={48} title="Follow us on Twitter" />
+          </Link>
+        ),
+      },
+    ]}
+    m={2}
+  />
+</Box>
+```
+
+This is an example with one social icon:
+
+```jsx live
+<SocialIcons
+  values={[
+    {
+      id: 'twitter',
+      icon: (
+        <Link href="https://twitter.com/454de6e" sx={{ color: 'inherit' }}>
+          <TwitterIcon size={48} title="Follow us on Twitter" />
+        </Link>
+      ),
+    },
+  ]}
+  m={2}
+/>
+```
+
+## System props
+
+`SocialIcons` supports [space props](https://styled-system.com/api#space) and
+[color props](https://styled-system.com/api#color) from
+[Styled System](https://styled-system.com/).
+
+## Component props
+
+| Name   | Type                       | Default  | Required | Description                             |
+| :----- | :------------------------- | :------- | :------- | :-------------------------------------- |
+| values | Array of value             |          | ✓        | See below.                              |
+| align  | `start`, `center` or `end` | `center` |          | Alignment of social icons (responsive). |
+
+### Value
+
+| Name | Type   | Default | Required | Description                           |
+| :--- | :----- | :------ | :------- | ------------------------------------- |
+| id   | String |         | ✓        | Key for the underlying list in React. |
+| icon | Node   |         | ✓        | Social icon (composition pattern).    |
+
+## Variants
+
+`SocialIcons` does not support variants.
+
+## Visual regression testing
+
+The following URLs can be used for visual regression testing:
+
+- [Align start](/social-icons/align-start)
+- [Align center](/social-icons/align-center)
+- [Align end](/social-icons/align-end)

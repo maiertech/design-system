@@ -14,13 +14,11 @@
     }
   },
   "scripts": {
-    "dev": "yarn workspace @maiertech/components run dev",
     "prepare": "yarn workspaces run prepare",
-    "build": "yarn workspace @maiertech/components run storybook-build",
+    "prettier": "prettier . --ignore-path .gitignore",
     "lint": "run-s lint:*",
     "lint:eslint": "eslint . --ignore-path .gitignore",
     "lint:prettier": "yarn run prettier --check",
-    "prettier": "prettier . --ignore-path .gitignore",
     "format": "run-s format:*",
     "format:eslint": "yarn run lint:eslint --fix",
     "format:prettier": "yarn run prettier --write",

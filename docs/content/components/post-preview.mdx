@@ -1,0 +1,98 @@
+---
+title: PostPreview
+status: Experimental
+source: https://github.com/maiertech/design-system/blob/master/packages/components/src/post-preview.js
+---
+
+A `PostPreview` renders a preview of a post on a posts overview page or it can
+be used to render the top of a post page.
+
+## Examples
+
+In this example we render `PostPreview` with a description, which is what you
+would do on a posts overview page:
+
+```jsx live
+<PostPreview
+  post={{
+    title: (
+      <Heading as="h2" mb={3}>
+        Et voluptate nisi deserunt consectetur esse fugiat velit occaecat veniam
+        esse
+      </Heading>
+    ),
+    description: (
+      <Text as="p" mb={3}>
+        Nulla ut erat id mauris vulputate elementum. Nullam varius. Nulla
+        facilisi. Cras non velit nec nisi vulputate nonummy. Maecenas tincidunt
+        lacus at velit. Vivamus vel nulla eget eros elementum pellentesque.
+        Quisque porta volutpat erat. Quisque erat eros, viverra eget, congue
+        eget, semper rutrum, nulla. Nunc purus.
+      </Text>
+    ),
+    author: 'Thilo Maier',
+    date: 'July 4, 2018',
+  }}
+  m={2}
+/>
+```
+
+Since `title` is a React component, you have full control over how it is
+rendered. E.g., on a posts overview page you can render it as `h2`, but on a
+post page you can render it as `h1`. The component provided as `title` also
+manages the spacing between the title and the description using the `mb` system
+prop.
+
+In the following example we render `PostPreview` without a description, which is
+what you would do on a post page:
+
+```jsx live
+<PostPreview
+  post={{
+    title: (
+      <Heading as="h2" mb={3}>
+        Et voluptate nisi deserunt consectetur esse fugiat velit occaecat veniam
+        esse
+      </Heading>
+    ),
+    author: 'Thilo Maier',
+    date: 'July 4, 2018',
+  }}
+  m={2}
+/>
+```
+
+## System props
+
+`PostPreview` supports [space props](https://styled-system.com/api#space) and
+[color props](https://styled-system.com/api#color) from
+[Styled System](https://styled-system.com/).
+
+## Component props
+
+| Name | Type   | Default | Required | Description |
+| :--- | :----- | :------ | :------- | :---------- |
+| post | Object |         | ✓        | See below.  |
+
+### Post
+
+| Name        | Type   | Default | Required | Description                                                 |
+| :---------- | :----- | :------ | :------- | ----------------------------------------------------------- |
+| title       | Node   |         | ✓        | Component that renders a title (composition pattern).       |
+| description | Node   |         |          | Component that renders a description (composition pattern). |
+| author      | String |         | ✓        | Author name.                                                |
+| date        | String |         | ✓        | Formatted date.                                             |
+
+## Variants
+
+`PostPreview` does not support variants. Variants are not needed because with
+the composition pattern you have full control over how `title` and `description`
+render.
+
+## Visual regression testing
+
+The following links can be used for visual regression testing:
+
+- [`PostPreview` with description](/post-preview/with-description)
+- [`PostPreview` without description](/post-preview/without-description)
+- [Grid of posts](/post-preview/grid-of-posts)

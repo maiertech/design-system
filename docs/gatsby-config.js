@@ -5,7 +5,6 @@ module.exports = {
     description: 'Design system for @maiertech websites.',
   },
   plugins: [
-    'gatsby-plugin-theme-ui',
     {
       resolve: '@primer/gatsby-theme-doctocat',
       options: {

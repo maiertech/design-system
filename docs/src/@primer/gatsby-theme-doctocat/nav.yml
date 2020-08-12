@@ -1,0 +1,15 @@
+- title: Components
+  url: /components
+  children:
+    - title: Footer
+      url: /components/footer
+    - title: GitHubIcon
+      url: /components/github-icon
+    - title: Header
+      url: /components/header
+    - title: PostPreview
+      url: /components/post-preview
+    - title: SocialIcons
+      url: /components/social-icons
+    - title: TwitterIcon
+      url: /components/twitter-icon

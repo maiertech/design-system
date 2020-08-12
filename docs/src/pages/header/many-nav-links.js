@@ -1,7 +1,7 @@
 import React from 'react';
 import { Header } from '@maiertech/components';
 import { ThemeProvider } from 'theme-ui';
-import preset from '@theme-ui/preset-base';
+import preset from '@maiertech/preset';
 
 const VisualRegressionTest = () => (
   <ThemeProvider theme={preset}>

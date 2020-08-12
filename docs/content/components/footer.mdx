@@ -1,0 +1,186 @@
+---
+title: Footer
+status: Experimental
+source: https://github.com/maiertech/design-system/blob/master/packages/components/src/footer.js
+---
+
+A `Footer` renders a page footer and can be used in layouts.
+
+## Examples
+
+This example shows a footer with a few navigation links:
+
+```jsx live
+<Footer
+  title="This is the Footer title"
+  name="Thilo Maier"
+  lastUpdated="Aug 1, 2018"
+  links={[
+    {
+      href: '/blog',
+      text: 'Blog',
+    },
+    {
+      href: '/about',
+      text: 'About',
+    },
+    {
+      href: '/archive',
+      text: 'Archive',
+    },
+  ]}
+/>
+```
+
+This example shows a footer with many navigation links:
+
+```jsx live
+<Footer
+  title="This is the Footer title"
+  name="Thilo Maier"
+  links={[
+    {
+      href: '/one',
+      text: 'One',
+    },
+    {
+      href: '/two',
+      text: 'Two',
+    },
+    {
+      href: '/three',
+      text: 'Three',
+    },
+    {
+      href: '/four',
+      text: 'Four',
+    },
+    {
+      href: '/five',
+      text: 'Five',
+    },
+    {
+      href: '/six',
+      text: 'Six',
+    },
+    {
+      href: '/seven',
+      text: 'Seven',
+    },
+    {
+      href: '/eight',
+      text: 'Eight',
+    },
+    {
+      href: '/nine',
+      text: 'Nine',
+    },
+    {
+      href: '/ten',
+      text: 'Ten',
+    },
+    {
+      href: '/eleven',
+      text: 'Eleven',
+    },
+    {
+      href: '/twelve',
+      text: 'Twelve',
+    },
+    {
+      href: '/thirteen',
+      text: 'Thirteen',
+    },
+    {
+      href: '/fourteen',
+      text: 'Fourteen',
+    },
+    {
+      href: '/fifteen',
+      text: 'Fifteen',
+    },
+    {
+      href: '/sixteen',
+      text: 'Sixteen',
+    },
+    {
+      href: '/seventeen',
+      text: 'Seventeen',
+    },
+    {
+      href: '/eighteen',
+      text: 'Eighteen',
+    },
+    {
+      href: '/nineteen',
+      text: 'Nineteen',
+    },
+    {
+      href: '/twenty',
+      text: 'Twenty',
+    },
+  ]}
+/>
+```
+
+## System props
+
+`Footer` supports [space props](https://styled-system.com/api#space) and
+[color props](https://styled-system.com/api#color) from
+[Styled System](https://styled-system.com/).
+
+## Component props
+
+| Name        | Type          | Default | Required | Description   |
+| :---------- | :------------ | :------ | :------- | :------------ |
+| title       | String        |         | ✓        |               |
+| name        | String        |         | ✓        |               |
+| lastUpdated |               |         |          |               |
+| links       | Array of Link |         | ✓        | Footer links. |
+
+### Link
+
+| Name | Type   | Default | Required | Description |
+| :--- | :----- | :------ | :------- | ----------- |
+| href | String |         | ✓        |             |
+| text | String |         | ✓        |             |
+
+## Variants
+
+| Key                | Description                     |
+| :----------------- | :------------------------------ |
+| `footer`           | Set `color` and `bg`.           |
+| `footer.container` | Set Set `maxWidth` and padding. |
+
+This example shows how to custmize a header with variants:
+
+```jsx live
+<ThemeProvider theme={{ footer: { color: 'primary', bg: 'background' } }}>
+  <Footer
+    title="This is the Footer title"
+    name="Thilo Maier"
+    lastUpdated="Aug 1, 2018"
+    links={[
+      {
+        href: '/blog',
+        text: 'Blog',
+      },
+      {
+        href: '/about',
+        text: 'About',
+      },
+      {
+        href: '/archive',
+        text: 'Archive',
+      },
+    ]}
+  />
+</ThemeProvider>
+```
+
+## Visual regression testing
+
+The following links can be used for visual regression testing:
+
+- [Few footer links](/footer/few-footer-links)
+- [Many footer links](/footer/many-footer-links)

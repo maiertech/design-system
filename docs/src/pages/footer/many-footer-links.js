@@ -1,37 +1,14 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
-import { withKnobs, object, text } from '@storybook/addon-knobs';
+import { Footer } from '@maiertech/components';
+import { ThemeProvider } from 'theme-ui';
+import preset from '@maiertech/preset';
 
-import Footer from './Footer';
-
-storiesOf('Footer', module)
-  .addDecorator(withKnobs)
-  .add('knobs', () => (
+const VisualRegressionTest = () => (
+  <ThemeProvider theme={preset}>
     <Footer
-      title={text('title', 'This is the Footer Title')}
-      name={text('name', 'Thilo Maier')}
-      lastUpdated={text('lastUpdated', 'Aug 1, 2018')}
-      links={object('links', [
-        {
-          href: '/blog',
-          text: 'Blog',
-        },
-        {
-          href: '/about',
-          text: 'About',
-        },
-        {
-          href: '/archive',
-          text: 'Archive',
-        },
-      ])}
-    />
-  ))
-  .add('many links that wrap', () => (
-    <Footer
-      title={text('title', 'This is the Footer Title')}
-      name={text('name', 'Thilo Maier')}
-      links={object('links', [
+      title="This is the Footer title"
+      name="Thilo Maier"
+      links={[
         {
           href: '/one',
           text: 'One',
@@ -112,6 +89,9 @@ storiesOf('Footer', module)
           href: '/twenty',
           text: 'Twenty',
         },
-      ])}
+      ]}
     />
-  ));
+  </ThemeProvider>
+);
+
+export default VisualRegressionTest;

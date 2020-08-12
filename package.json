@@ -14,7 +14,6 @@
     }
   },
   "scripts": {
-    "dev": "yarn workspace docs run dev",
     "prepare": "yarn workspaces run prepare",
     "prettier": "prettier . --ignore-path .gitignore",
     "lint": "run-s lint:*",

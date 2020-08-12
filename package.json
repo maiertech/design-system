@@ -32,7 +32,7 @@
     "@maiertech/eslint-config": "0.12.1",
     "@maiertech/prettier-config": "0.2.1",
     "babel-loader": "8.1.0",
-    "babel-plugin-styled-components": "1.10.7",
+    "babel-plugin-styled-components": "1.11.1",
     "eslint": "6.8.0",
     "husky": "4.2.5",
     "lint-staged": "10.2.11",

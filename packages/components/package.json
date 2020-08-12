@@ -34,7 +34,7 @@
   "dependencies": {
     "prop-types": "15.7.2",
     "react-helmet": "5.2.1",
-    "rebass": "3.2.2"
+    "rebass": "4.0.7"
   },
   "devDependencies": {
     "@theme-ui/preset-base": "0.3.0",

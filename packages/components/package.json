@@ -27,19 +27,11 @@
     "purge": "rm -rf ./node_modules"
   },
   "peerDependencies": {
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
     "theme-ui": "^0.3.1"
   },
   "dependencies": {
-    "prop-types": "15.7.2",
-    "react-helmet": "5.2.1",
-    "rebass": "3.2.2"
-  },
-  "devDependencies": {
-    "@theme-ui/preset-base": "0.3.0",
-    "react": "16.13.1",
-    "react-dom": "16.13.1",
-    "theme-ui": "0.3.1"
+    "prop-types": "15.7.2"
   }
 }

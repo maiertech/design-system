@@ -17,9 +17,9 @@ jobs:
           # Prevent personal access token GH_TOKEN, assigned to GITHUB_TOKEN, from being overridden.
           # Personal access token instead of auto generated token is required to trigger workflows.
           persist-credentials: false
-      - uses: actions/setup-node@v2.1.1
+      - uses: actions/setup-node@v2.1.2
         with:
-          node-version: '12'
+          node-version: '14'
       - run: yarn install --frozen-lockfile
       - uses: changesets/action@master
         with:

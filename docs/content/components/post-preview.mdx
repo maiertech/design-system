@@ -62,6 +62,32 @@ what you would do on a post page:
 />
 ```
 
+Finally, we render `PostPreview` without an author:
+
+```jsx live
+<PostPreview
+  post={{
+    title: (
+      <Heading as="h2" mb={3}>
+        Et voluptate nisi deserunt consectetur esse fugiat velit occaecat veniam
+        esse
+      </Heading>
+    ),
+    description: (
+      <Text as="p" mb={3}>
+        Nulla ut erat id mauris vulputate elementum. Nullam varius. Nulla
+        facilisi. Cras non velit nec nisi vulputate nonummy. Maecenas tincidunt
+        lacus at velit. Vivamus vel nulla eget eros elementum pellentesque.
+        Quisque porta volutpat erat. Quisque erat eros, viverra eget, congue
+        eget, semper rutrum, nulla. Nunc purus.
+      </Text>
+    ),
+    date: 'July 4, 2018',
+  }}
+  m={2}
+/>
+```
+
 ## System props
 
 `PostPreview` supports [space props](https://styled-system.com/api#space) and
@@ -80,7 +106,7 @@ what you would do on a post page:
 | :---------- | :----- | :------ | :------- | ----------------------------------------------------------- |
 | title       | Node   |         | ✓        | Component that renders a title (composition pattern).       |
 | description | Node   |         |          | Component that renders a description (composition pattern). |
-| author      | String |         | ✓        | Author name.                                                |
+| author      | String |         |          | Author name.                                                |
 | date        | String |         | ✓        | Formatted date.                                             |
 
 ## Variants

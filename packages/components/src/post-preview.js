@@ -6,7 +6,7 @@ const PostPreview = ({ post, ...props }) => (
   <Box {...props} as="article">
     {post.title}
     {post.description}
-    <Text sx={{ fontSize: 1 }}>{post.author}</Text>
+    {post.author && <Text sx={{ fontSize: 1 }}>{post.author}</Text>}
     <Text as="time" sx={{ fontSize: 1 }}>
       {post.date}
     </Text>
@@ -17,7 +17,7 @@ PostPreview.propTypes = {
   post: shape({
     title: node.isRequired,
     description: node,
-    author: string.isRequired,
+    author: string,
     date: string.isRequired,
   }).isRequired,
 };

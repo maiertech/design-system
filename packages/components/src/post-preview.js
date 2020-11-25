@@ -1,15 +1,17 @@
-import React from 'react';
+/** @jsx jsx */
 import { node, shape, string } from 'prop-types';
-import { Box, Text } from 'theme-ui';
+import { jsx, Box, Text } from 'theme-ui';
 
 const PostPreview = ({ post, ...props }) => (
   <Box {...props} as="article">
     {post.title}
     {post.description}
     {post.author && <Text sx={{ fontSize: 1 }}>{post.author}</Text>}
-    <Text as="time" sx={{ fontSize: 1 }}>
-      {post.date}
-    </Text>
+    {post.date && (
+      <time datetime={post.date.datetime} sx={{ fontSize: 1 }}>
+        {post.date.formatted}
+      </time>
+    )}
   </Box>
 );
 
@@ -18,7 +20,7 @@ PostPreview.propTypes = {
     title: node.isRequired,
     description: node,
     author: string,
-    date: string.isRequired,
+    date: shape({ formatted: string.isRequired, datetime: string.isRequired }),
   }).isRequired,
 };
 

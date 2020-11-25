@@ -14,7 +14,7 @@ const VisualRegressionTest = () => (
           </Heading>
         ),
         author: 'Thilo Maier',
-        date: 'July 4, 2018',
+        date: { formatted: 'July 4, 2018', datetime: '2018-07-04' },
       }}
       m={2}
     />

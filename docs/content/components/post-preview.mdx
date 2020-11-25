@@ -31,7 +31,7 @@ would do on a posts overview page:
       </Text>
     ),
     author: 'Thilo Maier',
-    date: 'July 4, 2018',
+    date: { formatted: 'July 4, 2018', datetime: '2018-07-04' },
   }}
   m={2}
 />
@@ -56,7 +56,7 @@ what you would do on a post page:
       </Heading>
     ),
     author: 'Thilo Maier',
-    date: 'July 4, 2018',
+    date: { formatted: 'July 4, 2018', datetime: '2018-07-04' },
   }}
   m={2}
 />
@@ -82,7 +82,7 @@ Finally, we render `PostPreview` without an author:
         eget, semper rutrum, nulla. Nunc purus.
       </Text>
     ),
-    date: 'July 4, 2018',
+    date: { formatted: 'July 4, 2018', datetime: '2018-07-04' },
   }}
   m={2}
 />
@@ -96,18 +96,25 @@ Finally, we render `PostPreview` without an author:
 
 ## Component props
 
-| Name | Type   | Default | Required | Description |
-| :--- | :----- | :------ | :------- | :---------- |
-| post | Object |         | ✓        | See below.  |
+| Name | Type | Required | Description |
+| :--- | :--- | :------- | :---------- |
+| post | Post | ✓        | See below.  |
 
 ### Post
 
-| Name        | Type   | Default | Required | Description                                                 |
-| :---------- | :----- | :------ | :------- | ----------------------------------------------------------- |
-| title       | Node   |         | ✓        | Component that renders a title (composition pattern).       |
-| description | Node   |         |          | Component that renders a description (composition pattern). |
-| author      | String |         |          | Author name.                                                |
-| date        | String |         | ✓        | Formatted date.                                             |
+| Name        | Type   | Required | Description                                                 |
+| :---------- | :----- | :------- | ----------------------------------------------------------- |
+| title       | Node   | ✓        | Component that renders a title (composition pattern).       |
+| description | Node   |          | Component that renders a description (composition pattern). |
+| author      | String |          | Author name.                                                |
+| date        | Date   |          | See below.                                                  |
+
+### Date
+
+| Name       | Type   | Required | Description                              |
+| :--------- | :----- | :------- | :--------------------------------------- |
+| formatted  | String | ✓        | Formatted date.                          |
+| datestring | String | ✓        | Machine readale date, e.g. `YYYY-MM-DD`. |
 
 ## Variants
 

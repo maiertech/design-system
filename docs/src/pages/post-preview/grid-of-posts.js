@@ -23,7 +23,7 @@ const posts = [
       </Text>
     ),
     author: 'Abigail Lyptratt',
-    date: 'July 4, 2018',
+    date: { formatted: 'July 4, 2018', datetime: '2018-07-04' },
   },
   {
     id: '008fbc3b-102e-41d1-8ccf-11e2a3235aba',
@@ -46,7 +46,7 @@ const posts = [
       </Text>
     ),
     author: 'Lon Kamena',
-    date: 'June 12, 2018',
+    date: { formatted: 'June 12, 2018', datetime: '2018-06-12' },
   },
   {
     id: 'a3e1d0c3-7188-49b1-945b-0c079c160064',
@@ -67,7 +67,7 @@ const posts = [
       </Text>
     ),
     author: 'Orin Sissons',
-    date: 'May 31, 2018',
+    date: { formatted: 'May 31, 2018', datetime: '2018-05-31' },
   },
   {
     id: 'e72b1ae2-c1a2-4255-bf19-976074f78291',
@@ -88,7 +88,7 @@ const posts = [
       </Text>
     ),
     author: 'Knox Simes',
-    date: 'May 15, 2018',
+    date: { formatted: 'May 15, 2018', datetime: '2018-05-15' },
   },
   {
     id: 'f8374972-768d-4f54-be36-ae986da7343e',
@@ -108,7 +108,7 @@ const posts = [
       </Text>
     ),
     author: 'Adelaida Hurndall',
-    date: 'May 2, 2018',
+    date: { formatted: 'May 2, 2018', datetime: '2018-05-02' },
   },
   {
     id: 'de501562-fc22-4c38-984e-db27623273fc',
@@ -127,7 +127,7 @@ const posts = [
       </Text>
     ),
     author: 'Jeff Holsall',
-    date: 'April 20, 2018',
+    date: { formatted: 'April 20, 2018', datetime: '2018-04-20' },
   },
   {
     id: 'e4c404a7-1d41-4a35-bd0f-6e18b2c54926',
@@ -144,7 +144,7 @@ const posts = [
         anim ad ea labore ipsum qui.
       </Text>
     ),
-    date: 'April 5, 2018',
+    date: { formatted: 'April 5, 2018', datetime: '2020-04-05' },
     author: 'Chaddie Bordes',
   },
   {
@@ -166,7 +166,7 @@ const posts = [
       </Text>
     ),
     author: 'Ruthi Kunat',
-    date: 'March 14, 2018',
+    date: { formatted: 'March 14, 2018', datetime: '2018-03-14' },
   },
   {
     id: '99272059-a47a-4609-8318-3bdca47d0a80',
@@ -186,7 +186,7 @@ const posts = [
       </Text>
     ),
     author: 'Deanna Effnert',
-    date: 'February 28, 2018',
+    date: { formatted: 'February 28, 2018', datetime: '2018-02-28' },
   },
   {
     id: 'b1760e59-3cd4-46b7-a929-e6208442503a',
@@ -207,7 +207,7 @@ const posts = [
       </Text>
     ),
     author: 'Carr Missenden',
-    date: 'February 13, 2018',
+    date: { formatted: 'February 13, 2018', datetime: '2018-02-13' },
   },
 ];
 

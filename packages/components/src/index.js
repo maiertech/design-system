@@ -4,4 +4,5 @@ export { default as Header } from './header';
 export { default as NewTabLink } from './new-tab-link';
 export { default as PostPreview } from './post-preview';
 export { default as SocialIcons } from './social-icons';
+export { default as Tags } from './tags';
 export { default as TwitterIcon } from './twitter-icon';

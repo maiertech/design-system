@@ -11,5 +11,7 @@
       url: /components/post-preview
     - title: SocialIcons
       url: /components/social-icons
+    - title: Tags
+      url: /components/tags
     - title: TwitterIcon
       url: /components/twitter-icon

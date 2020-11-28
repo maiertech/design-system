@@ -1,7 +1,7 @@
 {
   "private": true,
   "name": "docs",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Docs for the design system for @maiertech websites.",
   "author": "Thilo Maier <maier@un.org>",
   "repository": "maiertech/design-system",
@@ -14,8 +14,8 @@
     "purge": "rm -rf ./node_modules"
   },
   "dependencies": {
-    "@maiertech/components": "^0.20.0",
-    "@maiertech/preset": "^0.1.0",
+    "@maiertech/components": "^0.21.0",
+    "@maiertech/preset": "^0.2.0",
     "@primer/gatsby-theme-doctocat": "^1.2.0",
     "@theme-ui/preset-base": "^0.3.0",
     "gatsby": "^2.27.4",

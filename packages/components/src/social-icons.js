@@ -2,17 +2,7 @@ import React from 'react';
 import { arrayOf, oneOf, oneOfType, shape, string, node } from 'prop-types';
 import { Box, Flex } from 'theme-ui';
 
-const normalizeAlign = (align) => {
-  const alignments = {
-    start: 'flex-start',
-    center: 'center',
-    end: 'flex-end',
-  };
-  if (Array.isArray(align)) {
-    return align.map((alignment) => alignments[alignment]);
-  }
-  return alignments[align];
-};
+import { normalizeAlign } from './helpers';
 
 const SocialIcons = ({ values, align = 'start', ...props }) => {
   return (

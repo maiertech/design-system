@@ -1,0 +1,259 @@
+---
+title: Tags
+status: Experimental
+source: https://github.com/UNDataForum/design-system/blob/master/packages/components/src/tags.js
+---
+
+`Tags` is used to render one or more linked tags.
+
+## Examples
+
+Tags align start (left) by default:
+
+```jsx live
+<Tags
+  values={[
+    { tag: 'css', path: '/tags/css/' },
+    { tag: 'gatsby', path: '/tags/gatsby/' },
+    { tag: 'nextjs', path: '/tags/nextjs/' },
+    { tag: 'react', path: '/tags/react/' },
+  ]}
+  m={2}
+/>
+```
+
+You can align center:
+
+```jsx live
+<Tags
+  values={[
+    { tag: 'css', path: '/tags/css/' },
+    { tag: 'gatsby', path: '/tags/gatsby/' },
+    { tag: 'nextjs', path: '/tags/nextjs/' },
+    { tag: 'react', path: '/tags/react/' },
+  ]}
+  align="center"
+  m={2}
+/>
+```
+
+Or align end (right):
+
+```jsx live
+<Tags
+  values={[
+    { tag: 'css', path: '/tags/css/' },
+    { tag: 'gatsby', path: '/tags/gatsby/' },
+    { tag: 'nextjs', path: '/tags/nextjs/' },
+    { tag: 'react', path: '/tags/react/' },
+  ]}
+  align="end"
+  m={2}
+/>
+```
+
+When you have many tags they wrap:
+
+```jsx live
+<Tags
+  values={[
+    { tag: 'bash', path: '/tags/bash/' },
+    { tag: 'codesandbox', path: '/tags/codesandbox/' },
+    { tag: 'css', path: '/tags/css/' },
+    { tag: 'design-systems', path: '/tags/design-systems/' },
+    { tag: 'devtools', path: '/tags/devtools/' },
+    { tag: 'digital-garden', path: '/tags/digital-garden/' },
+    { tag: 'gatsby', path: '/tags/gatsby/' },
+    { tag: 'github', path: '/tags/github/' },
+    { tag: 'graphql', path: '/tags/graphql/' },
+    { tag: 'macos', path: '/tags/macos/' },
+    { tag: 'mdx', path: '/tags/mdx/' },
+    { tag: 'nextjs', path: '/tags/nextjs/' },
+    { tag: 'node', path: '/tags/node/' },
+    { tag: 'react', path: '/tags/react/' },
+    { tag: 'postcss', path: '/tags/postcss/' },
+    { tag: 'screenflow', path: '/tags/screenflow/' },
+    { tag: 'serverless', path: '/tags/serverless/' },
+    { tag: 'tailwind', path: '/tags/tailwind/' },
+    { tag: 'theme-ui', path: '/tags/theme-ui/' },
+    { tag: 'vercel', path: '/tags/vercel/' },
+    { tag: 'vscode', path: '/tags/vscode/' },
+  ]}
+  m={2}
+/>
+```
+
+You can still align center:
+
+```jsx live
+<Tags
+  values={[
+    { tag: 'bash', path: '/tags/bash/' },
+    { tag: 'codesandbox', path: '/tags/codesandbox/' },
+    { tag: 'css', path: '/tags/css/' },
+    { tag: 'design-systems', path: '/tags/design-systems/' },
+    { tag: 'devtools', path: '/tags/devtools/' },
+    { tag: 'digital-garden', path: '/tags/digital-garden/' },
+    { tag: 'gatsby', path: '/tags/gatsby/' },
+    { tag: 'github', path: '/tags/github/' },
+    { tag: 'graphql', path: '/tags/graphql/' },
+    { tag: 'macos', path: '/tags/macos/' },
+    { tag: 'mdx', path: '/tags/mdx/' },
+    { tag: 'nextjs', path: '/tags/nextjs/' },
+    { tag: 'node', path: '/tags/node/' },
+    { tag: 'react', path: '/tags/react/' },
+    { tag: 'postcss', path: '/tags/postcss/' },
+    { tag: 'screenflow', path: '/tags/screenflow/' },
+    { tag: 'serverless', path: '/tags/serverless/' },
+    { tag: 'tailwind', path: '/tags/tailwind/' },
+    { tag: 'theme-ui', path: '/tags/theme-ui/' },
+    { tag: 'vercel', path: '/tags/vercel/' },
+    { tag: 'vscode', path: '/tags/vscode/' },
+  ]}
+  align="center"
+  m={2}
+/>
+```
+
+Or align end:
+
+```jsx live
+<Tags
+  values={[
+    { tag: 'bash', path: '/tags/bash/' },
+    { tag: 'codesandbox', path: '/tags/codesandbox/' },
+    { tag: 'css', path: '/tags/css/' },
+    { tag: 'design-systems', path: '/tags/design-systems/' },
+    { tag: 'devtools', path: '/tags/devtools/' },
+    { tag: 'digital-garden', path: '/tags/digital-garden/' },
+    { tag: 'gatsby', path: '/tags/gatsby/' },
+    { tag: 'github', path: '/tags/github/' },
+    { tag: 'graphql', path: '/tags/graphql/' },
+    { tag: 'macos', path: '/tags/macos/' },
+    { tag: 'mdx', path: '/tags/mdx/' },
+    { tag: 'nextjs', path: '/tags/nextjs/' },
+    { tag: 'node', path: '/tags/node/' },
+    { tag: 'react', path: '/tags/react/' },
+    { tag: 'postcss', path: '/tags/postcss/' },
+    { tag: 'screenflow', path: '/tags/screenflow/' },
+    { tag: 'serverless', path: '/tags/serverless/' },
+    { tag: 'tailwind', path: '/tags/tailwind/' },
+    { tag: 'theme-ui', path: '/tags/theme-ui/' },
+    { tag: 'vercel', path: '/tags/vercel/' },
+    { tag: 'vscode', path: '/tags/vscode/' },
+  ]}
+  align="end"
+  m={2}
+/>
+```
+
+You can adjust the gap:
+
+```jsx live
+<Tags
+  values={[
+    { tag: 'bash', path: '/tags/bash/' },
+    { tag: 'codesandbox', path: '/tags/codesandbox/' },
+    { tag: 'css', path: '/tags/css/' },
+    { tag: 'design-systems', path: '/tags/design-systems/' },
+    { tag: 'devtools', path: '/tags/devtools/' },
+    { tag: 'digital-garden', path: '/tags/digital-garden/' },
+    { tag: 'gatsby', path: '/tags/gatsby/' },
+    { tag: 'github', path: '/tags/github/' },
+    { tag: 'graphql', path: '/tags/graphql/' },
+    { tag: 'macos', path: '/tags/macos/' },
+    { tag: 'mdx', path: '/tags/mdx/' },
+    { tag: 'nextjs', path: '/tags/nextjs/' },
+    { tag: 'node', path: '/tags/node/' },
+    { tag: 'react', path: '/tags/react/' },
+    { tag: 'postcss', path: '/tags/postcss/' },
+    { tag: 'screenflow', path: '/tags/screenflow/' },
+    { tag: 'serverless', path: '/tags/serverless/' },
+    { tag: 'tailwind', path: '/tags/tailwind/' },
+    { tag: 'theme-ui', path: '/tags/theme-ui/' },
+    { tag: 'vercel', path: '/tags/vercel/' },
+    { tag: 'vscode', path: '/tags/vscode/' },
+  ]}
+  gap={1}
+  m={2}
+/>
+```
+
+## System props
+
+`Tags` supports [space props](https://styled-system.com/api#space) and
+[color props](https://styled-system.com/api#color) from
+[Styled System](https://styled-system.com/).
+
+## Component props
+
+| Name    | Type                       | Default        | Required | Description                                                                                                                                 |
+| :------ | :------------------------- | :------------- | :------- | :------------------------------------------------------------------------------------------------------------------------------------------ |
+| values  | Array of string            |                | ✓        | Array of badge names.                                                                                                                       |
+| gap     | Number                     | 2              |          | Gap between badges (from space scale).                                                                                                      |
+| align   | `start`, `center` or `end` | `start`        |          | Alignment (responsive).                                                                                                                     |
+| variant | String                     | `tags.primary` |          | Optional variant to customize the underlying [`Badge`](https://github.com/system-ui/theme-ui/blob/master/packages/components/src/Badge.js). |
+
+## Variants
+
+| Key         | Description                      |
+| :---------- | :------------------------------- |
+| `links.tag` | Customize links that wraps tags. |
+
+If you do not provide a `variant` prop, tags are rendered with the defaults from
+Theme UI's
+[`Badge`](https://github.com/system-ui/theme-ui/blob/master/packages/components/src/Badge.js).
+You can define your own variants under any key and provide that key to
+`variant`. But it is recommended to define custom variants under the `tags` key.
+If `Link` styling defined under `styles.a` interfers with tags, you can use key
+`links.tag` to correct it.
+
+In this example we make multiple customizations. We define variant
+`tags.secondary` which changes colors and creates square corners and we override
+default link styling with variant `links.tag`:
+
+```jsx live
+<ThemeProvider
+  theme={{
+    links: {
+      tag: {
+        textDecoration: 'none',
+        '@media (hover: hover)': {
+          '&:hover': {
+            textDecoration: 'none',
+          },
+        },
+      },
+    },
+    tags: {
+      default: {
+        borderRadius: 0,
+      },
+      secondary: {
+        color: 'background',
+        bg: 'secondary',
+        variant: 'tags.default',
+      },
+    },
+  }}
+>
+  <Tags
+    values={[
+      { tag: 'css', path: '/tags/css/' },
+      { tag: 'gatsby', path: '/tags/gatsby/' },
+      { tag: 'nextjs', path: '/tags/nextjs/' },
+      { tag: 'react', path: '/tags/react/' },
+    ]}
+    variant="tags.secondary"
+    m={2}
+  />
+</ThemeProvider>
+```
+
+## Visual regression testing
+
+The following URLs can be used for visual regression testing:
+
+- [Few tags](/tags/few-tags)
+- [Many tags](/tags/many-tags)
+- [Customized with `@maiertech/preset`](/tags/customized-with-preset)

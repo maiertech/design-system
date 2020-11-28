@@ -7,6 +7,7 @@ const gray9 = '#374047';
 const blue9 = '#004170';
 const teal8 = '#007d34';
 
+// Merge customizations with https://github.com/system-ui/theme-ui/tree/master/packages/preset-base.
 const theme = merge(preset, {
   // contrast(text, background) = 10.05 AAA
   // contrast(primary, background) = 10.03 AAA
@@ -33,6 +34,18 @@ const theme = merge(preset, {
     },
   },
 
+  // Variants for Link.
+  links: {
+    tag: {
+      textDecoration: 'none',
+      '@media (hover: hover)': {
+        '&:hover': {
+          textDecoration: 'none',
+        },
+      },
+    },
+  },
+
   // Customizations.
 
   // Customize Header.
@@ -46,6 +59,20 @@ const theme = merge(preset, {
   footer: {
     container: {
       variant: 'layout.wide',
+    },
+  },
+
+  tags: {
+    default: {},
+    primary: {
+      color: 'background',
+      bg: 'primary',
+      variant: 'tags.default',
+    },
+    secondary: {
+      color: 'background',
+      bg: 'secondary',
+      variant: 'tags.default',
     },
   },
 

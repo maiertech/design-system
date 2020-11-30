@@ -7,8 +7,16 @@ const gray9 = '#374047';
 const blue9 = '#004170';
 const teal8 = '#007d34';
 
-// Merge customizations with https://github.com/system-ui/theme-ui/tree/master/packages/preset-base.
+/**
+ * This file accomplishes 4 things:
+ * 1 - Set defaults (from @theme-ui/preset-base).
+ * 2 - Define colors.
+ * 3 - Customize variants for Theme UI components.
+ * 4 - Customize variants for @maiertech/components.
+ * 5 - Customize styles for MDX content.
+ */
 const theme = merge(preset, {
+  // 2 - Define colors.
   // contrast(text, background) = 10.05 AAA
   // contrast(primary, background) = 10.03 AAA
   colors: {
@@ -18,7 +26,9 @@ const theme = merge(preset, {
     secondary: teal8,
   },
 
-  // Variants for Container.
+  // 3 - Customize variants for Theme UI components.
+
+  // Container
   layout: {
     container: {
       px: [2, 3, 4],
@@ -34,7 +44,7 @@ const theme = merge(preset, {
     },
   },
 
-  // Variants for Link.
+  // Link
   links: {
     tag: {
       textDecoration: 'none',
@@ -46,35 +56,35 @@ const theme = merge(preset, {
     },
   },
 
-  // Customizations.
+  // 4 - Customize variants for @maiertech/components.
 
-  // Customize Header.
+  // Header
   header: {
     container: {
       variant: 'layout.wide',
     },
   },
 
-  // Customize Footer.
+  // Footer
   footer: {
     container: {
       variant: 'layout.wide',
     },
   },
 
+  // Tags
   tags: {
-    default: {},
     primary: {
       color: 'background',
       bg: 'primary',
-      variant: 'tags.default',
     },
     secondary: {
       color: 'background',
       bg: 'secondary',
-      variant: 'tags.default',
     },
   },
+
+  // 5 - Customize styles for MDX content.
 
   styles: {
     a: {

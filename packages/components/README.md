@@ -1,1 +1,1 @@
-# @maiertech/components
+../../docs/content/components/index.mdx

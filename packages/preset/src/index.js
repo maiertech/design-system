@@ -1,5 +1,4 @@
 import preset from '@theme-ui/preset-base';
-import merge from 'deepmerge';
 
 // Palette generated with https://palx.jxnblk.com/ with base color #0366d6.
 const gray0 = '#f9f9fa';
@@ -15,11 +14,14 @@ const teal8 = '#007d34';
  * 4 - Customize variants for @maiertech/components.
  * 5 - Customize styles for MDX content.
  */
-const theme = merge(preset, {
+const theme = {
+  ...preset,
+
   // 2 - Define colors.
   // contrast(text, background) = 10.05 AAA
   // contrast(primary, background) = 10.03 AAA
   colors: {
+    ...preset.colors,
     text: gray9,
     background: gray0,
     primary: blue9,
@@ -30,6 +32,7 @@ const theme = merge(preset, {
 
   // Container
   layout: {
+    ...preset.layout,
     container: {
       px: [2, 3, 4],
       maxWidth: '64rem',
@@ -46,6 +49,7 @@ const theme = merge(preset, {
 
   // Link
   links: {
+    ...preset.links,
     tag: {
       textDecoration: 'none',
       '@media (hover: hover)': {
@@ -87,8 +91,8 @@ const theme = merge(preset, {
   // 5 - Customize styles for MDX content.
 
   styles: {
+    ...preset.styles,
     a: {
-      // Deep merge with a from @theme-ui/preset-base.
       textDecoration: 'none',
       '@media (hover: hover)': {
         '&:hover': {
@@ -98,6 +102,6 @@ const theme = merge(preset, {
       WebkitTapHighlightColor: 'transparent',
     },
   },
-});
+};
 
 export default theme;

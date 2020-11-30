@@ -1,1 +1,1 @@
-# @maiertech/preset
+../../docs/content/preset/index.mdx

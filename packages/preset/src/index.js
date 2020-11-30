@@ -7,7 +7,7 @@ const blue9 = '#004170';
 const teal8 = '#007d34';
 
 /**
- * This file accomplishes 4 things:
+ * This file accomplishes 5 things:
  * 1 - Set defaults (from @theme-ui/preset-base).
  * 2 - Define colors.
  * 3 - Customize variants for Theme UI components.

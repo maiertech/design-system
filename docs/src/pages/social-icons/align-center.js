@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link, ThemeProvider } from 'theme-ui';
-import { GitHubIcon, SocialIcons, TwitterIcon } from '@maiertech/components';
 import preset from '@maiertech/preset';
+import { GitHubIcon, SocialIcons, TwitterIcon } from '@maiertech/components';
 
 const VisualRegressionTest = () => (
   <ThemeProvider theme={preset}>

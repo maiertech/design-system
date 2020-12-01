@@ -1,5 +1,15 @@
 # @maiertech/preset
 
+## 0.3.0
+
+### Minor Changes
+
+- 17c3f99: Upgrade colors
+
+### Patch Changes
+
+- ea4537f: Eliminate deepmerge dependency
+
 ## 0.2.0
 
 ### Minor Changes

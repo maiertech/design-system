@@ -1,12 +1,12 @@
 import React from 'react';
 import { Container, Heading, Grid, Link, Text, ThemeProvider } from 'theme-ui';
-import preset from '@theme-ui/preset-base';
+import preset from '@maiertech/preset';
 import { PostPreview } from '@maiertech/components';
 
 const posts = [
   {
     id: 'f0c6b008-19bc-4e78-b79b-1e9a437afc16',
-    href: '/2018/07/04/slug',
+    href: '/2018/07/04/slug/',
     title: (
       <Heading as="h2" mb={3}>
         Amet amet eiusmod irure irure tempor magna ullamco excepteur veniam in
@@ -27,7 +27,7 @@ const posts = [
   },
   {
     id: '008fbc3b-102e-41d1-8ccf-11e2a3235aba',
-    href: '/2018/06/12/slug',
+    href: '/2018/06/12/slug/',
     title: (
       <Heading as="h2" mb={3}>
         Occaecat et ut in ut ad anim quis
@@ -50,7 +50,7 @@ const posts = [
   },
   {
     id: 'a3e1d0c3-7188-49b1-945b-0c079c160064',
-    href: '/2018/05/31/slug',
+    href: '/2018/05/31/slug/',
     title: (
       <Heading as="h2" mb={3}>
         Nostrud labore enim id amet enim proident nostrud exercitation laborum
@@ -71,7 +71,7 @@ const posts = [
   },
   {
     id: 'e72b1ae2-c1a2-4255-bf19-976074f78291',
-    href: '/2018/05/15/slug',
+    href: '/2018/05/15/slug/',
     title: (
       <Heading as="h2" mb={3}>
         Ea irure irure occaecat cupidatat pariatur elit aliquip deserunt sit
@@ -92,7 +92,7 @@ const posts = [
   },
   {
     id: 'f8374972-768d-4f54-be36-ae986da7343e',
-    href: '/2018/05/02/slug',
+    href: '/2018/05/02/slug/',
     title: (
       <Heading as="h2" mb={3}>
         Officia enim aute amet sit minim veniam nostrud veniam
@@ -112,7 +112,7 @@ const posts = [
   },
   {
     id: 'de501562-fc22-4c38-984e-db27623273fc',
-    href: '/2018/04/20/slug',
+    href: '/2018/04/20/slug/',
     title: (
       <Heading as="h2" mb={3}>
         Sunt commodo fugiat qui culpa excepteur occaecat cupidatat
@@ -131,7 +131,7 @@ const posts = [
   },
   {
     id: 'e4c404a7-1d41-4a35-bd0f-6e18b2c54926',
-    href: '/2018/04/05/slug',
+    href: '/2018/04/05/slug/',
     title: (
       <Heading as="h2" mb={3}>
         Aliquip duis pariatur enim cupidatat eu laborum cillum pariatur minim id
@@ -149,7 +149,7 @@ const posts = [
   },
   {
     id: '8328492a-335f-4226-bd56-a8c5f3778242',
-    href: '/2018/03/14/slug',
+    href: '/2018/03/14/slug/',
     title: (
       <Heading as="h2" mb={3}>
         Pariatur ad sunt minim velit ex incididunt quis
@@ -170,7 +170,7 @@ const posts = [
   },
   {
     id: '99272059-a47a-4609-8318-3bdca47d0a80',
-    href: '/2018/02/28/slug',
+    href: '/2018/02/28/slug/',
     title: (
       <Heading as="h2" mb={3}>
         Sit elit est ullamco non amet irure
@@ -190,7 +190,7 @@ const posts = [
   },
   {
     id: 'b1760e59-3cd4-46b7-a929-e6208442503a',
-    href: '/2018/02/13/slug',
+    href: '/2018/02/13/slug/',
     title: (
       <Heading as="h2" mb={3}>
         Ex in elit ullamco ad Lorem deserunt exercitation excepteur aliquip eu

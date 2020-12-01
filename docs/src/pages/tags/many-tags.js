@@ -1,6 +1,6 @@
 import React from 'react';
 import { ThemeProvider } from 'theme-ui';
-import preset from '@theme-ui/preset-base';
+import preset from '@maiertech/preset';
 import { Tags } from '@maiertech/components';
 
 const ManyTags = () => (
@@ -29,6 +29,7 @@ const ManyTags = () => (
         { tag: 'vercel', path: '/tags/vercel/' },
         { tag: 'vscode', path: '/tags/vscode/' },
       ]}
+      variant="tags.secondary"
       m={2}
     />
   </ThemeProvider>

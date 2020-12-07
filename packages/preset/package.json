@@ -1,7 +1,7 @@
 {
   "name": "@maiertech/preset",
   "description": "Theme UI preset for @maiertech websites.",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "author": "Thilo Maier <git@maier.asia>",
   "license": "MIT",
   "homepage": "https://github.com/maiertech/design-system/tree/master/packages/preset",

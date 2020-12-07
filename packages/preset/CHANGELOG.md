@@ -1,5 +1,11 @@
 # @maiertech/preset
 
+## 0.3.1
+
+### Patch Changes
+
+- 585ed55: Re-release with Microbundle 0.12.4
+
 ## 0.3.0
 
 ### Minor Changes

@@ -1,5 +1,12 @@
 # @maiertech/components
 
+## 0.21.1
+
+### Patch Changes
+
+- e4ea22f: Fix 'Invalid DOM property `datetime`' error
+- 585ed55: Re-release with Microbundle 0.12.4
+
 ## 0.21.0
 
 ### Minor Changes

@@ -62,7 +62,7 @@ what you would do on a post page:
 />
 ```
 
-Finally, we render `PostPreview` without an author:
+In this example we render `PostPreview` without an author:
 
 ```jsx live
 <PostPreview
@@ -83,6 +83,23 @@ Finally, we render `PostPreview` without an author:
       </Text>
     ),
     date: { formatted: 'July 4, 2018', datetime: '2018-07-04' },
+  }}
+  m={2}
+/>
+```
+
+And finally, we render `PostPreview` without date:
+
+```jsx live
+<PostPreview
+  post={{
+    title: (
+      <Heading as="h2" mb={3}>
+        Et voluptate nisi deserunt consectetur esse fugiat velit occaecat veniam
+        esse
+      </Heading>
+    ),
+    author: 'Thilo Maier',
   }}
   m={2}
 />

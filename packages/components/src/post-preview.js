@@ -8,7 +8,7 @@ const PostPreview = ({ post, ...props }) => (
     {post.description}
     {post.author && <Text sx={{ fontSize: 1 }}>{post.author}</Text>}
     {post.date && (
-      <time datetime={post.date.datetime} sx={{ fontSize: 1 }}>
+      <time dateTime={post.date.datetime} sx={{ fontSize: 1 }}>
         {post.date.formatted}
       </time>
     )}

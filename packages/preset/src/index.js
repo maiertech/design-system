@@ -95,6 +95,46 @@ const theme = {
   // 6 - Customize styles for MDX content.
   styles: {
     ...preset.styles,
+    h1: {
+      ...preset.styles.h1,
+      mt: 0,
+      mb: 4,
+    },
+    h2: {
+      ...preset.styles.h2,
+      mt: 0,
+      mb: 3,
+    },
+    h3: {
+      ...preset.styles.h3,
+      mt: 0,
+      mb: 2,
+    },
+    h4: {
+      ...preset.styles.h4,
+      mt: 0,
+      mb: 2,
+    },
+    h5: {
+      ...preset.styles.h5,
+      mt: 0,
+      mb: 2,
+    },
+    h6: {
+      ...preset.styles.h6,
+      mt: 0,
+      mb: 2,
+    },
+    p: {
+      ...preset.styles.p,
+      // Set color to inherit to allow adapting to parent text color.
+      color: 'inherit',
+      mt: 0,
+      mb: 3,
+      '&:last-child': {
+        mb: 0,
+      },
+    },
     a: {
       textDecoration: 'none',
       '@media (hover: hover)': {

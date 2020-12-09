@@ -1,5 +1,15 @@
 # @maiertech/preset
 
+## 0.4.0
+
+### Minor Changes
+
+- 3df5e4c: Eliminate top margins from h1 to h6 and p in styles
+
+### Patch Changes
+
+- d5ce21c: Fix styles.a by adding color back
+
 ## 0.3.1
 
 ### Patch Changes

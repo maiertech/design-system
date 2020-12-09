@@ -136,6 +136,7 @@ const theme = {
       },
     },
     a: {
+      ...preset.styles.a,
       textDecoration: 'none',
       '@media (hover: hover)': {
         '&:hover': {

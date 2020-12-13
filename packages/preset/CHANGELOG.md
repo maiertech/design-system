@@ -1,5 +1,11 @@
 # @maiertech/preset
 
+## 0.4.1
+
+### Patch Changes
+
+- d385b2c: Add inlineCode styles
+
 ## 0.4.0
 
 ### Minor Changes

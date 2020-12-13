@@ -95,6 +95,16 @@ const theme = {
   // 6 - Customize styles for MDX content.
   styles: {
     ...preset.styles,
+    a: {
+      ...preset.styles.a,
+      textDecoration: 'none',
+      '@media (hover: hover)': {
+        '&:hover': {
+          textDecoration: 'underline',
+        },
+      },
+      WebkitTapHighlightColor: 'transparent',
+    },
     h1: {
       ...preset.styles.h1,
       mt: 0,
@@ -125,6 +135,10 @@ const theme = {
       mt: 0,
       mb: 2,
     },
+    inlineCode: {
+      // Reuse styling for code.
+      ...preset.styles.code,
+    },
     p: {
       ...preset.styles.p,
       // Set color to inherit to allow adapting to parent text color.
@@ -134,16 +148,6 @@ const theme = {
       '&:last-child': {
         mb: 0,
       },
-    },
-    a: {
-      ...preset.styles.a,
-      textDecoration: 'none',
-      '@media (hover: hover)': {
-        '&:hover': {
-          textDecoration: 'underline',
-        },
-      },
-      WebkitTapHighlightColor: 'transparent',
     },
   },
 };

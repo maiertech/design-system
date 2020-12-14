@@ -6,7 +6,11 @@ const PostPreview = ({ post, ...props }) => (
   <Box {...props} as="article">
     {post.title}
     {post.description}
-    {post.author && <Text sx={{ fontSize: 1 }}>{post.author}</Text>}
+    {post.author && (
+      <Text as="div" sx={{ fontSize: 1 }}>
+        {post.author}
+      </Text>
+    )}
     {post.date && (
       <time dateTime={post.date.datetime} sx={{ fontSize: 1 }}>
         {post.date.formatted}

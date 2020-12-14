@@ -1,5 +1,11 @@
 # @maiertech/preset
 
+## 0.5.0
+
+### Minor Changes
+
+- e1071f1: Upgrade @theme-ui/preset-base to @next
+
 ## 0.4.1
 
 ### Patch Changes

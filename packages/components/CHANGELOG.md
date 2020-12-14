@@ -1,5 +1,11 @@
 # @maiertech/components
 
+## 0.22.0
+
+### Minor Changes
+
+- e1071f1: Upgrade theme-ui to v0.6.0-alpha.3 to enable React v17 support
+
 ## 0.21.1
 
 ### Patch Changes

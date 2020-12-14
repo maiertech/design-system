@@ -77,11 +77,11 @@ const Footer = ({ title, name, links, lastUpdated, ...props }) => (
         m={2}
       />
       {lastUpdated && (
-        <Text sx={{ fontSize: 0, textAlign: 'center', mb: 3 }}>
+        <Text as="div" sx={{ fontSize: 0, textAlign: 'center', mb: 3 }}>
           {`Last updated: ${lastUpdated}`}
         </Text>
       )}
-      <Text sx={{ fontSize: 1, textAlign: 'center' }}>
+      <Text as="div" sx={{ fontSize: 1, textAlign: 'center' }}>
         © {new Date().getFullYear()} by {name}
       </Text>
     </Container>

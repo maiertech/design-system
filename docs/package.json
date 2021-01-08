@@ -18,7 +18,7 @@
     "@maiertech/preset": "*",
     "@primer/gatsby-theme-doctocat": "^1.2.0",
     "@theme-ui/preset-base": "^0.5.0-alpha.1",
-    "gatsby": "^2.27.5",
+    "gatsby": "^2.30.1",
     "prop-types": "^15.7.2",
     "react": "^16.14.0",
     "react-dom": "^16.14.0",

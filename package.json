@@ -32,7 +32,7 @@
     "@maiertech/eslint-config": "^0.16.0",
     "@maiertech/prettier-config": "^0.2.1",
     "eslint": "^7.17.0",
-    "husky": "^4.3.0",
+    "husky": "^4.3.7",
     "lint-staged": "^10.5.3",
     "microbundle": "^0.12.4",
     "micromatch": "^4.0.2",

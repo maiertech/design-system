@@ -15,6 +15,9 @@
     "format": "yarn run format:eslint && yarn run format:prettier",
     "format:eslint": "yarn run lint:eslint --fix",
     "format:prettier": "yarn run prettier --write",
+    "test": "yarn run test:components && yarn run test:preset",
+    "test:components": "yarn run package-check --cwd ./packages/components",
+    "test:preset": "yarn run package-check --cwd ./packages/preset",
     "purge": "rm -rf ./node_modules && yarn workspaces run purge"
   },
   "devDependencies": {
@@ -25,10 +28,11 @@
     "@changesets/cli": "^2.11.2",
     "@maiertech/eslint-config": "^0.16.0",
     "@maiertech/prettier-config": "^0.2.1",
+    "@skypack/package-check": "^0.2.2",
     "eslint": "^7.17.0",
     "husky": "^4.3.7",
     "lint-staged": "^10.5.3",
-    "microbundle": "^0.12.4",
+    "microbundle": "^0.13.0",
     "micromatch": "^4.0.2",
     "prettier": "^2.2.1"
   }

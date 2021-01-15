@@ -1,8 +1,7 @@
 # MDS (@maiertech design system)
 
 This monorepo contains the design system for
-[@maiertech](https://github.com/maiertech) and
-[@454de6e](https://github.com/454de6e) websites:
+[@maiertech](https://github.com/maiertech) websites:
 
 - [@maiertech/components](https://github.com/maiertech/design-system/tree/master/packages/components)
 - [@maiertech/preset](https://github.com/maiertech/design-system/tree/master/packages/preset)

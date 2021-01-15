@@ -1,5 +1,11 @@
 # @maiertech/preset
 
+## 0.5.1
+
+### Patch Changes
+
+- 5cbd744: Update microbundle to v0.13.0 and re-publish
+
 ## 0.5.0
 
 ### Minor Changes

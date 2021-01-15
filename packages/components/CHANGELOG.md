@@ -1,5 +1,11 @@
 # @maiertech/components
 
+## 0.22.1
+
+### Patch Changes
+
+- 5cbd744: Update microbundle to v0.13.0 and re-publish
+
 ## 0.22.0
 
 ### Minor Changes

@@ -20,7 +20,7 @@
     "@theme-ui/preset-base": "^0.5.0-alpha.1",
     "gatsby": "^2.31.1",
     "prop-types": "^15.7.2",
-    "react": "^16.14.0",
+    "react": "^17.0.1",
     "react-dom": "^16.14.0",
     "theme-ui": "^0.6.0-alpha.6"
   }

@@ -1,3 +1,4 @@
+export { default as DevIcon } from './dev-icon';
 export { default as Footer } from './footer';
 export { default as GitHubIcon } from './github-icon';
 export { default as Header } from './header';

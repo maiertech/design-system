@@ -56,8 +56,11 @@ const Footer = ({ title, name, links, lastUpdated, ...props }) => (
           {
             id: 'github',
             icon: (
-              <Link href="https://github.com/454de6e" sx={{ color: 'inherit' }}>
-                <GitHubIcon title="Follow us on GitHub" />
+              <Link
+                href="https://github.com/maiertech"
+                sx={{ color: 'inherit' }}
+              >
+                <GitHubIcon title="Follow me on GitHub" />
               </Link>
             ),
           },
@@ -65,10 +68,10 @@ const Footer = ({ title, name, links, lastUpdated, ...props }) => (
             id: 'twitter',
             icon: (
               <Link
-                href="https://twitter.com/454de6e"
+                href="https://twitter.com/maiertech"
                 sx={{ color: 'inherit' }}
               >
-                <TwitterIcon title="Follow us on Twitter" />
+                <TwitterIcon title="Follow me on Twitter" />
               </Link>
             ),
           },

@@ -1,5 +1,11 @@
 # @maiertech/components
 
+## 0.23.0
+
+### Minor Changes
+
+- 3c1cd1b: Add DEV icon
+
 ## 0.22.1
 
 ### Patch Changes

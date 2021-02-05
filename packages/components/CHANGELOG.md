@@ -1,5 +1,11 @@
 # @maiertech/components
 
+## 0.23.1
+
+### Patch Changes
+
+- f6fbb65: Add DEV icon to Footer
+
 ## 0.23.0
 
 ### Minor Changes

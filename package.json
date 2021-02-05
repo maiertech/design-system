@@ -21,12 +21,12 @@
     "purge": "rm -rf ./node_modules && yarn workspaces run purge"
   },
   "devDependencies": {
-    "@babel/cli": "^7.12.10",
-    "@babel/core": "^7.12.10",
-    "@babel/preset-env": "^7.12.11",
-    "@babel/preset-react": "^7.12.10",
+    "@babel/cli": "^7.12.13",
+    "@babel/core": "^7.12.13",
+    "@babel/preset-env": "^7.12.13",
+    "@babel/preset-react": "^7.12.13",
     "@changesets/cli": "^2.14.0",
-    "@maiertech/eslint-config": "^0.16.0",
+    "@maiertech/eslint-config": "^0.16.1",
     "@maiertech/prettier-config": "^0.3.0",
     "@skypack/package-check": "^0.2.2",
     "eslint": "^7.19.0",

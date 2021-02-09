@@ -28,8 +28,10 @@
     "access": "public"
   },
   "scripts": {
-    "prepare": "microbundle --format cjs,modern --compress false",
-    "watch": "microbundle watch --format cjs,modern --compress false",
+    "start": "tsdx watch --tsconfig tsconfig.build.json --verbose --noClean",
+    "build": "tsdx build --tsconfig tsconfig.build.json",
+    "lint": "tsdx lint",
+    "prepare": "yarn run build",
     "clean": "rm -rf ./dist",
     "purge": "rm -rf ./node_modules"
   },

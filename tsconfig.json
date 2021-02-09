@@ -1,0 +1,17 @@
+{
+  "extends": "./tsconfig.base.json",
+  "include": ["packages"],
+  "compilerOptions": {
+    // Permit JS during migration.
+    "allowJs": true,
+    // Check JS during migration.
+    "checkJs": true
+    // Uncomment if you are done with changing relative imports.
+    // "baseUrl": "./",
+    // Uncomment when needed.
+    // "paths": {
+    //   "@maiertech/components": ["./packages/components/src"],
+    //   "@maiertech/preset": ["./packages/preset/src"]
+    // }
+  }
+}

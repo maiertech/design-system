@@ -1,22 +1,28 @@
 const micromatch = require('micromatch');
 const prettier = require('prettier');
 
-// Figure out all extensions supported by Prettier.
+// https://coding.maier.tech/chunks/optimizing-lint-staged-config-js-for-prettier/
+
 const prettierSupportedExtensions = prettier
   .getSupportInfo()
   .languages.map(({ extensions }) => extensions)
   .flat();
 
+const addQuotes = (a) => `"${a}"`;
+
 module.exports = (allStagedFiles) => {
-  // Match files for ESLint.
-  const eslintFiles = micromatch(allStagedFiles, ['**/*.js']);
-  // Match all files that can be formated by Prettier.
+  const eslintFiles = micromatch(allStagedFiles, ['**/*.{js,jsx,ts,tsx}'], {
+    dot: true,
+  });
   const prettierFiles = micromatch(
     allStagedFiles,
-    prettierSupportedExtensions.map((extension) => `**/*${extension}`)
+    prettierSupportedExtensions.map((extension) => `**/*${extension}`),
+    { dot: true }
   );
-  return [
-    `eslint --fix ${eslintFiles.join(' ')}`,
-    `prettier --write ${prettierFiles.join(' ')}`,
-  ];
+  const linters = [];
+  if (eslintFiles.length > 0)
+    linters.push(`eslint --fix ${eslintFiles.join(' ')}`);
+  if (prettierFiles.length > 0)
+    linters.push(`prettier --write ${prettierFiles.map(addQuotes).join(' ')}`);
+  return linters;
 };

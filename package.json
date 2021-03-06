@@ -22,9 +22,9 @@
     "purge": "rm -rf ./node_modules && yarn workspaces run purge"
   },
   "devDependencies": {
-    "@babel/cli": "^7.12.13",
-    "@babel/core": "^7.12.13",
-    "@babel/preset-env": "^7.12.13",
+    "@babel/cli": "^7.13.0",
+    "@babel/core": "^7.13.8",
+    "@babel/preset-env": "^7.13.9",
     "@babel/preset-react": "^7.12.13",
     "@changesets/cli": "^2.14.0",
     "@maiertech/eslint-config": "^0.17.1",

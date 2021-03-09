@@ -1,5 +1,11 @@
 # @maiertech/preset
 
+## 0.5.2
+
+### Patch Changes
+
+- 529b274: Upgrade dependencies
+
 ## 0.5.1
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # @maiertech/components
 
+## 0.24.0
+
+### Minor Changes
+
+- 529b274: Add socialIcons prop to Footer
+
 ## 0.23.1
 
 ### Patch Changes

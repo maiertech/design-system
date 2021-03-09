@@ -3071,10 +3071,10 @@
     "@emotion/react" "^11.1.1"
     "@theme-ui/css" "0.6.0-alpha.6"
 
-"@theme-ui/preset-base@^0.6.0-alpha.4":
-  version "0.6.0-alpha.4"
-  resolved "https://registry.yarnpkg.com/@theme-ui/preset-base/-/preset-base-0.6.0-alpha.4.tgz#bcd5aadaeddf028da0dadc00227ec205fe2fad7c"
-  integrity sha512-H+OYvjx5MdOcAk1+qK50LbHmelO4GZ8Jpx4mcrVabgcBesCVUFXj5dCp7wkUDyyWWIDCeeTcdKR2cNCjsOy3tA==
+"@theme-ui/preset-base@^0.6.0-canary.1544.5359f8a1e408a4dfeb74a9ae39688270286e534a.0":
+  version "0.6.0-canary.1544.5359f8a1e408a4dfeb74a9ae39688270286e534a.0"
+  resolved "https://registry.yarnpkg.com/@theme-ui/preset-base/-/preset-base-0.6.0-canary.1544.5359f8a1e408a4dfeb74a9ae39688270286e534a.0.tgz#ea368ac31b826441afd13983605ab0e99e1d9567"
+  integrity sha512-DVVurMh0kfjU1zC6jN5CWm8kyjE++anZ4GKLKXEKac99D2xNid51yKqjrneYQqfuKoTHyxujQeXB5cxrBKlwxA==
 
 "@theme-ui/theme-provider@0.6.0-alpha.6":
   version "0.6.0-alpha.6"

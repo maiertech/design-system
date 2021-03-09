@@ -34,6 +34,6 @@
     "purge": "rm -rf ./node_modules"
   },
   "dependencies": {
-    "@theme-ui/preset-base": "^0.6.0-alpha.4"
+    "@theme-ui/preset-base": "^0.6.0-canary.1544.5359f8a1e408a4dfeb74a9ae39688270286e534a.0"
   }
 }

@@ -1,7 +1,7 @@
 const micromatch = require('micromatch');
 const prettier = require('prettier');
 
-// https://coding.maier.tech/chunks/optimizing-lint-staged-config-js-for-prettier/
+// https://coding.maier.tech/posts/optimizing-lint-staged-config-js-for-prettier/
 
 const prettierSupportedExtensions = prettier
   .getSupportInfo()

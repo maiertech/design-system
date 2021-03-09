@@ -14,7 +14,6 @@ This example shows a footer with a few navigation links:
 <Footer
   title="This is the Footer title"
   name="Thilo Maier"
-  lastUpdated="Aug 1, 2018"
   links={[
     {
       href: '/blog',
@@ -29,10 +28,37 @@ This example shows a footer with a few navigation links:
       text: 'Archive',
     },
   ]}
+  socialIcons={
+    <SocialIcons
+      values={[
+        {
+          id: 'twitter',
+          icon: (
+            <Link
+              href="https://twitter.com/maiertech"
+              sx={{ color: 'inherit' }}
+            >
+              <TwitterIcon title="Follow me on Twitter" />
+            </Link>
+          ),
+        },
+        {
+          id: 'github',
+          icon: (
+            <Link href="https://github.com/maiertech" sx={{ color: 'inherit' }}>
+              <GitHubIcon title="Follow me on GitHub" />
+            </Link>
+          ),
+        },
+      ]}
+      align="center"
+      m={2}
+    />
+  }
 />
 ```
 
-This example shows a footer with many navigation links:
+This example shows a footer with many navigation links and without social icons:
 
 ```jsx live
 <Footer
@@ -135,8 +161,8 @@ This example shows a footer with many navigation links:
 | :---------- | :------------ | :------ | :------- | :------------ |
 | title       | String        |         | ✓        |               |
 | name        | String        |         | ✓        |               |
-| lastUpdated |               |         |          |               |
 | links       | Array of Link |         | ✓        | Footer links. |
+| socialIcons | Node          |         |          | Social icons. |
 
 ### Link
 
@@ -159,7 +185,6 @@ This example shows how to custmize a header with variants:
   <Footer
     title="This is the Footer title"
     name="Thilo Maier"
-    lastUpdated="Aug 1, 2018"
     links={[
       {
         href: '/blog',
@@ -174,6 +199,36 @@ This example shows how to custmize a header with variants:
         text: 'Archive',
       },
     ]}
+    socialIcons={
+      <SocialIcons
+        values={[
+          {
+            id: 'twitter',
+            icon: (
+              <Link
+                href="https://twitter.com/maiertech"
+                sx={{ color: 'inherit' }}
+              >
+                <TwitterIcon title="Follow me on Twitter" />
+              </Link>
+            ),
+          },
+          {
+            id: 'github',
+            icon: (
+              <Link
+                href="https://github.com/maiertech"
+                sx={{ color: 'inherit' }}
+              >
+                <GitHubIcon title="Follow me on GitHub" />
+              </Link>
+            ),
+          },
+        ]}
+        align="center"
+        m={2}
+      />
+    }
   />
 </ThemeProvider>
 ```

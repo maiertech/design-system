@@ -1,13 +1,8 @@
 import React from 'react';
-import { arrayOf, shape, string } from 'prop-types';
+import { arrayOf, node, shape, string } from 'prop-types';
 import { Box, Container, Flex, Heading, Text, Link } from 'theme-ui';
 
-import DevIcon from './dev-icon';
-import GitHubIcon from './github-icon';
-import TwitterIcon from './twitter-icon';
-import SocialIcons from './social-icons';
-
-const Footer = ({ title, name, links, lastUpdated, ...props }) => (
+const Footer = ({ title, name, links, socialIcons, ...props }) => (
   <Box
     {...props}
     as="footer"
@@ -52,47 +47,7 @@ const Footer = ({ title, name, links, lastUpdated, ...props }) => (
           </Link>
         ))}
       </Flex>
-      <SocialIcons
-        values={[
-          {
-            id: 'twitter',
-            icon: (
-              <Link
-                href="https://twitter.com/maiertech"
-                sx={{ color: 'inherit' }}
-              >
-                <TwitterIcon title="Follow me on Twitter" />
-              </Link>
-            ),
-          },
-          {
-            id: 'dev',
-            icon: (
-              <Link href="https://dev.to/maiertech" sx={{ color: 'inherit' }}>
-                <DevIcon title="Follow me on DEV" />
-              </Link>
-            ),
-          },
-          {
-            id: 'github',
-            icon: (
-              <Link
-                href="https://github.com/maiertech"
-                sx={{ color: 'inherit' }}
-              >
-                <GitHubIcon title="Follow me on GitHub" />
-              </Link>
-            ),
-          },
-        ]}
-        align="center"
-        m={2}
-      />
-      {lastUpdated && (
-        <Text as="div" sx={{ fontSize: 0, textAlign: 'center', mb: 3 }}>
-          {`Last updated: ${lastUpdated}`}
-        </Text>
-      )}
+      {socialIcons}
       <Text as="div" sx={{ fontSize: 1, textAlign: 'center' }}>
         © {new Date().getFullYear()} by {name}
       </Text>
@@ -103,7 +58,7 @@ const Footer = ({ title, name, links, lastUpdated, ...props }) => (
 Footer.propTypes = {
   title: string.isRequired,
   name: string.isRequired,
-  lastUpdated: string,
+  socialIcons: node,
   links: arrayOf(
     shape({
       href: string.isRequired,

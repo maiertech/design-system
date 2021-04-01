@@ -25,7 +25,7 @@
     "@babel/cli": "^7.13.0",
     "@babel/core": "^7.13.8",
     "@babel/preset-env": "^7.13.9",
-    "@babel/preset-react": "^7.12.13",
+    "@babel/preset-react": "^7.13.13",
     "@changesets/cli": "^2.14.1",
     "@maiertech/eslint-config": "^0.17.1",
     "@maiertech/prettier-config": "^0.3.0",

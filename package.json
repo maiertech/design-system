@@ -31,7 +31,7 @@
     "@maiertech/prettier-config": "^0.3.0",
     "@skypack/package-check": "^0.2.2",
     "eslint": "^7.21.0",
-    "husky": "^5.1.3",
+    "husky": "^7.0.2",
     "lint-staged": "^10.5.4",
     "microbundle": "^0.13.0",
     "micromatch": "^4.0.2",
